@@ -1,0 +1,1223 @@
+# Sistema DropHunter Implementação Técnica Aprimorada com Interface Completa
+
+Este documento apresenta uma versão aprimorada do Sistema DropHunter, combinando a robustez técnica do Projeto 2 com a interface completa e abrangência do Projeto 3.
+
+## 1. Arquitetura do Sistema
+
+```typescript
+// src/drophunter/core/index.ts
+// Sistema DropHunter integrado com RobotHGAds
+
+import { Container } from 'inversify';
+import 'reflect-metadata';
+import { TYPES } from '../types';
+import { ProductMonitorService } from './ProductMonitorService';
+import { OpportunityLibraryService } from './OpportunityLibraryService';
+import { IntegrationService } from './IntegrationService';
+import { RemotionRendererService } from './RemotionRendererService';
+import { DashboardService } from './DashboardService';
+import { EventBus } from '../../core/utils/EventBus';
+import { Logger } from '../../core/utils/Logger';
+import { DropHunterConfig } from '../config/DropHunterConfig';
+import { RobotHGAdsIntegrationAdapter } from './adapters/RobotHGAdsIntegrationAdapter';
+
+/**
+ * Classe principal do sistema DropHunter
+ * Responsável por orquestrar os serviços e fornecer uma API unificada
+ */
+export class DropHunterSystem {
+  private container: Container;
+  private productMonitor: ProductMonitorService;
+  private opportunityLibrary: OpportunityLibraryService;
+  private integrationService: IntegrationService;
+  private remotionRenderer: RemotionRendererService;
+  private dashboardService: DashboardService;
+  private eventBus: EventBus;
+  private logger: Logger;
+  private config: DropHunterConfig;
+  private initialized: boolean = false;
+
+  constructor(config: DropHunterConfig) {
+    this.config = config;
+    this.container = new Container();
+    this.logger = new Logger('DropHunterSystem');
+    this.setupDependencyInjection();
+  }
+
+  /**
+   * Configura a injeção de dependências
+   */
+  private setupDependencyInjection(): void {
+    // Registrar serviços principais
+    this.container.bind<Logger>(TYPES.Logger).toConstantValue(this.logger);
+    this.container.bind<DropHunterConfig>(TYPES.DropHunterConfig).toConstantValue(this.config);
+    this.container.bind<EventBus>(TYPES.EventBus).to(EventBus).inSingletonScope();
+    
+    // Registrar repositórios
+    this.container.bind<ProductRepository>(TYPES.ProductRepository).to(ProductRepository).inSingletonScope();
+    this.container.bind<MarketRepository>(TYPES.MarketRepository).to(MarketRepository).inSingletonScope();
+    this.container.bind<OpportunityRepository>(TYPES.OpportunityRepository).to(OpportunityRepository).inSingletonScope();
+    this.container.bind<RemotionTemplateRepository>(TYPES.RemotionTemplateRepository).to(RemotionTemplateRepository).inSingletonScope();
+    this.container.bind<RenderJobRepository>(TYPES.RenderJobRepository).to(RenderJobRepository).inSingletonScope();
+    
+    // Registrar serviços de segurança
+    this.container.bind<CredentialsManager>(TYPES.CredentialsManager).to(CredentialsManager).inSingletonScope();
+    this.container.bind<EncryptionService>(TYPES.EncryptionService).to(EncryptionService).inSingletonScope();
+    this.container.bind<AntiDetectionService>(TYPES.AntiDetectionService).to(AntiDetectionService).inSingletonScope();
+    this.container.bind<ProxyManager>(TYPES.ProxyManager).to(ProxyManager).inSingletonScope();
+    this.container.bind<UserAgentManager>(TYPES.UserAgentManager).to(UserAgentManager).inSingletonScope();
+    this.container.bind<CookieManager>(TYPES.CookieManager).to(CookieManager).inSingletonScope();
+    
+    // Registrar serviços principais
+    this.container.bind<ProductMonitorService>(TYPES.ProductMonitorService).to(ProductMonitorService).inSingletonScope();
+    this.container.bind<OpportunityLibraryService>(TYPES.OpportunityLibraryService).to(OpportunityLibraryService).inSingletonScope();
+    this.container.bind<IntegrationService>(TYPES.IntegrationService).to(IntegrationService).inSingletonScope();
+    this.container.bind<RemotionRendererService>(TYPES.RemotionRendererService).to(RemotionRendererService).inSingletonScope();
+    this.container.bind<DashboardService>(TYPES.DashboardService).to(DashboardService).inSingletonScope();
+    
+    // Registrar adaptadores
+    this.container.bind<RobotHGAdsIntegrationAdapter>(TYPES.RobotHGAdsIntegrationAdapter).to(RobotHGAdsIntegrationAdapter).inSingletonScope();
+    this.container.bind<RemotionLambdaAdapter>(TYPES.RemotionLambdaAdapter).to(RemotionLambdaAdapter).inSingletonScope();
+    this.container.bind<S3StorageAdapter>(TYPES.S3StorageAdapter).to(S3StorageAdapter).inSingletonScope();
+    this.container.bind<ShopifyAdapter>(TYPES.ShopifyAdapter).to(ShopifyAdapter).inSingletonScope();
+    this.container.bind<ClaudeAIAdapter>(TYPES.ClaudeAIAdapter).to(ClaudeAIAdapter).inSingletonScope();
+  }
+
+  /**
+   * Inicializa o sistema DropHunter
+   */
+  public async initialize(): Promise<boolean> {
+    try {
+      this.logger.info('Inicializando sistema DropHunter...');
+      
+      // Obter instâncias dos serviços principais
+      this.eventBus = this.container.get<EventBus>(TYPES.EventBus);
+      this.productMonitor = this.container.get<ProductMonitorService>(TYPES.ProductMonitorService);
+      this.opportunityLibrary = this.container.get<OpportunityLibraryService>(TYPES.OpportunityLibraryService);
+      this.integrationService = this.container.get<IntegrationService>(TYPES.IntegrationService);
+      this.remotionRenderer = this.container.get<RemotionRendererService>(TYPES.RemotionRendererService);
+      this.dashboardService = this.container.get<DashboardService>(TYPES.DashboardService);
+      
+      // Inicializar serviços em ordem correta
+      await this.eventBus.initialize();
+      await this.productMonitor.initialize();
+      await this.opportunityLibrary.initialize();
+      await this.integrationService.initialize();
+      await this.remotionRenderer.initialize();
+      await this.dashboardService.initialize();
+      
+      // Configurar tratamento de eventos
+      this.setupEventHandlers();
+      
+      this.initialized = true;
+      this.logger.info('Sistema DropHunter inicializado com sucesso');
+      
+      return true;
+    } catch (error) {
+      this.logger.error('Falha ao inicializar sistema DropHunter', {
+        error: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined
+      });
+      
+      return false;
+    }
+  }
+
+  // Métodos existentes do Projeto 2...
+}
+```
+
+## 2. Dashboard Completo (do Projeto 3)
+
+```tsx
+// src/components/Dashboard.tsx
+import React, { useState, useEffect } from 'react';
+import { 
+  Search, Filter, ChevronDown, RefreshCw, SlidersHorizontal, Globe, 
+  ShoppingBag, BarChart2, Star, StarOff, Clock, ExternalLink, Plus, 
+  Flag, FileText, BrainCircuit, Zap, Copy, Share2, Sparkles, BarChart,
+  Award, TrendingUp, PieChart, ShoppingCart, Database, Layers
+} from 'lucide-react';
+
+export default function DropHunterDashboard() {
+  const [selectedTab, setSelectedTab] = useState("oportunidades");
+  const [selectedCountry, setSelectedCountry] = useState("all");
+  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+  const [showAnalysisModal, setShowAnalysisModal] = useState(false);
+  const [showExpertMethodologies, setShowExpertMethodologies] = useState(false);
+  const [showWorkflowModal, setShowWorkflowModal] = useState(false);
+  
+  // Países prioritários conforme especificado no plano de implementação
+  const countries = [
+    { 
+      id: "uk", 
+      name: "Reino Unido", 
+      flag: "🇬🇧", 
+      products: 46,
+      roi: "11.000%",
+      specialist: "Tom Breeze",
+      methodology: "Emotional Resolution",
+      campaignType: "Performance Max + YouTube",
+      budget: "£50-200/dia (estágio 3)",
+      lastVerification: "Hoje, 09:45"
+    },
+    // Outros países...
+  ];
+  
+  // Oportunidades baseadas na análise da Claude 3.7 Sonnet
+  const opportunities = [
+    {
+      id: 1,
+      name: "Kit Relógio Smart Premium",
+      country: "uk",
+      flag: "🇬🇧",
+      score: 92,
+      price: "£75",
+      cost: "£30",
+      roi: "150%",
+      dateFound: "01/05/2025",
+      category: "Gadgets",
+      imageUrl: "/api/placeholder/400/300",
+      isFavorite: true,
+      // Análise da Claude 3.7 Sonnet
+      analysis: {
+        // Análise detalhada...
+      },
+      // Status de processamento no fluxo de trabalho integrado
+      workflow: {
+        status: "completed",
+        steps: [
+          // Passos do workflow...
+        ]
+      }
+    },
+    // Outras oportunidades...
+  ];
+  
+  // Código do componente Dashboard...
+  
+  return (
+    <div className="bg-gray-50 min-h-screen">
+      {/* Header */}
+      <header className="bg-indigo-700 text-white">
+        {/* Header content... */}
+      </header>
+      
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Dashboard content... */}
+        
+        {/* Stats Cards */}
+        <div className="grid grid-cols-4 gap-5 mb-6">
+          {/* Cards... */}
+        </div>
+        
+        {/* Countries Panel */}
+        <div className="bg-white rounded-lg shadow mb-6">
+          {/* Countries content... */}
+        </div>
+        
+        {/* Tabs and Filters */}
+        <div className="bg-white rounded-lg shadow mb-6">
+          {/* Tabs content... */}
+          
+          {/* Product Grid */}
+          <div className="grid grid-cols-3 gap-6 p-6">
+            {/* Products... */}
+          </div>
+        </div>
+        
+        {/* Modals and other components... */}
+      </main>
+    </div>
+  );
+}
+```
+
+## 3. Integração com RobotHGAds (do Projeto 2, melhorado)
+
+```typescript
+// src/drophunter/core/IntegrationService.ts
+// Serviço aprimorado de integração entre DropHunter e RobotHGAds
+
+import { injectable, inject } from 'inversify';
+import { TYPES } from '../types';
+import { Logger } from '../../core/utils/Logger';
+import { RobotHGAdsIntegrationAdapter } from './adapters/RobotHGAdsIntegrationAdapter';
+import { EventBus } from '../../core/utils/EventBus';
+import { OpportunityLibraryService } from './OpportunityLibraryService';
+import { ClaudeAIAdapter } from './adapters/ClaudeAIAdapter';
+
+@injectable()
+export class IntegrationService {
+  constructor(
+    @inject(TYPES.Logger) private logger: Logger,
+    @inject(TYPES.RobotHGAdsIntegrationAdapter) private robotAdapter: RobotHGAdsIntegrationAdapter,
+    @inject(TYPES.EventBus) private eventBus: EventBus,
+    @inject(TYPES.OpportunityLibraryService) private opportunityLibrary: OpportunityLibraryService,
+    @inject(TYPES.ClaudeAIAdapter) private claudeAI: ClaudeAIAdapter
+  ) {}
+  
+  /**
+   * Inicializa o serviço de integração
+   */
+  async initialize(): Promise<boolean> {
+    try {
+      this.logger.info('Inicializando serviço de integração...');
+      
+      // Verificar conexão com RobotHGAds
+      const connectionStatus = await this.robotAdapter.testConnection();
+      
+      if (!connectionStatus.success) {
+        this.logger.warn('Conexão com RobotHGAds falhou', {
+          error: connectionStatus.error
+        });
+      }
+      
+      // Verificar conexão com Claude AI
+      const aiConnectionStatus = await this.claudeAI.testConnection();
+      
+      if (!aiConnectionStatus.success) {
+        this.logger.warn('Conexão com Claude AI falhou', {
+          error: aiConnectionStatus.error
+        });
+      }
+      
+      // Configurar tratamento de eventos
+      this.setupRobotHGAdsEvents();
+      this.setupClaudeAIEvents();
+      
+      this.logger.info('Serviço de integração inicializado com sucesso');
+      return true;
+    } catch (error) {
+      this.logger.error('Falha ao inicializar serviço de integração', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      return false;
+    }
+  }
+  
+  // Métodos existentes do Projeto 2...
+  
+  /**
+   * Configurar eventos do Claude AI
+   */
+  private setupClaudeAIEvents(): void {
+    // Configurar eventos relacionados à análise de Claude AI
+    this.claudeAI.onAnalysisCompleted((analysisData) => {
+      this.eventBus.publish('claude.analysis.completed', analysisData);
+      
+      // Atualizar o status da oportunidade com a análise
+      if (analysisData.opportunityId) {
+        this.opportunityLibrary.updateOpportunityWithAnalysis(
+          analysisData.opportunityId,
+          analysisData.analysis
+        ).catch(error => {
+          this.logger.error('Erro ao atualizar oportunidade com análise do Claude', {
+            opportunityId: analysisData.opportunityId,
+            error: error instanceof Error ? error.message : String(error)
+          });
+        });
+      }
+    });
+  }
+  
+  /**
+   * Solicita análise avançada da Claude AI para uma oportunidade
+   */
+  async requestClaudeAnalysis(opportunityId: string): Promise<boolean> {
+    try {
+      this.logger.info('Solicitando análise avançada do Claude AI', {
+        opportunityId
+      });
+      
+      // Obter detalhes da oportunidade
+      const opportunityDetail = await this.opportunityLibrary.getOpportunityDetail(opportunityId);
+      
+      if (!opportunityDetail) {
+        throw new Error(`Oportunidade não encontrada: ${opportunityId}`);
+      }
+      
+      // Preparar dados para análise
+      const prompt = this.prepareClaudePrompt(opportunityDetail);
+      
+      // Enviar para o Claude AI
+      const analysisResult = await this.claudeAI.analyzeOpportunity(prompt);
+      
+      if (!analysisResult.success) {
+        throw new Error(`Claude AI rejeitou a análise: ${analysisResult.error}`);
+      }
+      
+      this.logger.info('Análise do Claude AI iniciada com sucesso', {
+        opportunityId,
+        analysisRequestId: analysisResult.requestId
+      });
+      
+      return true;
+    } catch (error) {
+      this.logger.error('Erro ao solicitar análise do Claude AI', {
+        opportunityId,
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      return false;
+    }
+  }
+  
+  /**
+   * Prepara o prompt para o Claude AI
+   */
+  private prepareClaudePrompt(opportunityDetail: OpportunityDetail): ClaudeAnalysisPrompt {
+    // Implementação do prompt...
+    return {
+      // Detalhes do prompt...
+    };
+  }
+}
+```
+
+## 4. Sistema Remotion Aprimorado (combinando ambos os projetos)
+
+```typescript
+// src/drophunter/core/RemotionRendererService.ts
+// Serviço de renderização de vídeo usando Remotion
+
+import { injectable, inject } from 'inversify';
+import { TYPES } from '../types';
+import { Logger } from '../../core/utils/Logger';
+import { EventBus } from '../../core/utils/EventBus';
+import { CredentialsManager } from '../../core/security/CredentialsManager';
+import { RemotionTemplateRepository } from '../repositories/RemotionTemplateRepository';
+import { RenderJobRepository } from '../repositories/RenderJobRepository';
+import { RemotionLambdaAdapter } from './adapters/RemotionLambdaAdapter';
+import { S3StorageAdapter } from './adapters/S3StorageAdapter';
+import { AsyncLockManager } from '../../core/utils/AsyncLockManager';
+import { RateLimiter } from '../../core/utils/RateLimiter';
+import { OpportunityService } from './OpportunityService';
+import { DashboardService } from './DashboardService';
+
+@injectable()
+export class RemotionRendererService {
+  private lockManager: AsyncLockManager;
+  private rateLimiter: RateLimiter;
+  private renderQueue: RenderJob[] = [];
+  private processingQueue: boolean = false;
+  
+  constructor(
+    @inject(TYPES.Logger) private logger: Logger,
+    @inject(TYPES.EventBus) private eventBus: EventBus,
+    @inject(TYPES.CredentialsManager) private credentialsManager: CredentialsManager,
+    @inject(TYPES.RemotionTemplateRepository) private templateRepository: RemotionTemplateRepository,
+    @inject(TYPES.RenderJobRepository) private renderJobRepository: RenderJobRepository,
+    @inject(TYPES.RemotionLambdaAdapter) private lambdaAdapter: RemotionLambdaAdapter,
+    @inject(TYPES.S3StorageAdapter) private storageAdapter: S3StorageAdapter,
+    @inject(TYPES.OpportunityService) private opportunityService: OpportunityService,
+    @inject(TYPES.DashboardService) private dashboardService: DashboardService
+  ) {
+    this.lockManager = new AsyncLockManager();
+    this.rateLimiter = new RateLimiter({
+      maxRequests: 5,  // 5 requisições
+      perTimeWindow: 60000,  // por minuto
+      gracePeriod: 10000  // espera 10 segundos entre tentativas
+    });
+  }
+  
+  // Métodos existentes do Projeto 2...
+  
+  /**
+   * Obtém template recomendado com base na análise da Claude AI
+   */
+  async getRecommendedTemplate(opportunityId: string): Promise<string> {
+    try {
+      // Obter detalhes da oportunidade
+      const opportunity = await this.opportunityService.getOpportunityDetail(opportunityId);
+      
+      if (!opportunity) {
+        throw new Error(`Oportunidade não encontrada: ${opportunityId}`);
+      }
+      
+      // Verificar se há recomendação da Claude AI
+      if (opportunity.aiAnalysis?.recommendedTemplates?.length > 0) {
+        return opportunity.aiAnalysis.recommendedTemplates[0];
+      }
+      
+      // Determinar com base no tipo de campanha (fallback)
+      const campaignType = opportunity.recommendedCampaignType || 'Performance Max';
+      
+      switch (campaignType) {
+        case 'Performance Max':
+          return 'performance-max';
+        case 'YouTube':
+          return 'youtube-shorts';
+        case 'TikTok':
+          return 'tiktok';
+        default:
+          return 'performance-max';
+      }
+    } catch (error) {
+      this.logger.error('Erro ao obter template recomendado', {
+        opportunityId,
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      // Template padrão em caso de erro
+      return 'performance-max';
+    }
+  }
+  
+  /**
+   * Notifica o dashboard sobre progresso da renderização
+   */
+  private async notifyDashboard(jobId: string, status: string, progress: number): Promise<void> {
+    try {
+      await this.dashboardService.updateRenderStatus(jobId, status, progress);
+    } catch (error) {
+      this.logger.error('Erro ao notificar dashboard sobre progresso', {
+        jobId,
+        status,
+        progress,
+        error: error instanceof Error ? error.message : String(error)
+      });
+    }
+  }
+}
+```
+
+## 5. Componente React para Renderização de Vídeo (melhorado)
+
+```tsx
+// src/components/RemotionVideoRenderer.tsx
+// Componente React aprimorado para renderização de vídeo
+
+import React, { useState, useEffect } from 'react';
+import { 
+  Film, 
+  Layers, 
+  CheckCircle, 
+  Clock, 
+  AlertCircle,
+  RefreshCw,
+  Monitor,
+  Download,
+  PlayCircle,
+  List,
+  BrainCircuit
+} from 'lucide-react';
+
+interface RemotionVideoRendererProps {
+  opportunityId: string;
+  briefingId?: string;
+  campaignType: string;
+  showAIRecommendations?: boolean;
+}
+
+const RemotionVideoRenderer: React.FC<RemotionVideoRendererProps> = ({ 
+  opportunityId, 
+  briefingId, 
+  campaignType,
+  showAIRecommendations = true
+}) => {
+  const [renderStatus, setRenderStatus] = useState('idle'); // idle, queued, rendering, completed, error
+  const [templates, setTemplates] = useState([]);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [renderProgress, setRenderProgress] = useState(0);
+  const [renderJob, setRenderJob] = useState(null);
+  const [videoUrl, setVideoUrl] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [aiRecommendations, setAiRecommendations] = useState(null);
+  const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false);
+  
+  // Buscar templates disponíveis ao montar o componente
+  useEffect(() => {
+    fetchTemplates();
+    if (showAIRecommendations) {
+      fetchAIRecommendations();
+    }
+  }, [opportunityId, campaignType, showAIRecommendations]);
+  
+  // Buscar templates disponíveis
+  const fetchTemplates = async () => {
+    try {
+      const response = await fetch('/api/remotion/templates');
+      const data = await response.json();
+      
+      if (data.success) {
+        setTemplates(data.templates);
+        
+        // Auto-seleção de template com base no tipo de campanha
+        const defaultTemplate = campaignType === 'Performance Max' ? 'performance-max' : 
+                              campaignType === 'YouTube' ? 'youtube-shorts' :
+                              campaignType === 'TikTok' ? 'tiktok' : 'performance-max';
+                              
+        setSelectedTemplate(defaultTemplate);
+      } else {
+        setErrorMessage('Falha ao carregar templates de vídeo');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar templates:', error);
+      setErrorMessage('Falha ao carregar templates de vídeo');
+    }
+  };
+  
+  // Buscar recomendações de IA
+  const fetchAIRecommendations = async () => {
+    try {
+      setIsLoadingRecommendations(true);
+      
+      const response = await fetch(`/api/opportunities/${opportunityId}/ai-recommendations`);
+      const data = await response.json();
+      
+      if (data.success) {
+        setAiRecommendations(data.recommendations);
+        
+        // Se houver uma recomendação de template, use-a
+        if (data.recommendations.videoTemplate) {
+          setSelectedTemplate(data.recommendations.videoTemplate);
+        }
+      }
+    } catch (error) {
+      console.error('Erro ao buscar recomendações de IA:', error);
+    } finally {
+      setIsLoadingRecommendations(false);
+    }
+  };
+  
+  // Iniciar renderização de vídeo
+  const startRendering = async () => {
+    // Implementação existente...
+  };
+  
+  // Consultar status da renderização
+  const pollRenderStatus = async (jobId) => {
+    // Implementação existente...
+  };
+
+  return (
+    <div className="bg-white rounded-lg shadow-lg p-6">
+      <div className="flex items-center mb-6">
+        <Film className="h-6 w-6 mr-2 text-indigo-600" />
+        <h3 className="text-lg font-medium text-gray-900">Renderizador de Vídeo Remotion</h3>
+      </div>
+      
+      {/* Recomendações de IA */}
+      {showAIRecommendations && (
+        <div className="mb-6">
+          <div className="flex items-center mb-2">
+            <BrainCircuit className="h-5 w-5 mr-2 text-purple-600" />
+            <h4 className="text-sm font-medium text-gray-700">Recomendações da Claude AI</h4>
+          </div>
+          
+          {isLoadingRecommendations ? (
+            <div className="flex justify-center items-center h-16">
+              <RefreshCw className="h-5 w-5 animate-spin text-indigo-600" />
+            </div>
+          ) : aiRecommendations ? (
+            <div className="bg-purple-50 rounded-lg p-3 text-sm">
+              <p className="text-purple-800 mb-2">{aiRecommendations.message}</p>
+              {aiRecommendations.videoTemplate && (
+                <div className="flex items-center">
+                  <span className="text-xs text-purple-600 mr-2">Template recomendado:</span>
+                  <span className="px-2 py-1 bg-purple-200 text-purple-800 rounded text-xs font-medium">
+                    {templates.find(t => t.id === aiRecommendations.videoTemplate)?.name || aiRecommendations.videoTemplate}
+                  </span>
+                </div>
+              )}
+            </div>
+          ) : null}
+        </div>
+      )}
+      
+      {/* Seleção de Template */}
+      <div className="mb-6">
+        {/* Implementação existente... */}
+      </div>
+      
+      {/* Status da Renderização */}
+      <div className="mb-6">
+        {/* Implementação existente... */}
+      </div>
+      
+      {/* Ações */}
+      <div className="flex space-x-3">
+        {/* Implementação existente... */}
+      </div>
+      
+      {/* Pré-visualização do Vídeo Concluído */}
+      {renderStatus === 'completed' && videoUrl && (
+        <div className="mt-6">
+          {/* Implementação existente... */}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default RemotionVideoRenderer;
+```
+
+## 6. Integração com Claude AI (adicionada)
+
+```typescript
+// src/drophunter/core/adapters/ClaudeAIAdapter.ts
+// Adaptador para integração com Claude AI
+
+import { injectable, inject } from 'inversify';
+import { TYPES } from '../../types';
+import { Logger } from '../../../core/utils/Logger';
+import { CredentialsManager } from '../../../core/security/CredentialsManager';
+import axios, { AxiosInstance } from 'axios';
+
+type AnalysisCompletedCallback = (data: any) => void;
+
+@injectable()
+export class ClaudeAIAdapter {
+  private apiClient: AxiosInstance;
+  private apiBaseUrl: string;
+  private apiKey: string | null = null;
+  private analysisCompletedHandlers: AnalysisCompletedCallback[] = [];
+  private initialized: boolean = false;
+  private retryCount: number = 3;
+  
+  constructor(
+    @inject(TYPES.Logger) private logger: Logger,
+    @inject(TYPES.CredentialsManager) private credentialsManager: CredentialsManager
+  ) {
+    // Configuração inicial com valores vazios (serão atualizados durante initialize)
+    this.apiBaseUrl = '';
+    this.apiClient = axios.create({
+      baseURL: this.apiBaseUrl,
+      timeout: 120000, // 120 segundos para análises complexas
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+  
+  /**
+   * Inicializa o adaptador com credenciais seguras
+   */
+  async initialize(): Promise<boolean> {
+    try {
+      // Obter credenciais de forma segura
+      const credentials = await this.credentialsManager.getCredentials('claudeAI');
+      
+      if (!credentials || !credentials.apiKey || !credentials.apiBaseUrl) {
+        throw new Error('Credenciais ausentes para Claude AI');
+      }
+      
+      this.apiKey = credentials.apiKey;
+      this.apiBaseUrl = credentials.apiBaseUrl;
+      
+      // Reconfigurar o cliente com os dados corretos
+      this.apiClient = axios.create({
+        baseURL: this.apiBaseUrl,
+        timeout: 120000,
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': this.apiKey,
+          'anthropic-version': '2023-06-01'
+        }
+      });
+      
+      // Adicionar interceptor para tratamento de erros
+      this.setupErrorInterceptor();
+      
+      this.initialized = true;
+      return true;
+    } catch (error) {
+      this.logger.error('Falha ao inicializar adaptador Claude AI', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      return false;
+    }
+  }
+  
+  /**
+   * Configura interceptor para tratamento de erros
+   */
+  private setupErrorInterceptor(): void {
+    // Implementação...
+  }
+  
+  /**
+   * Testa a conexão com a API da Claude
+   */
+  async testConnection(): Promise<{ success: boolean; error?: string }> {
+    try {
+      if (!this.initialized) {
+        await this.initialize();
+      }
+      
+      // Tentar uma requisição simples para verificar a conexão
+      const response = await this.apiClient.post('/v1/messages', {
+        model: 'claude-3-sonnet-20240229',
+        max_tokens: 10,
+        messages: [
+          { role: 'user', content: 'Say hello' }
+        ]
+      });
+      
+      if (response.status === 200 && response.data) {
+        return { success: true };
+      } else {
+        return { 
+          success: false, 
+          error: `Resposta inesperada: ${response.status}`
+        };
+      }
+    } catch (error) {
+      return { 
+        success: false, 
+        error: error instanceof Error ? error.message : String(error)
+      };
+    }
+  }
+  
+  /**
+   * Analisa uma oportunidade usando Claude AI
+   */
+  async analyzeOpportunity(prompt: ClaudeAnalysisPrompt): Promise<{ success: boolean; requestId?: string; error?: string }> {
+    try {
+      if (!this.initialized) {
+        await this.initialize();
+      }
+      
+      const requestId = `req-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+      
+      // Formatar prompt para a API da Claude
+      const formattedPrompt = this.formatPromptForClaude(prompt);
+      
+      // Enviar requisição para a API da Claude
+      const response = await this.apiClient.post('/v1/messages', formattedPrompt);
+      
+      if (response.status === 200 && response.data) {
+        // Processar a resposta da Claude
+        const processedResponse = this.processClaudeResponse(response.data, prompt.opportunityId);
+        
+        // Notificar handlers de conclusão de análise
+        for (const handler of this.analysisCompletedHandlers) {
+          handler({
+            opportunityId: prompt.opportunityId,
+            analysis: processedResponse,
+            requestId,
+            timestamp: new Date()
+          });
+        }
+        
+        return {
+          success: true,
+          requestId
+        };
+      } else {
+        return {
+          success: false,
+          error: `Resposta inesperada: ${response.status}`
+        };
+      }
+    } catch (error) {
+      this.logger.error('Erro na análise Claude', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      // Tentar novamente com estratégia de retry
+      if (this.retryCount > 0) {
+        this.retryCount--;
+        this.logger.info(`Tentando novamente (${this.retryCount} tentativas restantes)...`);
+        
+        // Esperar antes de tentar novamente
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        return this.analyzeOpportunity(prompt);
+      }
+      
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : String(error)
+      };
+    }
+  }
+  
+  /**
+   * Formata o prompt para a API da Claude
+   */
+  private formatPromptForClaude(prompt: ClaudeAnalysisPrompt): any {
+    return {
+      model: 'claude-3-sonnet-20240229',
+      max_tokens: 4000,
+      messages: [
+        {
+          role: 'system',
+          content: prompt.system
+        },
+        {
+          role: 'user',
+          content: prompt.user
+        }
+      ]
+    };
+  }
+  
+  /**
+   * Processa a resposta da Claude
+   */
+  private processClaudeResponse(response: any, opportunityId: string): any {
+    try {
+      const content = response.content[0]?.text || '';
+      
+      // Extrair JSON da resposta
+      const jsonMatch = content.match(/```json\n([\s\S]*?)\n```/) || content.match(/\{[\s\S]*\}/);
+      
+      if (jsonMatch) {
+        return JSON.parse(jsonMatch[1] || jsonMatch[0]);
+      } else {
+        // Tentar estruturar a resposta de texto
+        return this.structureUnformattedResponse(content, opportunityId);
+      }
+    } catch (error) {
+      this.logger.error('Erro ao processar resposta da Claude', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      return {
+        opportunityId,
+        error: error instanceof Error ? error.message : String(error),
+        timestamp: new Date()
+      };
+    }
+  }
+  
+  /**
+   * Estrutura uma resposta não formatada da Claude
+   */
+  private structureUnformattedResponse(content: string, opportunityId: string): any {
+    // Implementação para extrair dados de uma resposta em texto...
+    return {
+      opportunityId,
+      summary: "Análise extraída da resposta textual da Claude",
+      // Outros campos...
+    };
+  }
+  
+  /**
+   * Registra callback para eventos de conclusão de análise
+   */
+  onAnalysisCompleted(callback: AnalysisCompletedCallback): void {
+    this.analysisCompletedHandlers.push(callback);
+  }
+}
+
+interface ClaudeAnalysisPrompt {
+  opportunityId: string;
+  system: string;
+  user: string;
+}
+```
+
+## 7. Sistema Integrado de Fluxo de Trabalho (melhorado)
+
+```typescript
+// src/drophunter/core/IntegratedWorkflowSystem.ts
+// Sistema integrado de fluxo de trabalho melhorado
+
+import { injectable, inject } from 'inversify';
+import { TYPES } from '../types';
+import { Logger } from '../../core/utils/Logger';
+import { ProductMonitorService } from './ProductMonitorService';
+import { MultiShopifySystem } from './MultiShopifySystem';
+import { CreativeStudioSystem } from './CreativeStudioSystem';
+import { RemotionRendererService } from './RemotionRendererService';
+import { ExecutiveReportingSystem } from './ExecutiveReportingSystem';
+import { IntegrationService } from './IntegrationService';
+import { EventBus } from '../../core/utils/EventBus';
+import { OpportunityLibraryService } from './OpportunityLibraryService';
+import { DashboardService } from './DashboardService';
+
+@injectable()
+export class IntegratedWorkflowSystem {
+  constructor(
+    @inject(TYPES.Logger) private logger: Logger,
+    @inject(TYPES.ProductMonitorService) private monitoringSystem: ProductMonitorService,
+    @inject(TYPES.MultiShopifySystem) private multiShopifySystem: MultiShopifySystem,
+    @inject(TYPES.CreativeStudioSystem) private creativeStudioSystem: CreativeStudioSystem,
+    @inject(TYPES.RemotionRendererService) private remotionRenderer: RemotionRendererService,
+    @inject(TYPES.ExecutiveReportingSystem) private reportingSystem: ExecutiveReportingSystem,
+    @inject(TYPES.IntegrationService) private integrationService: IntegrationService,
+    @inject(TYPES.EventBus) private eventBus: EventBus,
+    @inject(TYPES.OpportunityLibraryService) private opportunityLibrary: OpportunityLibraryService,
+    @inject(TYPES.DashboardService) private dashboardService: DashboardService
+  ) {}
+  
+  /**
+   * Inicializa o sistema integrado de fluxo de trabalho
+   */
+  async initialize(): Promise<boolean> {
+    try {
+      this.logger.info("Inicializando Sistema Integrado de Fluxo de Trabalho...");
+      
+      // Inicializar todos os sistemas componentes
+      await this.monitoringSystem.initialize();
+      await this.multiShopifySystem.initialize();
+      await this.creativeStudioSystem.initialize();
+      await this.remotionRenderer.initialize();
+      await this.reportingSystem.initialize();
+      await this.integrationService.initialize();
+      await this.dashboardService.initialize();
+      
+      // Configurar listeners de eventos
+      this.setupEventListeners();
+      
+      this.logger.info("Sistema Integrado de Fluxo de Trabalho inicializado com sucesso");
+      return true;
+    } catch (error) {
+      this.logger.error("Erro na inicialização do Sistema Integrado:", {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      return false;
+    }
+  }
+  
+  /**
+   * Configura listeners de eventos para o fluxo de trabalho
+   */
+  private setupEventListeners(): void {
+    // Produto descoberto -> Análise da IA
+    this.eventBus.subscribe('product.opportunity.discovered', async (data) => {
+      try {
+        this.logger.info(`Nova oportunidade descoberta: ${data.id}`);
+        
+        // Solicitar análise da Claude AI
+        await this.integrationService.requestClaudeAnalysis(data.id);
+        
+        // Atualizar dashboard
+        await this.dashboardService.addNewOpportunity(data);
+      } catch (error) {
+        this.logger.error('Erro ao processar nova oportunidade', {
+          opportunityId: data.id,
+          error: error instanceof Error ? error.message : String(error)
+        });
+      }
+    });
+    
+    // Análise da IA concluída -> Briefing Criativo
+    this.eventBus.subscribe('claude.analysis.completed', async (data) => {
+      try {
+        this.logger.info(`Análise da Claude AI concluída para: ${data.opportunityId}`);
+        
+        // Gerar briefing criativo
+        const briefingId = await this.creativeStudioSystem.generateCreativeBriefing(data.opportunityId);
+        
+        // Atualizar fluxo de trabalho no dashboard
+        await this.dashboardService.updateWorkflowStatus(data.opportunityId, 'briefing', {
+          status: 'completed',
+          briefingId,
+          timestamp: new Date()
+        });
+      } catch (error) {
+        this.logger.error('Erro ao processar análise concluída', {
+          opportunityId: data.opportunityId,
+          error: error instanceof Error ? error.message : String(error)
+        });
+      }
+    });
+    
+    // Outros eventos do fluxo de trabalho...
+  }
+  
+  /**
+   * Executa o fluxo completo para uma oportunidade
+   */
+  async executeFullWorkflow(opportunityId: string): Promise<WorkflowResult> {
+    try {
+      this.logger.info(`Executando fluxo completo para oportunidade: ${opportunityId}`);
+      
+      // Etapa 1: Verificar oportunidade
+      const opportunity = await this.opportunityLibrary.getOpportunityDetail(opportunityId);
+      if (!opportunity) {
+        throw new Error(`Oportunidade não encontrada: ${opportunityId}`);
+      }
+      
+      this.logger.info(`Iniciando fluxo para ${opportunity.productName} - ${opportunity.country}`);
+      
+      // Atualizar dashboard
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'workflow', {
+        status: 'started',
+        timestamp: new Date()
+      });
+      
+      // Etapa 2: Gerar briefing criativo
+      this.logger.info("Etapa 2: Gerando briefing criativo...");
+      const briefing = await this.creativeStudioSystem.generateCreativeBriefing(opportunityId);
+      
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'briefing', {
+        status: 'completed',
+        briefingId: briefing.id,
+        timestamp: new Date()
+      });
+      
+      // Etapa 3: Gerar assets criativos
+      this.logger.info("Etapa 3: Gerando assets criativos...");
+      const assets = await this.creativeStudioSystem.generateCreativeAssets(briefing.id);
+      
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'assets', {
+        status: 'completed',
+        assetsId: assets.id,
+        timestamp: new Date()
+      });
+      
+      // Etapa 4: Renderizar vídeos usando Remotion (NOVA ETAPA)
+      this.logger.info("Etapa 4: Renderizando vídeos com Remotion...");
+      const renderResult = await this.renderVideos(briefing, opportunity);
+      
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'videoRendering', {
+        status: renderResult.success ? 'completed' : 'partial',
+        videoCount: renderResult.videoCount,
+        videoUrls: renderResult.videoUrls,
+        timestamp: new Date()
+      });
+      
+      // Etapa 5: Replicar para lojas Shopify
+      this.logger.info("Etapa 5: Replicando para lojas Shopify...");
+      const replicationResult = await this.multiShopifySystem.replicateProduct(opportunityId);
+      
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'replication', {
+        status: replicationResult.successCount > 0 ? 'completed' : 'partial',
+        successCount: replicationResult.successCount,
+        failureCount: replicationResult.failureCount,
+        timestamp: new Date()
+      });
+      
+      // Etapa 6: Gerar relatório executivo
+      this.logger.info("Etapa 6: Gerando relatório executivo...");
+      const report = await this.reportingSystem.generateOpportunityReport(opportunityId);
+      
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'report', {
+        status: 'completed',
+        reportId: report.id,
+        timestamp: report.generatedAt
+      });
+      
+      // Compilar resultados do fluxo
+      const workflowResults: WorkflowResult = {
+        opportunityId,
+        productName: opportunity.productName,
+        country: opportunity.country,
+        steps: {
+          briefing: {
+            id: briefing.id,
+            status: 'completed',
+            timestamp: briefing.createdAt
+          },
+          assets: {
+            id: assets.id,
+            status: 'completed',
+            timestamp: assets.createdAt
+          },
+          videoRendering: {
+            status: renderResult.success ? 'completed' : 'partial',
+            videoCount: renderResult.videoCount,
+            videoUrls: renderResult.videoUrls,
+            timestamp: new Date()
+          },
+          replication: {
+            status: replicationResult.successCount > 0 ? 'completed' : 'partial',
+            successCount: replicationResult.successCount,
+            failureCount: replicationResult.failureCount,
+            timestamp: new Date()
+          },
+          report: {
+            id: report.id,
+            status: 'completed',
+            timestamp: report.generatedAt
+          }
+        },
+        completedAt: new Date(),
+        status: 'completed'
+      };
+      
+      // Atualizar oportunidade com resultados do fluxo
+      await this.opportunityLibrary.updateOpportunityWorkflow(opportunityId, workflowResults);
+      
+      // Atualizar dashboard
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'workflow', {
+        status: 'completed',
+        timestamp: new Date()
+      });
+      
+      this.logger.info(`Fluxo completo executado com sucesso para ${opportunity.productName}`);
+      return workflowResults;
+    } catch (error) {
+      this.logger.error(`Erro na execução do fluxo para ${opportunityId}:`, {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      
+      // Registrar falha no fluxo
+      const failedWorkflow: FailedWorkflowResult = {
+        opportunityId,
+        status: 'failed',
+        error: error instanceof Error ? error.message : String(error),
+        timestamp: new Date()
+      };
+      
+      // Atualizar oportunidade com falha
+      await this.opportunityLibrary.updateOpportunityWorkflowFailure(opportunityId, failedWorkflow);
+      
+      // Atualizar dashboard
+      await this.dashboardService.updateWorkflowStatus(opportunityId, 'workflow', {
+        status: 'failed',
+        error: error instanceof Error ? error.message : String(error),
+        timestamp: new Date()
+      });
+      
+      throw error;
+    }
+  }
+  
+  // Métodos existentes do Projeto 2 para renderização de vídeos...
+}
+
+interface WorkflowResult {
+  opportunityId: string;
+  productName: string;
+  country: string;
+  steps: {
+    briefing: {
+      id: string;
+      status: string;
+      timestamp: Date;
+    };
+    assets: {
+      id: string;
+      status: string;
+      timestamp: Date;
+    };
+    videoRendering: {
+      status: string;
+      videoCount: number;
+      videoUrls: string[];
+      timestamp: Date;
+    };
+    replication: {
+      status: string;
+      successCount: number;
+      failureCount: number;
+      timestamp: Date;
+    };
+    report: {
+      id: string;
+      status: string;
+      timestamp: Date;
+    };
+  };
+  completedAt: Date;
+  status: string;
+}
+
+interface FailedWorkflowResult {
+  opportunityId: string;
+  status: string;
+  error: string;
+  timestamp: Date;
+}
+```
