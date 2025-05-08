@@ -1,0 +1,3145 @@
+# Configurações de Google Ads dos 44 Especialistas
+
+Este documento contém as configurações práticas e específicas para implementação na interface do Google Ads, baseadas nas metodologias e estratégias dos 44 especialistas em marketing digital mais reconhecidos do setor.
+
+## ESPECIALISTAS DE CAMPANHAS DE PESQUISA (SEARCH)
+
+### 1. Frederick Vallaeys (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search (apenas rede de pesquisa)
+- Redes: Desmarcar "Incluir parceiros de pesquisa do Google"
+- Estratégia de Lances: Começar com CPC manual, evoluir para Target CPA
+- Orçamento Diário: Definir valor conservador (15-20% do orçamento mensal ÷ 30)
+- Programação de Anúncios: 24h inicialmente, para coleta de dados
+
+#### Tela: Estrutura da Campanha (Method 1-3-10)
+- Monitoramento diário (1 dia):
+  - Verificar métricas críticas de desempenho
+  - Ajustar lances para palavras-chave de maior volume
+  - Pausar anúncios de baixo desempenho (CTR < 1%)
+- Otimização semanal (3 semanas):
+  - Implementar testes A/B de anúncios
+  - Avaliar desempenho por dispositivo e ajustar modificadores
+  - Refinar segmentações geográficas
+- Planejamento de longo prazo (10 meses):
+  - Analisar tendências sazonais
+  - Planejar para datas importantes
+  - Revisar estrutura completa da conta trimestralmente
+
+#### Tela: Degrau de Automação
+- Fase 1: Regras simples (pausar palavras-chave sem conversão após 100 cliques)
+- Fase 2: Regras avançadas (ajustar lance se palavra-chave tiver mínimo de conversões E determinado CPA)
+- Fase 3: Smart Bidding com limites de CPC máximo
+- Fase 4: Automação total com monitoramento constante
+
+#### Tela: Palavras-chave e Grupos de Anúncios
+- Implementar Single Keyword Ad Groups (SKAGs):
+  - Um grupo de anúncios para cada palavra-chave principal
+  - Criar hierarquia de termos: exata → frase → ampla
+  - Implementar negativas em cascata entre tipos de correspondência
+
+#### Tela: Otimização de Quality Score
+- Monitorar os três componentes separadamente:
+  - CTR esperado: Otimizar elementos atrativos do anúncio
+  - Relevância do anúncio: Alinhar copy com termos de pesquisa
+  - Experiência na página de destino: Garantir carregamento rápido e conteúdo relevante
+- Implementar scripts para monitoramento automático de Quality Score
+
+### 2. Brad Geddes (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search
+- Objetivo da Campanha: Conversões
+- Estrutura: Utilizar o método 5-3-10
+
+#### Tela: Estrutura de Campanha (Método 5-3-10)
+- 5 Categorias de Intenção: Criar campanhas separadas para cada intenção:
+  - Informacional: Usuários buscando informações gerais
+  - Navegacional: Usuários procurando por marcas/sites específicos
+  - Comercial-investigação: Usuários comparando opções
+  - Comercial-transacional: Usuários com intenção próxima à compra
+  - Transacional: Usuários prontos para converter
+- 3 Níveis de Engajamento: Para cada campanha, criar grupos de anúncios específicos:
+  - Usuários novos: Nunca interagiram com a marca
+  - Usuários retornantes: Visitaram o site anteriormente
+  - Usuários de alta frequência: Visitantes recorrentes
+- 10 Variações de Mensagem: Para cada combinação intenção/engajamento:
+  - Testar 10 variações de copy para identificar o que ressoa melhor
+  - Utilizar RSAs com todas as variações possíveis
+
+#### Tela: Matriz de Atributos Críticos
+- Fase 1: Identificação de atributos do produto/serviço
+  - Listar todos os atributos: preço, qualidade, velocidade, garantia, etc.
+  - Priorizar por relevância para o público-alvo
+- Fase 2: Teste de atributos isolados
+  - Criar anúncios focados em um único atributo
+  - Medir performance comparativa entre atributos
+- Fase 3: Combinação de atributos de alto desempenho
+  - Criar novos anúncios com os 2-3 melhores atributos
+- Fase 4: Testes contínuos contra o "campeão" atual
+  - Implementar testes A/B com significância estatística
+
+#### Tela: Segmentação Avançada
+- Dispositivos: Criar ajustes específicos
+  - Desktop vs. Mobile vs. Tablet
+  - Horário do dia × Dispositivo
+- Scripts personalizados: Implementar para ajustes automáticos baseados em 20+ variáveis
+- Query Sculpting: Direcionar consultas específicas para campanhas dedicadas
+
+#### Tela: Profiling Linguístico
+- Análise demográfica: Adaptar linguagem ao perfil do público
+- Variações de estilo: Testar formal vs. casual, técnico vs. simples
+- Abordagens emocionais: Testar medo vs. aspiração vs. solução de problemas
+
+### 3. Tom Breeze (Reino Unido)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Vídeo (YouTube)
+- Objetivo da Campanha: Conversões ou consideração de marca
+- Estratégia de Lance: Maximizar conversões
+
+#### Tela: Estrutura de Vídeo (AIDA Framework)
+- Atenção (0-3 segundos):
+  - Upload de vídeo com gancho forte nos primeiros 3 segundos
+  - Implementar afirmação impactante ou pergunta provocativa
+  - Usar movimento/cor de alto contraste para interrupção visual
+- Interesse (3-15 segundos):
+  - Adicionar estatísticas ou histórias relevantes ao problema
+  - Estabelecer credibilidade rapidamente (prêmios, resultados)
+  - Criar "lacuna de curiosidade" que mantém atenção
+- Desejo (15-45 segundos):
+  - Apresentar solução focando em benefícios, não recursos
+  - Configurar demonstração de uso/resultado
+  - Incluir prova social específica para o nicho
+- Ação (últimos 10-15 segundos):
+  - Finalizar com CTA claro e específico
+  - Adicionar elemento de urgência (tempo/quantidade limitada)
+  - Incluir garantias para redução de risco
+
+#### Tela: Algorithm Pattern Interruption
+- Primeiros 5 segundos:
+  - Afirmação controversa relacionada ao nicho
+  - Configurar contraste de cores de alto impacto
+  - Incluir movimento inesperado/transição
+  - Posicionar logo nos primeiros 3 segundos (sutilmente)
+  - Evitar música de fundo neste período inicial
+
+#### Tela: Emotional Resolution Advertising
+- Mapear arco emocional:
+  - Fase 1 (0-10s): Tensão emocional relacionada ao problema
+  - Fase 2 (10-20s): Compreensão e validação do problema
+  - Fase 3 (20-30s): Revelação da solução
+  - Fase 4 (30-40s): Transformação para estado positivo
+  - Fase 5 (40s+): Nova identidade para o espectador
+
+#### Tela: Segmentação e Bidding
+- Estruturar campanhas por intenção:
+  - Awareness → Consideração → Conversão
+- Segmentação por nível:
+  - Demografia + Interesse + Remarketing
+- Implementar Bidding Ladder Strategy:
+  - Iniciar com lances conservadores (-20% do recomendado)
+  - Aumentar gradualmente conforme validação de resultados
+  - Definir incrementos semanais baseados em ROAS
+
+### 4. Savannah Sanchez (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Vídeo/YouTube Shorts
+- Objetivo da Campanha: Consideração ou conversões
+- Dispositivos: Priorizar mobile (+30% de ajuste de lance)
+
+#### Tela: Configurações de Vídeo (Sistema 3U para UGC)
+- Urgência:
+  - Começar vídeos com frases como "Você precisa saber isso" ou "Algo que ninguém menciona"
+  - Adicionar contagem regressiva visual para ofertas
+  - Incluir termos específicos de urgência nos primeiros 3 segundos
+- Utilidade:
+  - Mostrar claramente o produto resolvendo um problema real
+  - Implementar comparações diretas antes/depois
+  - Destacar funcionalidades não óbvias ou "hacks" de uso
+- Unicidade:
+  - Enfatizar diferenciais do produto vs. concorrentes
+  - Apresentar casos de uso não convencionais
+  - Destacar histórias ou características memoráveis
+
+#### Tela: Adaptação de Formato (Framework TikTok-to-YouTube)
+- TikTok → YouTube Shorts:
+  - Alongar ligeiramente o vídeo para evitar cortes abruptos
+  - Ajustar proporção mantendo conteúdo principal centralizado
+  - Remover hashtags/textos específicos do TikTok
+  - Adicionar mais contexto nos primeiros segundos
+- Curva de Intensidade Emocional:
+  - 0-2s: Choque/surpresa (100% intensidade)
+  - 2-5s: Curiosidade (80% intensidade)
+  - 5-10s: Interesse crescente (60-90% intensidade)
+  - 10-15s: Clímax informativo (100% intensidade)
+  - 15s+: Resolução com call-to-action (70% intensidade)
+
+#### Tela: Teste e Escala
+- Testar múltiplas variáveis:
+  - 3-5 ganchos diferentes (primeiros 3 segundos)
+  - 2-3 tipos de apresentadores/narradores
+  - 2 abordagens de script (direto vs. narrativo)
+- Escalonar gradualmente:
+  - Dias 1-3: $50-100/dia (fase de teste)
+  - Dias 4-7: $200-500/dia (conceitos promissores)
+  - Dias 8+: $1000+/dia (vencedores comprovados)
+- Sistema 70/20/10:
+  - 70% para anúncios comprovados
+  - 20% para iterações de anúncios bem-sucedidos
+  - 10% para conceitos totalmente novos
+
+### 5. Akvile DeFazio (Espanha/EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Display - Remarketing
+- Objetivo: Reconversão de usuários
+- Estratégia de Lance: Target ROAS ou CPC manual
+- Orçamento: 15-25% do orçamento total de aquisição
+
+#### Tela: Sistema CRAC para Remarketing
+- Contexto:
+  - Criar segmentos por comportamento específico: 
+    - Visitou página de produto (30 dias)
+    - Adicionou ao carrinho mas não comprou (14 dias)
+    - Iniciou checkout mas não completou (7 dias)
+    - Comprou produto A mas não produto complementar B (90 dias)
+  - Implementar janelas de tempo específicas por comportamento
+- Relevância:
+  - Criar banners específicos para cada segmento comportamental
+  - Adaptar mensagem ao estágio exato do funil
+  - Personalizar criativos com feed dinâmico de produtos visualizados
+- Ação:
+  - Configurar CTAs específicos por segmento:
+    - Visitantes: "Veja mais detalhes"
+    - Abandono de carrinho: "Complete sua compra"
+    - Abandono de checkout: "Finalize com desconto"
+  - Implementar incentivos progressivos por valor potencial
+- Conexão:
+  - Manter consistência visual com experiência anterior
+  - Referenciar interação prévia ("Você esqueceu algo?")
+  - Utilizar elementos familiares para reconstruir confiança
+
+#### Tela: Modelo de Latência de Conversão
+- Análise de comportamento:
+  - Analisar janelas ideais de conversão por categoria
+  - Identificar padrões de latência por origem de tráfego
+  - Mapear pontos decisórios críticos
+- Segmentação por tempo desde última interação:
+  - 0-24h: Foco em lembretes simples (frequência alta: 8-10 impressões/dia)
+  - 24-72h: Incentivos moderados (frequência média: 4-6 impressões/dia)
+  - 3-7 dias: Incentivos maiores + urgência (frequência baixa: 2-3 impressões/dia)
+  - 7+ dias: Abordagem de reconquista (frequência intermitente: 1-2 impressões/dia)
+
+#### Tela: Diversificação de Criativos
+- Visitantes de produto:
+  - Criativos focados em benefícios principais
+  - Comparação com alternativas
+  - Social proof específico ao produto
+- Abandonadores de carrinho:
+  - Imagens exatas dos produtos no carrinho
+  - Mensagens de estoque limitado/alta demanda
+  - Simplificação visual do processo de checkout
+- Abandonadores de checkout:
+  - Foco em segurança/credibilidade
+  - Garantias e políticas de devolução
+  - Opções alternativas de pagamento
+- Rotação programada:
+  - Substituir criativos a cada 10-14 dias
+  - Testar diferentes apelos emocionais por segmento
+
+### 6. Marty Weintraub (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Display
+- Objetivo da Campanha: Consideração
+- Estratégia de Lance: CPC manual ou CPA alvo
+
+#### Tela: Segmentação Psicográfica Avançada
+- Construção de Audiência:
+  - Combinar múltiplas variáveis para criar perfil complexo: 
+    - Interesses + Comportamento + Demografia
+    - Padrões de consumo + Valores sociais
+    - Autoridades seguidas + Publicações lidas
+  - Criar "clusters de personalidade" baseados em análise fatorial
+- Expansão Controlada:
+  - Iniciar audiências semelhantes com 1-3% (máxima precisão)
+  - Testar expansão gradual (5%, 10%) em campanhas separadas
+  - Implementar exclusões estratégicas para refinar audiência
+- Iteração Contínua:
+  - Criar campanhas específicas para micro-segmentos de alto desempenho
+  - Documentar resultados em framework estruturado
+  - Refinar baseado em dados de desempenho
+
+#### Tela: Micro-Convertible Framework
+- Mapeamento de micro-conversões:
+  - Visualização de vídeo > 75%
+  - Download de PDFs informativos
+  - Inscrição em newsletter
+  - Acesso a ferramentas gratuitas
+  - Visualização de página de preços
+- Valoração de micro-conversões:
+  - Atribuir valor monetário baseado em correlação com conversão final
+  - Implementar valores proporcionais à probabilidade de conversão
+- Otimização específica:
+  - Criar campanhas dedicadas por objetivo de micro-conversão
+  - Implementar bidding específico baseado no valor calculado
+  - Desenvolver messaging direcionado para cada micro-conversão
+
+#### Tela: Canal Amplification Model
+- Sequenciamento multi-canal:
+  - Coordenar display com outros canais:
+    - Search → Display (reforço de mensagem)
+    - Social → Display (ampliação de alcance)
+    - Email → Display (lembretes programados)
+  - Manter consistência visual com variações sutis
+- Coordenação de frequência:
+  - Determinar frequência ótima por canal (evitar saturação)
+  - Distribuir impressões entre canais
+  - Programar "pulsos" coordenados em momentos-chave
+- Medição cross-channel:
+  - Implementar atribuição avançada entre canais
+  - Medir impacto incremental real
+  - Ajustar investimento baseado em análise integrada
+
+### 7. Andrea Cruz (Brasil/EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Performance Max
+- Objetivo: Vendas/Leads/Consideração
+- URL do Site: Página inicial ou categoria específica
+
+#### Tela: Progressive Signals Framework
+- Fase 1 - Sinais Básicos (Semanas 1-2):
+  - Audiências de intenção (pesquisas relacionadas)
+  - Remarketing de visitantes recentes (últimos 7-14 dias)
+  - Evitar restrições demográficas/geográficas excessivas
+  - Assets variados mas não excessivos (3-4 imagens, 3-4 headlines)
+  - Orçamento limitado a 50% do planejado
+- Fase 2 - Expansão de Sinais (Semanas 3-4):
+  - Adicionar audiências de afinidade relevantes
+  - Incorporar dados de CRM (listas de clientes)
+  - Implementar segmentação geográfica mais refinada
+  - Expandir assets baseado em desempenho inicial
+  - Aumentar orçamento para 75% do planejado
+- Fase 3 - Sinais Avançados (Mês 2+):
+  - Implementar segmentação por valor de cliente
+  - Adicionar audiências semelhantes de múltiplas fontes
+  - Incluir segmentação temporal (horários de melhor desempenho)
+  - Expandir para 100% do orçamento planejado
+
+#### Tela: B2B PMax Structure Model
+- Segmentação por perfil de decisor:
+  - Criar asset groups específicos por função:
+    - Técnicos: foco em especificações, integração
+    - Financeiros: foco em ROI, TCO, eficiência
+    - Executivos: foco em estratégia, vantagem competitiva
+  - Adaptar linguagem e visuais para cada perfil
+- Abordagem de conteúdo B2B:
+  - Awareness: educação sobre problema do setor
+  - Consideração: comparativos, casos de uso, demonstrações
+  - Decisão: provas sociais, ROI, facilidade de implementação
+  - Utilizar vídeos para explicações complexas
+
+#### Tela: PMax-Search Coordination
+- Hierarquia de campanhas:
+  - Search Brand: prioridade máxima, orçamento flexível
+  - Search Non-Brand (termos de alta intenção): segunda prioridade
+  - PMax: terceira prioridade, orçamento substancial
+  - Search Broad/Discovery: quarta prioridade, foco em alcance
+- Exclusões estratégicas:
+  - Excluir termos de marca em PMax
+  - Adicionar negativas para termos de alta intenção em campanhas amplas
+  - Implementar segmentação geográfica complementar
+- Rastreamento unificado:
+  - Padronizar UTMs entre campanhas
+  - Utilizar mesmas métricas de conversão
+  - Criar dashboard unificado de desempenho
+
+### 8. Joe Martinez (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Performance Max
+- Objetivo: Conversões de e-commerce
+- Estrutura: Asset Group Isolation Strategy
+
+#### Tela: Asset Group Isolation Strategy
+- Segmentação por categoria:
+  - Criar asset groups completamente separados por:
+    - Categoria de produto (sem sobreposição entre grupos)
+    - Margem de lucro (agrupar produtos com margens similares)
+    - Estágio do ciclo de vida (novos vs. estabelecidos)
+  - Utilizar feeds específicos para cada grupo, evitando mistura
+- Tematização completa:
+  - Manter consistência total dentro de cada asset group:
+    - Estilo visual uniforme nas imagens
+    - Copywriting com tom/abordagem específicos
+    - Landing pages dedicadas para cada grupo
+  - Evitar diluição de tema ou mensagem entre grupos
+- Isolamento de performance:
+  - Orçamentos separados por asset group
+  - Avaliação de desempenho em nível de grupo, não campanha
+  - Escalonamento específico baseado na performance de cada grupo
+
+#### Tela: Sistema Progressivo de Sinais
+- Fase 1 - Fundação (Dias 1-7):
+  - Incluir apenas sinais de maior intenção:
+    - Remarketing de visitantes de produto/carrinho
+    - Dados de feed completos e otimizados
+    - Sinais de intenção específicos para categoria
+  - Lances conservadores (20-30% abaixo do recomendado)
+  - Orçamento limitado a 50% do planejado
+- Fase 2 - Expansão (Dias 8-14):
+  - Adicionar camada secundária:
+    - Remarketing mais amplo (30-90 dias)
+    - Públicos semelhantes limitados (1-3%)
+    - Segmentação por interesse relacionado
+  - Aumentar para 75% do orçamento planejado
+- Fase 3 - Otimização Completa (Dias 15+):
+  - Implementar camada final:
+    - Audiências semelhantes ampliadas (3-10%)
+    - Segmentação demográfica baseada em dados iniciais
+    - Dados de CRM de alto valor
+  - Expandir para 100% do orçamento planejado
+
+#### Tela: Avaliação Automatizada de Assets
+- Sistema de pontuação:
+  - Avaliar assets em múltiplas dimensões:
+    - Desempenho direto (CTR, taxa de conversão)
+    - Contribuição para conversões (atribuição)
+    - Impacto em qualidade (valor médio de pedido)
+  - Pontuação de 0-100 para cada asset
+- Calendário de rotação:
+  - Assets com score <30: substituição imediata
+  - Assets com score 30-50: teste de variações
+  - Assets com score >70: criar variações similares
+  - Revisão completa a cada 14 dias
+- Testes multivariados:
+  - Testar combinações controladas de elementos
+  - Identificar padrões de sucesso
+  - Construir biblioteca de conhecimento de elementos eficazes
+
+### 9. Kirk Williams (EUA)
+
+#### Tela: Merchant Center
+- Feed Principal:
+  - Auditoria de 27 pontos:
+    - Verificação de valores nulos em atributos críticos
+    - Validação de formatos (preços, GTINs)
+    - Checagem de discrepâncias feed vs. site
+    - Benchmark contra concorrentes principais
+  - Otimização competitiva:
+    - Análise de densidade de palavras-chave
+    - Verificação de completude vs. concorrentes
+  - Otimização para algoritmo:
+    - Consistência de taxonomia/categorização
+    - Análise de histórico de desaprovações
+
+#### Tela: Otimização de Feed
+- Otimização de títulos:
+  - Estrutura hierárquica consistente:
+    - Produto-chave primeiro
+    - Marca logo após
+    - Modelo e características distintivas
+    - Atributos críticos por categoria
+  - Limitar a 65-70 caracteres
+  - Manter padrão consistente por categoria
+- Otimização de descrições:
+  - Estrutura em camadas:
+    - Camada 1: Uso principal e benefício-chave
+    - Camada 2: Características técnicas relevantes
+    - Camada 3: Informações adicionais
+  - Incluir palavras-chave secundárias
+  - Manter objetividade (evitar linguagem promocional)
+- Otimização de imagens:
+  - Fundo branco com iluminação adequada
+  - Produto ocupando >85% do espaço
+  - Múltiplos ângulos quando possível (3-5 imagens)
+  - Imagens contextuais como suplemento
+
+#### Tela: Priority Segmentation Strategy
+- Estrutura por prioridade:
+  - Alta prioridade:
+    - Orçamento limitado (15% do total)
+    - Produtos estratégicos (alta margem, alto volume)
+    - Lances agressivos para maximizar visibilidade
+    - Segmentação detalhada por subcategorias
+  - Média prioridade:
+    - Orçamento substancial (35% do total)
+    - Produtos com performance comprovada
+    - Lances moderados baseados em ROAS alvo
+    - Segmentação por categorias amplas
+  - Baixa prioridade:
+    - Orçamento generoso (50% do total)
+    - Catálogo completo como "rede de segurança"
+    - Lances conservadores baseados em CPA máximo
+    - Segmentação mínima
+
+#### Tela: Exclusões em Cascata e Query Sculpting
+- Implementação de exclusões cascata:
+  - Produtos em alta prioridade: excluir de média prioridade
+  - Produtos em média prioridade: excluir de baixa prioridade
+  - Ajustes manuais semanais baseados em análise
+- Query Sculpting Framework:
+  - Usar Search Terms Report para identificar:
+    - Termos com alta conversão e baixo volume
+    - Termos relevantes para produtos de alta margem
+    - Termos de nicho com baixa competição
+  - Criar campanhas dedicadas para queries de alto valor
+  - Implementar negativas estratégicas entre campanhas
+
+### 10. Nicolas Gendron (França)
+
+#### Tela: Merchant Center
+- Feed Localization Matrix:
+  - Adaptação linguística profunda:
+    - Ajustar títulos para convenções locais
+    - Utilizar terminologia específica regional
+    - Incorporar termos locais específicos
+  - Nuances linguísticas específicas:
+    - Adaptar ordem de elementos por idioma
+    - Ajustar unidades de medida por mercado
+    - Personalizar descrições para preferências culturais
+  - Adaptação de categorização:
+    - Utilizar taxonomias específicas por país
+    - Ajustar hierarquia para refletir importância local
+    - Implementar variações sazonais por mercado
+
+#### Tela: Campanhas Shopping
+- Estrutura Multi-Dimensional:
+  - Dimensão 1: Margem de lucro (Alta/Média/Baixa)
+  - Dimensão 2: Velocidade de venda (Rápida/Média/Lenta)
+  - Dimensão 3: Sazonalidade (Alta/Baixa)
+  - Criar matriz 3×3×2 com até 18 segmentos distintos
+- Estratégia de Lances por Segmento:
+  - Alta Margem + Venda Rápida + Alta Sazonalidade:
+    - Lances máximos (30-50% acima da média)
+    - Ajustes diários de lance
+  - Baixa Margem + Venda Lenta + Baixa Sazonalidade:
+    - Lances mínimos (30-50% abaixo da média)
+    - Ajustes mensais de lance
+  - Outras combinações:
+    - Lances proporcionais ao valor estimado
+    - Frequência de ajuste adequada ao segmento
+
+#### Tela: Monitoramento de Preços
+- Sistema de monitoramento:
+  - Rastreamento diário de preços de concorrentes
+  - Índice de competitividade por categoria
+  - Alertas para mudanças significativas
+- Segmentação de análise:
+  - Concorrentes diretos vs. marketplaces
+  - Produtos de alto volume vs. nicho
+  - Promoções sazonais vs. preços regulares
+- Estratégia de resposta:
+  - Ajustes automáticos para manter competitividade
+  - Limites de segurança para ajustes (mínimo/máximo)
+  - Aprovação manual para ajustes extremos
+
+### 11. Amy Hebdon (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Discovery
+- Objetivo: Consideração de marca ou Conversões
+- Estratégia de Lance: Maximizar conversões ou Target CPA
+
+#### Tela: Visual First Framework
+- Hierarquia de Elementos Visuais:
+  - Imagem principal:
+    - Alto contraste entre elemento principal e fundo
+    - Elemento central claro e identificável
+    - Enquadramento com primeiro plano >60% do espaço
+  - Paleta de cores:
+    - Limitada a 2-3 cores com alto contraste
+    - Esquema de cores alinhado com identidade da marca
+  - Texto na imagem:
+    - Mínimo, apenas se absolutamente necessário
+    - Fonte grande e legível (mínimo 14pt)
+  - Testes sistemáticos:
+    - A/B testar diferentes ângulos do mesmo objeto
+- Regras de implementação visual:
+  - Regra 70/30: Configure imagens com 70% objeto principal, 30% contexto
+  - Princípio do olhar direcionado: Pessoas olhando para texto/produto
+  - Contraste de 7:1 entre elemento principal e fundo
+  - Posicionamento por regra dos terços (elementos-chave nas intersecções)
+  - Hierarquia visual de leitura (Z ou F pattern)
+
+#### Tela: Engagement Quality Scoring
+- Sistema de pontuação:
+  - Configurar eventos de conversão para métricas de qualidade:
+    - Tempo na página (evento para >10s): 20 pontos
+    - Profundidade de navegação (2+ páginas): 25 pontos
+    - Interação com elementos (formulários, vídeos): 30 pontos
+    - Micro-conversões (downloads, inscrições): 25 pontos
+  - Soma de pontos: 0-100 para cada visitante
+  - Configuração de ajustes de lance:
+    - Audiências com score >70: +20% no lance base
+    - Audiências com score 40-70: manter lance base
+    - Audiências com score <40: -20% no lance base
+
+#### Tela: Cross-Platform Asset Testing
+- Framework de teste multi-plataforma:
+  - Fase 1: Configurar campanhas em Meta Ads com orçamento limitado (20% do total)
+  - Fase 2: Migrar assets vencedores para YouTube (orçamento de 30%)
+  - Fase 3: Implementar vencedores em Discovery (50% do orçamento)
+  - Em cada fase, configurar:
+    - Mesmo conjunto de audiências entre plataformas
+    - Mesmas métricas de conversão para comparação justa
+    - Período de teste idêntico (mínimo 14 dias)
+  - Documentação estruturada no Google Sheets com:
+    - Performance por asset e plataforma
+    - Diferenças de engajamento entre canais
+    - Características dos vencedores cross-platform
+
+### 12. Greg Finn (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Local
+- Objetivo da Campanha: Tráfego para lojas físicas
+- Redes: Google Search Network e Maps
+- Estratégia de Lances: Target CPA (CPA iniciando com 150-200% do ticket médio)
+- Orçamento Diário: Dividir por localização (orçamento mensal ÷ número de locais ÷ 30 dias)
+- Programação de Anúncios: Horários personalizados baseados em horário de funcionamento das lojas
+
+#### Tela: Radius Optimization Matrix
+- Segmentação de Localização:
+  - Áreas urbanas:
+    - Raio: 1-3 km
+    - Ajuste de lance: +30% do lance base
+    - Configurar exclusão de concorrentes próximos (raio de 0.5 km)
+  - Áreas suburbanas:
+    - Raio: 5-8 km
+    - Ajuste de lance: lance base (sem ajuste)
+    - Segmentar bairros específicos com maior renda
+  - Áreas rurais:
+    - Raio: 15-25 km
+    - Ajuste de lance: -10% do lance base
+    - Incluir cidades próximas como localizações específicas
+  - Ajustes por horário do dia:
+    - Horários de pico: Reduzir raio em 30%
+    - Horários de baixo movimento: Aumentar raio em 50%
+    - Implementar regras automáticas para dias específicos
+
+#### Tela: Local Inventory Leverage
+- Configuração de Feed de Inventário:
+  - Conectar feed de inventário local ao Merchant Center
+  - Atualização: Configure para mínimo 3x ao dia
+  - Informações críticas: SKU, quantidade, preço, disponibilidade
+  - Grupos de produtos específicos:
+    - Alta Prioridade (estoque limitado): ajuste de lance +20%
+    - Média Prioridade (estoque normal): lance base
+    - Baixa Prioridade (excesso de estoque): ajuste de lance +15%
+  - Criação de campanhas específicas:
+    - Campanha "Disponível Agora": produtos com estoque >10 unidades
+    - Campanha "Retirada Hoje": produtos disponíveis para pick-up imediato
+    - Campanha "Últimas Unidades": produtos com estoque <5 unidades
+
+#### Tela: Location Extension Enhancement
+- Configuração de Extensões de Local:
+  - Qualidade de imagem:
+    - Upload de fotos profissionais em alta resolução (mínimo 5 por localização)
+    - Incluir fotos externas e internas de cada loja
+    - Atualizar imagens sazonalmente (4x por ano)
+  - Informações diferenciadas:
+    - Horários estendidos/especiais (destacar "Aberto até tarde" ou "Domingos")
+    - Amenidades únicas (estacionamento, wifi, áreas específicas)
+    - Serviços exclusivos daquela localização
+  - Extensões de promoção local:
+    - Criar ofertas específicas por local (mínimo 3 por loja)
+    - Programar promoções exclusivas para períodos de baixo movimento
+    - Destacar eventos presenciais exclusivos
+
+#### Tela: Configurações Avançadas de Segmentação
+- Segmentação específica por localização:
+  - Criar campanhas dedicadas para lojas com características únicas
+  - Personalizar mensagens por dados demográficos locais:
+    - Ajustar copy para perfil de renda da área
+    - Destacar serviços específicos para o público local
+    - Adaptar ofertas para padrões de consumo regionais
+  - Implementar ajustes de lance baseados em:
+    - Performance histórica de cada localização
+    - Valor médio de venda por loja
+    - Volume de tráfego por região
+
+## ESPECIALISTAS EM E-COMMERCE ULTRA-COMPETITIVO
+
+### 13. Duane Brown (Canadá)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search e Shopping combinados
+- Objetivo: Vendas/Receita
+- Estratégia de Lances: CPC Manual ajustado por ROI (fase inicial)
+- Orçamento Diário: Diferenciado por zona de lucro (verde: 40%, amarela: 30%, vermelha: 20% do total)
+- Redes: Apenas Google Search (desmarcar parceiros de pesquisa)
+- Programação de Anúncios: 24h com ajustes de lance por hora (-20% em horários de baixa performance)
+
+#### Tela: Profit Zone Mapping
+- Configuração de Campanha por Zona:
+  - Zona Verde (alta margem, baixa competição):
+    - Configurar estrutura dedicada para produtos premium
+    - Estratégia de Lance: CPC manual agressivo (75-90% do CPA máximo calculado)
+    - Foco de expansão: Aumentar impressões e posições (1-2)
+    - Budget: 50-60% do orçamento total de busca
+    - Atualização de lances: Diária baseada em performance
+  - Zona Amarela (margem média, competição moderada):
+    - Configurar campanhas de equilíbrio custo-volume
+    - Estratégia de Lance: CPC manual moderado (60-75% do CPA máximo)
+    - Foco: Balancear volume/custo com posições médias (2-4)
+    - Budget: 30-40% do orçamento total
+    - Atualização de lances: 2-3x por semana
+  - Zona Vermelha (baixa margem, alta competição):
+    - Campanhas restritivas com foco em cross-sell
+    - Estratégia de Lance: CPC manual conservador (40-60% do CPA máximo)
+    - Foco: Minimizar CPA, posições mais baixas aceitáveis (3-5)
+    - Budget: 10-20% do orçamento total
+    - Negativas extensivas para termos de baixa conversão
+
+#### Tela: Customer Lifetime Value Bidding
+- Configuração de Segmentação por Valor:
+  - Alto Valor (>3 compras, ticket alto):
+    - Criar listas de público específicas no Google Analytics e importar
+    - Ajuste de lance: +30-50% sobre lance base
+    - Audiências semelhantes: 1-3% de similaridade, ajuste +20%
+    - Conteúdo personalizado destacando novidades/exclusividade
+  - Valor Médio (2-3 compras, ticket médio):
+    - Listas de remarketing por frequência de compra
+    - Ajuste de lance: +10-20% sobre lance base
+    - Audiências semelhantes: 3-5% de similaridade, ajuste +10%
+    - Conteúdo focado em fidelidade/recompensas
+  - Valor Único (1 compra apenas):
+    - Segmentação por tempo desde compra (7, 14, 30 dias)
+    - Ajuste de lance: Base a -10% (dependendo do tempo)
+    - Conteúdo focado em cross-sell e segunda compra
+
+#### Tela: Competitive Edge Analysis
+- Implementação de Vantagens Competitivas:
+  - Vantagens de Produto:
+    - Criar extensões de anúncio destacando diferenciais exclusivos
+    - Implementar comparativos em texto de anúncio: "2x mais durável que Marca X"
+    - Destaque visual para características únicas
+  - Vantagens Operacionais:
+    - Criar campanha específica para "Entrega Rápida" (se aplicável)
+    - Extensões de callout destacando velocidade/atendimento superior
+    - Headlines focados em facilidade de devolução/garantias
+  - Vantagens de Preço:
+    - Configurar campanhas para SKUs com vantagem de preço
+    - Implementar extensões de preço destacando economia vs. concorrentes
+    - Scripts de monitoramento para ajustes competitivos em tempo real
+
+### 14. Simo Ahava (Finlândia)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Múltiplas (Search, Display, Shopping)
+- Objetivo: Baseado em dados proprietários
+- Estratégia de Lance: Data-driven Attribution
+- Período de Conversão: Estendido (30-90 dias dependendo do ciclo de compra)
+- Métricas Primárias: Configurar para valor real estimado (não apenas contagem de conversões)
+- Ajuste de Atribuição: Ativar modelo de dados avançado (contabilizando múltiplos touchpoints)
+
+#### Tela: First-Party Data Leverage System
+- Configuração de Tags e Coleta:
+  - Implementar rastreamento avançado via Google Tag Manager:
+    - Eventos personalizados para cada microinteração (mínimo 15-20 eventos)
+    - Configurar parameters dimensões personalizadas:
+      - User-scoped: ID de cliente, segmento, valor histórico
+      - Session-scoped: Origem, dispositivo, engagement score
+      - Hit-scoped: Interações específicas, timestamp, sequência
+    - Frequência: Tempo real para eventos críticos
+  - Integração CRM/ERP:
+    - Configurar importação automática de dados de clientes
+    - Campos essenciais: histórico de compras, LTV, segmentação interna
+    - Schedule: Atualização diária via API
+  - ID Unificado:
+    - Implementar User ID unificado via Google Signals
+    - Habilitar cross-device tracking
+    - Configurar merging de dados entre dispositivos
+
+#### Tela: Machine Learning Attribution
+- Configuração de Modelo de Atribuição:
+  - Modelo Baseado em Dados:
+    - Ativar "Data-driven attribution" no Google Analytics 4
+    - Período mínimo de lookback: 60-90 dias
+    - Incluir canais offline no modelo (se disponível)
+  - Comparação de Modelos:
+    - Implementar relatórios comparativos via Google Data Studio
+    - Visualização side-by-side: last-click vs. first-click vs. data-driven
+    - Métricas de avaliação: mudança de valor atribuído, ROAS diferencial
+  - Aplicação à Estratégia:
+    - Configurar importação de conversões personalizadas
+    - Ajustar valores de conversão baseados no modelo selecionado
+    - Implementar bidding automatizado baseado em novos valores
+
+#### Tela: Conversion Path Analysis
+- Configuração de Análise de Jornada:
+  - Relatórios de Caminho para Conversão:
+    - Ativar "Path Analysis" no Google Analytics 4
+    - Configurar segmentos para análise comparativa
+    - Incorporar dados de múltiplos canais (paid, organic, direct)
+  - Implementação de Testes:
+    - Configurar experimentos controlados via Google Optimize
+    - Split testing para validação de jornadas alternativas
+    - Configurar metas de experimento alinhadas com KPIs
+
+### 15. Neil Patel (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search focado em conteúdo
+- Objetivo: Valor de longo prazo (não apenas conversões imediatas)
+- Estratégia de Lances: Maximizar conversões com valor ajustado
+- Orçamento Diário: Distribuído por estágio de funil (topo: 40%, meio: 40%, fundo: 20%)
+- Redes: Google Search Network (incluir parceiros de pesquisa para maior alcance)
+- Programação: 24h com ajustes para horários de alto engajamento (+15-20%)
+
+#### Tela: Content Gap Advertising
+- Configuração de Pesquisa de Palavras-chave:
+  - Identificação de Lacunas:
+    - Usar Keyword Planner para identificar termos de alto volume/baixa competição
+    - Configurar pesquisa de palavras relacionadas com mínimo de 500 buscas/mês
+    - Filtros avançados:
+      - CPC médio abaixo da média do setor (para eficiência)
+      - Competição baixa a média
+      - Crescimento de busca positivo (últimos 90 dias)
+  - Priorização Estratégica:
+    - Configurar planilha de keywords com scoring (volume × conversão × dificuldade)
+    - Segmentar por intenção: informacional, navegacional, transacional
+    - Aplicar tags por relevância para objetivos de negócio
+
+#### Tela: Competitor Conquest Framework
+- Configuração de Campanhas Competitivas:
+  - Análise de Concorrentes:
+    - Criar campanhas separadas por concorrente principal
+    - Estrutura de grupos de anúncios por tipo de termo:
+      - Marca concorrente (exato, frase)
+      - Marca + produto/serviço
+      - Termos de erro/reclamação relacionados
+    - Orçamentos específicos por competitor (baseado em volume/valor)
+  - Landing Pages Comparativas:
+    - Criar páginas de destino específicas para cada concorrente
+    - Implementar tabelas comparativas destacando vantagens
+    - Elementos críticos:
+      - Social proof específico vs. concorrente
+      - Ofertas exclusivas para clientes migrando
+      - Garantias que eliminam riscos de mudança
+
+#### Tela: Value-First Content Funnel
+- Estruturação de Campanhas por Funil:
+  - Topo de Funil (Awareness):
+    - Tipo: Campanhas Search com termos informativos
+    - Keywords: Foco em perguntas "como", "o que é", "por que"
+    - Lances: 30-40% do CPA alvo (engajamento, não conversão)
+    - Landing Pages: Conteúdo educacional completo sem gates
+    - Extensões: Sitelinks para conteúdo relacionado, callouts educacionais
+  - Meio de Funil (Consideração):
+    - Tipo: Campanhas Search + Remarketing
+    - Keywords: Comparativos, reviews, "melhor [categoria]"
+    - Lances: 50-60% do CPA alvo
+    - Landing Pages: Ferramentas interativas, comparativos, webinars
+    - Extensões: Snippet estruturado com recursos, callouts com prova social
+  - Fundo de Funil (Conversão):
+    - Tipo: Search de alta intenção + Remarketing segmentado
+    - Keywords: Termos de compra, marca + produto, "preço", "comprar"
+    - Lances: 80-100% do CPA alvo
+    - Landing Pages: Páginas de produto otimizadas para conversão
+    - Extensões: Preço, promoção, chamada, localização
+
+## ESPECIALISTAS EM JORNADA DO CLIENTE E INTEGRAÇÃO
+
+### 16. Joanna Wiebe (Canadá)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search segmentado por estágio
+- Objetivo: Otimização por linguagem específica ao estágio
+- Estratégia de Lances: Ajustada por valor de estágio
+- Orçamento: Distribuição por estágio (30% awareness, 40% consideração, 30% decisão)
+- Programação de Anúncios: 24h com rotação otimizada para cliques (inicial) depois conversões
+
+#### Tela: Customer Journey Copy Framework
+- Configuração de Campanhas por Estágio:
+  - Awareness (Topo de Funil):
+    - Estrutura de Campanha:
+      - Grupos de anúncios por problema/dor geral
+      - Language: Ampla e educacional, foco em dores
+      - Keywords: Termos informativos, problemas, questões gerais
+    - Headlines específicos:
+      - Formulação problema-centrada: "Cansado de [problema]?"
+      - Questões abertas: "Por que [problema] acontece?"
+      - Fact-based: "X% das pessoas sofrem com [problema]"
+    - Gatilhos psicológicos implementados:
+      - Curiosidade: Teaser de solução sem revelação completa
+      - Identificação: Copy que reflete a linguagem do público
+      - Dor: Foco no problema e suas consequências
+  - Consideração (Meio de Funil):
+    - Estrutura de Campanha:
+      - Grupos de anúncios por solução/abordagem
+      - Language: Comparativa, consultiva, foco em soluções
+      - Keywords: Termos comparativos, métodos, alternativas
+    - Headlines específicos:
+      - Comparativos: "Como resolver [problema] facilmente"
+      - Listagem: "5 maneiras eficazes de [resolver problema]"
+      - Benefício principal: "Aumente [resultado] com [abordagem]"
+    - Gatilhos psicológicos implementados:
+      - Segurança: Elementos de credibilidade (números, especialistas)
+      - Validação: Prova social e casos de sucesso
+      - FOMO: Elemento de oportunidade limitada
+  - Decisão (Fundo de Funil):
+    - Estrutura de Campanha:
+      - Grupos de anúncios por oferta específica
+      - Language: Específica, persuasiva, foco no produto
+      - Keywords: Termos de marca, produto específico, intenção de compra
+    - Headlines específicos:
+      - Oferta direta: "[Produto] com 30% OFF hoje"
+      - Urgência: "Últimos dias: [benefício] com [produto]"
+      - Garantia: "[Produto]: Satisfação garantida ou dinheiro de volta"
+    - Gatilhos psicológicos implementados:
+      - Urgência: Limites de tempo/quantidade
+      - Escassez: Disponibilidade limitada
+      - Reciprocidade: Ofertas especiais, bônus
+
+#### Tela: Message-Market Match Matrix
+- Configuração de Matriz de Segmentos:
+  - Eixo 1 - Segmentos de Mercado:
+    - Configurar campanhas separadas por segmento principal
+    - Segmentação demográfica específica por campanha
+    - Ajuste de lances por valor de segmento
+  - Eixo 2 - Pontos de Dor:
+    - Grupos de anúncios específicos por ponto de dor
+    - Copy específico abordando cada dor
+    - Keywords alinhadas a cada problema
+  - Eixo 3 - Objeções:
+    - Texto de anúncio abordando objeções principais
+    - Extensões de anúncio com respostas a objeções
+    - Landing pages com FAQs específicas
+  - Eixo 4 - Gatilhos de Decisão:
+    - Variações de anúncios por gatilho principal
+    - CTAs alinhados a cada motivador
+    - Teste sistemático para identificar gatilhos mais eficazes
+
+#### Tela: Desire Amplification Copy
+- Implementação de Técnicas de Amplificação:
+  - Future-pacing:
+    - Headlines específicos projetando resultado futuro
+    - Descrições com linguagem de visualização do depois
+    - CTAs que sugerem movimento para estado desejado
+  - Contrast-framing:
+    - Estrutura antes/depois nas descrições
+    - Elementos visuais comparativos (se aplicável)
+    - Justaposição de problema/solução
+  - Sensory-rich:
+    - Vocabulário que ativa sentidos específicos
+    - Palavras de alto impacto sensorial
+    - Descrições vívidas de benefícios/resultados
+  - Estruturação em Camadas:
+    - Headline: Benefício primário / resultado principal
+    - Descrição 1: Amplificação do benefício central
+    - Descrição 2: Remoção de objeções principais
+    - Adaptações por canal:
+      - Search: Precisão, resultados imediatos
+      - Display: Transformação visual, aspiracional
+      - Video: Narrativa completa, arco emocional
+
+### 17. Oli Gardner (Canadá)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Múltiplas com foco em conversão pós-clique
+- Objetivo: Conversões (vendas, leads, cadastros)
+- Estratégia de Lances: Maximizar conversões
+- Orçamento Diário: Ajustado por qualidade de landing page
+- Programação: Otimização para horários de maior taxa de conversão
+- Rotação de Anúncios: Otimizar para conversões
+
+#### Tela: Conversion-Centered Design System
+- Configuração de Landing Pages por Princípio:
+  - Foco:
+    - Remover navegação principal e links de saída
+    - Eliminar elementos distrativos (social share desnecessário)
+    - Desativar menu de navegação secundário
+  - Contraste:
+    - Configurar CTA com cor contrastante à paleta do site
+    - Implementar botão 30% maior que outros elementos
+    - Espaçamento negativo ao redor do CTA
+  - Direção:
+    - Implementar elementos direcionais (setas, linhas)
+    - Posicionar pessoas olhando para CTAs/formulários
+    - Utilizar gradientes que guiam para elementos de conversão
+  - Hierarquia:
+    - Estrutura H1 > H2 > H3 consistente
+    - Tamanho de fonte decrescente por importância
+    - Contraste de cor reduzindo por nível hierárquico
+  - Contexto:
+    - URL final com parâmetros de origem (utm_source, utm_medium, utm_campaign)
+    - Implementar personalização dinâmica baseada na origem
+    - Manter consistência visual com anúncio de origem
+  - Congruência:
+    - Headline de landing = headline de anúncio (ou amplificação direta)
+    - Paleta de cores alinhada entre anúncio e landing
+    - Mesmas imagens/elementos visuais quando possível
+  - Fechamento:
+    - Configurar página de confirmação otimizada
+    - Implementar feedback visual após conversão
+    - Próximos passos claros pós-conversão
+
+#### Tela: Attention Ratio Optimization
+- Configuração de Ratio de Atenção:
+  - Auditoria de Elementos Clicáveis:
+    - Criar planilha listando todos elementos clicáveis
+    - Categorizar por relevância para objetivo principal
+    - Calcular ratio atual (elementos totais : elementos para objetivo)
+  - Otimização Sistemática:
+    - Remover links de menu para landing pages de campanha
+    - Desativar navegação secundária/rodapé extenso
+    - Consolidar múltiplos CTAs em um único CTA principal
+    - Meta: Alcançar ratio máximo de 3:1, ideal 1:1
+  - Testes Específicos:
+    - Configurar teste de 5 segundos (ferramenta externa)
+    - Implementar heat mapping para análise de cliques
+    - Configurar scroll depth tracking no Google Analytics
+    - Ajustes iterativos baseados em resultados
+
+#### Tela: Message Match Enhancement
+- Configuração de Matching Preciso:
+  - Visual Match:
+    - Implementar mesmas imagens principais entre anúncio e landing
+    - Manter paleta de cores consistente
+    - Utilizar mesmos elementos gráficos/iconografia
+  - Message Match:
+    - Configurar headline da landing page idêntico ao headline do anúncio
+    - Utilizar subheadline para expandir promessa do headline
+    - Manter terminologia consistente entre anúncio e landing
+  - Intent Match:
+    - Criar landing pages específicas por intenção de busca
+    - Segmentar conteúdo para resolver exatamente a questão buscada
+    - Implementar elementos específicos por origem de tráfego
+
+## ESPECIALISTAS EM MICRO-SEGMENTAÇÃO E COMPORTAMENTO
+
+### 18. Ilya Cherepakhin (Rússia/EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search avançado por micro-momentos
+- Objetivo: Conversões em momentos específicos da jornada
+- Estratégia de Lances: Target CPA variável por tipo de momento
+- Orçamento: Distribuído por valor estratégico de cada momento
+- Redes: Google Search e parceiros selecionados
+- Dispositivos: Ajustes específicos por tipo de micro-momento
+
+#### Tela: Micro-Momento Mapping
+- Configuração por Tipo de Micro-Momento:
+  - I-want-to-know (Momentos Informativos):
+    - Estrutura de Campanha:
+      - Palavras-chave focadas em perguntas específicas
+      - Grupos de anúncios por tópico informacional
+      - Tipo de correspondência: Ampla modificada e frase
+    - Configuração de Anúncios:
+      - Headlines respondendo diretamente a perguntas
+      - Descrições oferecendo contexto adicional
+      - Extensions: Sitelinks para informações relacionadas
+    - Landing Page: Conteúdo educacional completo
+    - Ajuste de Lance: 30-40% do CPA padrão
+  - I-want-to-go (Momentos Locacionais):
+    - Estrutura de Campanha:
+      - Keywords com modificadores locais ("perto de mim", "em [cidade]")
+      - Grupos de anúncios por localidade/bairro
+      - Segmentação geográfica precisa (raios de 5-10km)
+    - Configuração de Anúncios:
+      - Headlines destacando proximidade/localização
+      - Descrições com informações específicas de local
+      - Extensions: Localização, afiliação local, call
+    - Landing Page: Foco em informações locais, mapa integrado
+    - Ajuste de Lance: +20-30% para mobile, +10-20% para desktop
+  - I-want-to-do (Momentos Instrucionais):
+    - Estrutura de Campanha:
+      - Keywords com termos "como", "tutorial", "guia"
+      - Grupos de anúncios por tipo de atividade/tarefa
+      - Segmentação por dispositivo (frequentemente mobile)
+    - Configuração de Anúncios:
+      - Headlines prometendo instruções claras/rápidas
+      - Descrições destacando facilidade/simplicidade
+      - Extensions: Structured snippets com etapas, vídeos
+    - Landing Page: Guias passo-a-passo, vídeos tutoriais
+    - Ajuste de Lance: Valor base com ajustes por engajamento
+  - I-want-to-buy (Momentos Transacionais):
+    - Estrutura de Campanha:
+      - Keywords com alta intenção de compra
+      - Grupos de anúncios por produto/categoria específica
+      - Tipo de correspondência: Exata e frase
+    - Configuração de Anúncios:
+      - Headlines com ofertas/preços específicos
+      - Descrições destacando benefícios imediatos
+      - Extensions: Preço, promoção, avaliações
+    - Landing Page: Produto específico, checkout simplificado
+    - Ajuste de Lance: 80-100% do CPA alvo
+
+#### Tela: Behavioral Sequence Targeting
+- Configuração de Sequências Comportamentais:
+  - Análise de Sequências:
+    - Implementar listas de remarketing sequenciais:
+      - Visitantes de página de categoria > não página de produto
+      - Visitantes de produto > não carrinho
+      - Carrinho > não checkout
+      - Checkout iniciado > não finalizado
+    - Configurar janelas de tempo específicas:
+      - Sequências rápidas: 1-3 dias
+      - Sequências médias: 4-7 dias
+      - Sequências longas: 8-30 dias
+  - Implementação em Targeting:
+    - Criar campanhas específicas para cada sequência
+    - Configurar regras de automatização:
+      - Triggers baseados em comportamento específico
+      - Segmentação por tempo desde último evento
+      - Exclusões automáticas após conversão
+
+#### Tela: Competitor Affinity Modeling
+- Configuração de Perfis de Afinidade:
+  - Análise de Concorrentes:
+    - Criar listas de remarketing para visitantes de:
+      - Páginas de comparação com concorrentes
+      - Páginas de avaliação/reviews de concorrentes
+      - Buscas de marca de concorrentes (via RLSA)
+    - Combinar com dados de busca para classificação:
+      - Exclusivos: Buscam apenas um concorrente
+      - Divididos: Buscam múltiplos concorrentes
+      - Exploradores: Buscam termos genéricos da categoria
+
+### 19. Justin Brooke (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Display e remarketing
+- Objetivo: Conversões com testes sistemáticos
+- Estratégia de Lances: CPC manual inicialmente
+- Orçamento: Distribuição sistemática (teste inicial: 20%, escala: 80%)
+- Redes: Rede de Display do Google
+- Dispositivos: Sem ajustes iniciais (para teste puro)
+
+#### Tela: Ad Grid Methodology
+- Configuração da Matriz de Testes:
+  - Eixo 1 - Imagens:
+    - Carregar 6-8 variações de imagem por produto
+    - Categorizar por tipo:
+      - Produto isolado (3-4 variações)
+      - Produto em uso (1-2 variações)
+      - Problema resolvido (1-2 variações)
+      - Resultado final (1-2 variações)
+    - Manter variáveis controladas (tamanho, estilo, paleta)
+  - Eixo 2 - Headlines:
+    - Criar 6-8 diferentes abordagens:
+      - Benefício principal (2 variações)
+      - Resolução de problema (2 variações)
+      - Curiosidade/pergunta (2 variações)
+      - Social proof (1-2 variações)
+    - Manter mesmo comprimento aproximado
+  - Eixo 3 - Corpo do Anúncio:
+    - Desenvolver 4-6 variações:
+      - Foco em features (1-2 variações)
+      - Foco em benefícios (1-2 variações)
+      - Foco em provas sociais (1 variação)
+      - Foco em urgência/escassez (1 variação)
+  - Eixo 4 - Públicos-alvo:
+    - Configurar 6-10 segmentos:
+      - Interesses relacionados (3-4 segmentos)
+      - In-market (2-3 segmentos)
+      - Custom intent/affinity (2-3 segmentos)
+    - Orçamento igual para cada segmento na fase inicial
+
+#### Tela: Hook-Angle-Offer Framework
+- Configuração de Testes Sistemáticos:
+  - Hooks (Ganchos):
+    - Criar anúncios com 5-10 ganchos iniciais:
+      - Estatística surpreendente
+      - Pergunta controversa
+      - Afirmação contra-intuitiva
+      - História pessoal
+      - Promessa ambiciosa
+    - Testar em grupos de anúncios separados
+    - Métrica primária: CTR (clique ÷ impressões)
+  - Angles (Ângulos):
+    - Para hooks vencedores, criar 3-5 ângulos:
+      - Economia de tempo
+      - Economia de dinheiro
+      - Redução de stress/dor
+      - Status/reconhecimento
+      - Transformação pessoal
+    - Testar em campanhas separadas
+    - Métrica primária: Clique-para-conversão
+  - Offers (Ofertas):
+    - Para combinações hook+angle vencedoras, testar 2-3 estruturas:
+      - Desconto por tempo limitado
+      - Bônus exclusivos
+      - Garantia estendida
+      - Opção premium vs. básica
+    - Métrica primária: Taxa de conversão final
+
+#### Tela: Traffic Temperature Strategy
+- Configuração de Segmentação por Temperatura:
+  - Frio (Nunca interagiu):
+    - Criar campanhas de topo de funil
+    - Segmentação: Interesses amplos, in-market relevante, dados demográficos
+    - Messaging: Conteúdo educacional, awareness
+    - Métricas: CTR, tempo no site, páginas/sessão
+    - Orçamento: 30-40% do total
+    - Objetivo no Google Ads: Tráfego ou Consideração
+  - Morno (Interagiu com conteúdo):
+    - Criar campanhas de meio de funil
+    - Segmentação: Listas de remarketing por páginas visitadas (últimos 30 dias)
+    - Messaging: Conteúdo comparativo, solução de problema
+    - Métricas: Engajamento, micro-conversões, tempo no site
+    - Orçamento: 30-40% do total
+    - Objetivo no Google Ads: Envolvimento
+  - Quente (Interagiu com marca):
+    - Criar campanhas de fundo de funil
+    - Segmentação: Visitantes de página de produto (últimos 14 dias)
+    - Messaging: Ofertas diretas, demonstrações, diferenciais
+    - Métricas: Taxa de conversão, custo por conversão
+    - Orçamento: 20-30% do total
+    - Objetivo no Google Ads: Conversões
+  - Escaldante (Iniciou compra):
+    - Criar campanhas de recuperação
+    - Segmentação: Abandonadores de carrinho/checkout (últimos 7 dias)
+    - Messaging: Incentivos para conclusão, remoção de objeções
+    - Métricas: Taxa de recuperação, valor médio de pedido
+    - Orçamento: 10-15% do total
+    - Objetivo no Google Ads: Conversões com ROAS específico
+
+### 20. Gianluca Binelli (Itália)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Múltiplas para mercados europeus
+- Objetivo: Conversões com adaptação cultural
+- Estratégia de Lances: Target CPA ajustado por região
+- Orçamento: Distribuição por mercado baseada em potencial
+- Redes: Search e Display com ajustes regionais
+- Idiomas: Configurados especificamente por mercado
+
+#### Tela: Cultural Context Matrix
+- Configuração de Adaptação Cultural:
+  - Valores Culturais (Dimensão 1):
+    - Individualismo vs. Coletivismo:
+      - Mercados individualistas (Alemanha, Reino Unido):
+        - Headlines: Foco em benefícios pessoais e diferenciação
+        - Imagens: Pessoas individuais usando o produto
+        - CTAs: Decisivos, diretos ("Compre agora", "Escolha o seu")
+      - Mercados coletivistas (Itália, Espanha):
+        - Headlines: Foco em benefícios familiares/grupais
+        - Imagens: Grupos/famílias usando o produto
+        - CTAs: Inclusivos ("Junte-se a nós", "Descubra conosco")
+    - Comunicação Direta vs. Indireta:
+      - Mercados diretos (Alemanha, Holanda):
+        - Copy: Objetivo, direto ao ponto, factual
+        - Estrutura: Benefícios listados claramente
+        - Extensões: Especificações técnicas, comparativos diretos
+      - Mercados indiretos (França, Itália):
+        - Copy: Narrativo, contextual, emocional
+        - Estrutura: Histórias e cenários de uso
+        - Extensões: Testemunhos, avaliações, social proof
+
+#### Tela: Regional Performance Prediction
+- Configuração de Modelos Preditivos:
+  - Sazonalidade Regional:
+    - Criar calendário de ajustes automáticos:
+      - Ajustes para períodos de férias específicos:
+        - Itália: Aumento de 15-20% para Ferragosto (agosto)
+        - Espanha: Ajustes para períodos de siesta (12h-15h)
+        - França: Fechamento de agosto (redução de orçamento)
+        - Alemanha: Oktoberfest (ajustes regionais)
+    - Programação de anúncios específica por região:
+      - Norte da Europa: Horários estendidos (7h-23h)
+      - Sul da Europa: Foco em horários tardios (10h-24h)
+      - Mediterrâneo: Pausas para horário de almoço (12h-15h)
+  - Sensibilidade a Preço:
+    - Configurar ajustes de lance baseados em dados regionais:
+      - Alta sensibilidade (Sul da Europa): Redução de 10-15%
+      - Média sensibilidade (França, Bélgica): Lance base
+      - Baixa sensibilidade (Alemanha, Norte): Aumento de 10-15%
+    - Messaging ajustado por sensibilidade:
+      - Alta: Foco em valor, economia, descontos
+      - Média: Equilíbrio entre valor e qualidade
+      - Baixa: Foco em qualidade, durabilidade, exclusividade
+
+#### Tela: Local Compliance Automation
+- Configuração de Conformidade Regional:
+  - Requisitos Legais por País:
+    - Extensões de anúncio específicas:
+      - GDPR: Adicionar extensões sobre privacidade de dados
+      - Garantias: Configurar informações de garantia por país
+      - Tributos: Incluir informação sobre impostos quando obrigatório
+    - Disclaimers obrigatórios:
+      - Criar biblioteca de disclaimers aprovados por país
+      - Implementar via snippets estruturados ou texto no anúncio
+  - Limitações Específicas:
+    - Criar listas de exclusão por país:
+      - Termos restritos por região
+      - Promoções limitadas geograficamente
+      - Produtos com restrições de venda
+    - Implementar bloqueios automatizados:
+      - Scripts de validação para conformidade
+      - Alerts automáticos para possíveis violações
+
+## ESPECIALISTAS EM JORNADA COMPLETA DO CLIENTE
+
+### 21. Dennis Yu (Singapura/EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Múltiplas com escalonamento gradual
+- Objetivo: Validação rápida seguida de escala
+- Estratégia de Lances: CPC manual com escalonamento por performance
+- Orçamento: Iniciar mínimo, escalonar baseado em dados
+- Redes: Todas (Search, Display, YouTube) com testes de conceito
+- Rotação: Otimizada para cliques (fase teste); conversões (fase escala)
+
+#### Tela: Dollar-a-Day Strategy
+- Configuração de Validação Inicial:
+  - Campanhas de Teste (Fase 1):
+    - Orçamento: Configurar $1-3/dia por conceito
+    - Duração: 3 dias (72h) para coleta inicial
+    - Estrutura:
+      - 5-10 conceitos diferentes em campanhas separadas
+      - Segmentação idêntica entre conceitos para teste puro
+      - Rastreamento específico por conceito
+    - Métricas de Validação:
+      - CTR: Configurar benchmark mínimo baseado no segmento
+      - Engajamento: Configurar eventos de conversão para ações secundárias
+      - CPE (custo por engajamento): Definir metas específicas
+  - Escalonamento Progressivo:
+    - Fase 2 ($5-10/dia):
+      - Configurar aumento para conceitos com:
+        - CTR >2x média do setor
+        - Tempo no site >2min
+        - Bounce rate <50%
+      - Duração: 5-7 dias
+    - Fase 3 ($20-50/dia):
+      - Configurar para conceitos com:
+        - Mínimo de 10 conversões
+        - CPA dentro de 150% do alvo
+        - ROAS >2
+      - Duração: 7-14 dias
+    - Fase 4 ($100+/dia):
+      - Configurar para campeões com:
+        - CPA dentro do alvo
+        - ROAS >3
+        - Indicação clara de escalabilidade
+
+#### Tela: Content Amplification Framework
+- Configuração da Estrutura de Amplificação:
+  - Criação Orgânica (Fase 1):
+    - Implementar rastreamento detalhado para:
+      - Conteúdo mais visitado organicamente
+      - Maior tempo de permanência
+      - Melhor taxa de conversão
+      - Maior compartilhamento social
+    - Criar tags específicas para categoria e formato
+  - Teste Pago (Fase 2):
+    - Configurar campanhas de baixo orçamento:
+      - Orçamento: 10-15% do total disponível
+      - Segmentação: Altamente específica
+      - Objetivos: Validação de métricas-chave
+    - Métricas de validação:
+      - CTR >1%
+      - Bounce rate <60%
+      - Custo por engajamento dentro de meta
+  - Amplificação (Fase 3):
+    - Configurar campanhas de escala:
+      - Orçamento: 70-80% do total disponível
+      - Segmentação: Expandida, mas ainda focada
+      - Objetivo: Maximizar alcance com performance controlada
+    - Parâmetros de controle:
+      - CPA máximo
+      - ROAS mínimo
+      - Limite de frequência
+      - Restrições de posicionamento
+
+#### Tela: Personal Branding Funnel
+- Configuração do Funil de Autoridade:
+  - Awareness (Topo):
+    - Campanhas de vídeo/display:
+      - Formato: Vídeos curtos de posicionamento (15-30s)
+      - Objetivo: Tráfego de marca
+      - Segmentação: Interesses amplos relacionados ao nicho
+      - Métricas: Visualizações, views de +30s, CTR
+    - Configurações específicas:
+      - Apenas impressões em tela visível
+      - Orçamento: 30-40% do total
+  - Engajamento (Meio):
+    - Campanhas de conteúdo:
+      - Formato: Vídeos educacionais, conteúdo longo
+      - Objetivo: Engajamento, leads
+      - Segmentação: Visitantes anteriores, interessados específicos
+      - Métricas: Tempo de visualização, taxa de conclusão, leads
+    - Configurações específicas:
+      - Remarketing para visualizadores de conteúdo anterior
+      - Orçamento: 40-50% do total
+  - Conversão (Fundo):
+    - Campanhas de oferta:
+      - Formato: Apelos diretos, ofertas específicas
+      - Objetivo: Conversões
+      - Segmentação: Remarketing avançado, visitantes de alta intenção
+      - Métricas: Taxa de conversão, CPA, ROAS
+    - Configurações específicas:
+      - Frequência maior para prospects qualificados
+      - Orçamento: 20-30% do total
+
+### 22. Purna Virji (Índia/EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search com foco em micro-momentos
+- Objetivo: Assistência em momentos-chave da jornada
+- Estratégia de Lances: Ajustada por importância de momento
+- Orçamento: Distribuição por valor estratégico
+- Programação: Horários ajustados por padrão de busca
+- Dispositivos: Foco em mobile para momentos locais/urgentes
+
+#### Tela: Micro-Momento Optimization Framework
+- Configuração de Campanhas por Momento:
+  - I-want-to-know:
+    - Estrutura de campanha:
+      - Grupos de anúncios por tópico informacional
+      - Keywords informacionais (como, o que, quando, por que)
+      - Correspondência: Ampla modificada e frase
+    - Landing pages educacionais:
+      - Conteúdo aprofundado
+      - Navegação clara para próximos passos
+    - Extensões de anúncio:
+      - Snippet estruturado com pontos informativos
+      - Sitelinks para tópicos relacionados
+      - Callouts destacando credibilidade/expertise
+  - I-want-to-go:
+    - Estrutura de campanha:
+      - Grupos de anúncios por localidade/região
+      - Keywords com modificadores locais
+      - Segmentação geográfica precisa
+    - Ajustes específicos:
+      - Mobile: +20-30% nos lances
+      - Horários de pico local: +15-20%
+      - Raio geográfico variável por densidade da área
+    - Extensões críticas:
+      - Localização (obrigatória)
+      - Chamada (click-to-call)
+      - Textos de localização nas descrições
+  - I-want-to-do:
+    - Estrutura de campanha:
+      - Segmentação por tipo de tarefa/instrução
+      - Keywords com "como fazer", "guia", "tutorial"
+      - Foco em conteúdo prático/execução
+    - Landing pages específicas:
+      - Conteúdo passo-a-passo
+      - Vídeos tutoriais
+      - Opções de download/salvamento
+    - Extensões úteis:
+      - Links para materiais auxiliares
+      - Snippets com etapas/requisitos
+      - Avaliações/reviews de usuários
+  - I-want-to-buy:
+    - Estrutura de campanha:
+      - Segmentação por produto/serviço específico
+      - Keywords com alta intenção de compra
+      - Remarketing para visitantes anteriores (RLSA)
+    - Configurações de conversão:
+      - Tracking para múltiplos pontos de conversão
+      - Valores diferentes por tipo de conversão
+      - Atribuição ajustada para considerar o funil completo
+    - Extensões comerciais:
+      - Preço
+      - Promoção
+      - Estruturadas de produto/serviço
+
+#### Tela: Assistive Search Advertising
+- Configuração de Anúncios Assistivos:
+  - Framework Assistivo:
+    - Estilo de Headlines:
+      - Formulados como respostas diretas
+      - Iniciados com verbos de ação
+      - Estrutura completa (não fragmentados)
+    - Descrições assistivas:
+      - Primeira linha: Contexto adicional útil
+      - Segunda linha: Próximos passos facilitados
+      - Linguagem natural, conversacional
+    - CTAs Facilitadores:
+      - Text específico por fase da jornada
+      - Redução de fricção ("Veja opções" vs "Compre agora")
+      - Verbos de baixo compromisso para fases iniciais
+  - Extensões Estratégicas:
+    - Snippets Estruturados:
+      - Configurar como mini-FAQs para questões comuns
+      - Organizar em formato de lista para facilitar leitura
+      - Incluir informações que complementam o anúncio principal
+    - Callouts Assistivos:
+      - Destacar elementos de assistência oferecida
+      - Incluir termos como "Guia completo", "Suporte 24h"
+      - Enfatizar facilidade e conveniência
+    - Sitelinks Organizados:
+      - Estruturar por tipo de necessidade
+      - Criar hierarquia clara de informações
+      - Oferecer múltiplos pontos de entrada para diferentes demandas
+
+#### Tela: Competitive Gap Targeting
+- Configuração de Análise de Lacunas:
+  - Identificação de Gaps:
+    - Pesquisa de Palavras-chave:
+      - Filtrar termos não cobertos pelos concorrentes
+      - Priorizar por volume e relevância
+      - Criar grupos específicos para essas oportunidades
+    - Análise de Jornada:
+      - Identificar estágios sub-atendidos pela concorrência
+      - Mapear pontos de abandono comuns
+      - Criar conteúdo específico para esses pontos
+    - Segmentação Sub-Atendida:
+      - Pesquisar nichos demográficos negligenciados
+      - Analisar necessidades específicas desses segmentos
+      - Desenvolver campanhas exclusivas para eles
+  - Implementação Estratégica:
+    - Campanhas Dedicadas:
+      - Criar estrutura separada para termos de gap
+      - Configurar orçamento específico para estas oportunidades
+      - Implementar métricas próprias de desempenho
+    - Bidding Agressivo:
+      - Configurar lances 30-50% acima do normal para estabelecer domínio
+      - Implementar ajustes automáticos baseados em posição média
+      - Definir limites máximos para manter rentabilidade
+
+### 23. Pauline Jakober (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search com testes avançados
+- Objetivo: Conversões com otimização científica
+- Estratégia de Lances: CPC manual com ajustes baseados em testes
+- Orçamento: Distribuição por grupos de teste
+- Rotação de Anúncios: Rotação uniforme (para testes)
+- Período de Teste: Definido por volume para significância estatística
+
+#### Tela: Multi-Variant Testing Framework
+- Configuração de Estrutura Científica:
+  - Preparação de Testes:
+    - Cálculo de amostra mínima:
+      - Definir conversões mínimas necessárias por variação (30+)
+      - Configurar duração baseada em volume histórico
+      - Implementar controle de significância estatística (95%+)
+    - Isolamento de variáveis:
+      - Criar campanhas duplicadas mudando apenas uma variável
+      - Divisão de tráfego: 50% controle, 50% teste (ou divisão igual entre múltiplas variações)
+      - Garantir mesmas condições (segmentação, horários, orçamento)
+  - Implementação de Testes:
+    - Testes de Headline:
+      - Testar uma variação por vez vs. controle
+      - Manter todas as outras variáveis idênticas
+      - Métricas principais: CTR, taxa de conversão, CPA
+    - Testes de Landing Page:
+      - Implementar via Google Optimize integrado à conta
+      - Definir conversões primárias e secundárias para avaliação
+      - Configurar distribuição de tráfego (50/50 para A/B simples)
+    - Testes de Targeting:
+      - Criar campanhas idênticas com diferentes configurações de público
+      - Ajustar orçamento para volume proporcional
+      - Avaliar por CPA e volume de conversão
+
+#### Tela: Matriz de Variações
+- Configuração da Matriz de Testes:
+  - Elementos do Anúncio (Eixo 1):
+    - Headlines (3-5 variações):
+      - Benefício vs. Feature
+      - Pergunta vs. Afirmação
+      - Com números vs. Sem números
+    - Descrições (3-5 variações):
+      - Curta vs. Longa
+      - Emocional vs. Racional
+      - Com vs. Sem social proof
+    - CTAs (2-3 variações):
+      - Direto vs. Suave
+      - Específico vs. Genérico
+      - Primeira pessoa vs. Segunda pessoa
+  - Segmentos de Audiência (Eixo 2):
+    - Criar testes específicos por segmento:
+      - Novos visitantes vs. Retornantes
+      - Por origem de tráfego anterior
+      - Por interesse/comportamento
+    - Calendário de implementação:
+      - Programar testes sequenciais com duração pré-determinada
+      - Configurar término automático baseado em significância
+      - Implementação automática de vencedores
+
+#### Tela: Regras de Automação Baseadas em Testes
+- Configuração de Automação Científica:
+  - Regras para Variações:
+    - Configurar regras para pausar variações:
+      - Performance 30% inferior à média por 7+ dias
+      - Sem conversão após volume mínimo definido
+      - CTR significativamente abaixo das outras variações
+    - Regras para promover vencedores:
+      - Aumentar orçamento em 20-30% para variações superior
+      - Aplicar vencedores em campanhas relacionadas
+      - Criar novos testes baseados nas características vencedoras
+  - Sistema de Notificação:
+    - Configurar alertas para:
+      - Testes concluídos com significância estatística
+      - Variações com performance muito acima/abaixo do esperado
+      - Oportunidades de novos testes baseados em padrões observados
+
+### 24. Aleyda Solis (Espanha)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Integração search-orgânico
+- Objetivo: Maximizar sinergia entre canais
+- Estratégia de Lances: Ajustada por performance orgânica
+- Orçamento: Distribuição estratégica baseada em gaps orgânicos
+- Redes: Search com complemento de Display para remarketing
+- Idiomas: Configurado para mercados hispânicos e internacionais
+
+#### Tela: Owned Channel Integration Framework
+- Configuração de Coleta de Dados Integrada:
+  - Rastreamento Comportamental:
+    - Implementar eventos avançados no GA4:
+      - Scrolls profundos (25%, 50%, 75%, 90%)
+      - Cliques em elementos interativos
+      - Tempo de permanência por seção
+      - Identificação de padrões de navegação
+    - Segmentação por engajamento:
+      - Visitantes casuais (1 página, <30s)
+      - Engajados (2+ páginas, 1min+)
+      - Altamente engajados (3+ páginas, 3min+, interação)
+  - Integração com CRM:
+    - Configurar importação de dados:
+      - Lista de clientes com valor de vida
+      - Histórico de compras/conversões
+      - Interações anteriores por canal
+    - Segmentação por status:
+      - Prospects vs. clientes
+      - Clientes únicos vs. recorrentes
+      - Potencial de upsell/cross-sell
+
+#### Tela: Organic-Paid Synergy System
+- Configuração de Campanhas Complementares:
+  - Keywords Orgânicas (Posições 4-10):
+    - Criar campanhas search específicas:
+      - Identificar termos com posição orgânica entre 4-10
+      - Configurar lances agressivos para estes termos
+      - Orçamento dedicado para esta estratégia
+    - Monitoramento de impacto:
+      - Rastrear posição orgânica durante campanhas pagas
+      - Medir tráfego total (pago + orgânico)
+      - Avaliar impacto de longo prazo na posição orgânica
+  - Tópicos de Alto Engajamento:
+    - Identificar conteúdo orgânico com alta performance:
+      - Maior tempo de permanência
+      - Maior taxa de conversão
+      - Alto engajamento social
+    - Criar campanhas de amplificação:
+      - Budget dedicado para promoção destes conteúdos
+      - Segmentação para públicos relevantes
+      - Métricas específicas de engajamento
+
+#### Tela: Métricas de Integração
+- Configuração de Avaliação Integrada:
+  - Métricas de Sinergia:
+    - Criar KPIs específicos:
+      - Lift incremental (tráfego total vs. apenas orgânico)
+      - Impacto em conversões totais
+      - Mudança em custo por aquisição integrado
+    - Implementar experimentos controlados:
+      - Testes A/B por região geográfica
+      - Períodos alternados (on/off)
+      - Medição de impacto isolado vs. combinado
+  - Dashboard Unificado:
+    - Configurar relatórios integrados:
+      - Visão consolidada de todos os canais
+      - Atribuição customizada considerando touchpoints múltiplos
+      - Visualização de jornada completa do cliente
+    - Implementar alertas para:
+      - Mudanças significativas em qualquer canal
+      - Oportunidades de sinergia identificadas
+      - Possíveis canibalizações entre canais
+
+### 25. Arianne Donoghue (Reino Unido)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: B2B Search avançado
+- Objetivo: Leads de decisores reais
+- Estratégia de Lances: Ajustada por valor potencial do lead
+- Orçamento: Distribuição por influência no processo decisório
+- Dispositivos: Ênfase em desktop para B2B (+20%)
+- Programação: Horário comercial com ajustes por fuso horário
+
+#### Tela: Decision Maker Targeting Framework
+- Configuração de Mapeamento de Influência:
+  - Padrões Decisórios por Indústria:
+    - Criar campanhas específicas por vertical:
+      - Tecnologia: Foco em CTOs, CIOs, Tech Managers
+      - Finanças: CFOs, Controllers, Finance Directors
+      - Saúde: CMOs, Diretores Médicos, Administradores
+    - Ajustar por porte da empresa:
+      - Enterprise: Múltiplos stakeholders, ciclo longo
+      - Mid-market: Grupos menores, ciclo moderado
+      - SMB: Decisores unificados, ciclo curto
+  - Perfis de Tomadores de Decisão:
+    - Criar grupos de anúncios por função:
+      - C-level: Mensagens estratégicas, visão de longo prazo
+      - Gerentes: Mensagens operacionais, eficiência, resultados
+      - Técnicos: Especificações, compatibilidade, implementação
+    - Adaptar linguagem por perfil:
+      - Termos técnicos para perfis técnicos
+      - Terminologia financeira para decisores financeiros
+      - Linguagem estratégica para executivos
+
+#### Tela: Lead Value Scoring Matrix
+- Configuração de Sistema de Pontuação:
+  - Critérios de Qualificação:
+    - Configurar valores específicos:
+      - Cargo/função: 1-30 pontos
+      - Porte da empresa: 1-25 pontos
+      - Indústria/vertical: 1-20 pontos
+      - Comportamento no site: 1-15 pontos
+      - Engajamento com conteúdo: 1-10 pontos
+    - Total máximo: 100 pontos
+  - Aplicação em Campanhas:
+    - Ajustes de lance por score:
+      - Leads score 80-100: +30-50% nos lances
+      - Leads score 60-79: +10-20% nos lances
+      - Leads score 40-59: Lance base
+      - Leads score <40: -10-20% nos lances
+    - Criar rotas específicas:
+      - Alta pontuação: Fast-track com SDR dedicado
+      - Média pontuação: Nutrição automatizada prioritária
+      - Baixa pontuação: Nutrição padrão de longo prazo
+
+#### Tela: B2B Customer Journey Map
+- Configuração de Jornada Específica:
+  - Mapeamento de Etapas B2B:
+    - Criar campanhas específicas por estágio:
+      - Awareness: Educação sobre problemas do setor
+      - Research: Exploração de soluções potenciais
+      - Consideration: Avaliação comparativa
+      - Decision: Justificativa e aprovação
+    - Configurar métricas específicas por estágio:
+      - Early-stage: Engajamento com conteúdo
+      - Mid-stage: Solicitações de informação
+      - Late-stage: Demonstrações, trials
+  - Touchpoints por Departamento:
+    - Personalizar abordagem por função:
+      - Técnica: Whitepapers, especificações, webinars técnicos
+      - Financeira: ROI calculators, case studies, TCO comparisons
+      - Executiva: Vision papers, tendências de mercado, estudos estratégicos
+    - Implementar conteúdo sequencial:
+      - Básico → intermediário → avançado
+      - Geral → específico → personalizado
+      - Educacional → comparativo → decisivo
+
+### 26. John Chen (Singapura)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search e Display para mercados asiáticos
+- Objetivo: Conversões adaptadas a processos decisórios regionais
+- Estratégia de Lances: Ajustada por hierarquia cultural
+- Orçamento: Distribuição por importância do mercado
+- Idiomas: Configurações específicas para cada mercado local
+- Segmentação: Ajustada para particularidades culturais
+
+#### Tela: Cultural Context Matrix para B2B
+- Configuração de Adaptação Cultural:
+  - Mercados Coletivistas (China, Japão, Coreia):
+    - Anúncios de Texto:
+      - Headlines: Foco em benefícios para o grupo/empresa
+      - Descrições: Ênfase em harmonia, continuidade, tradição
+      - CTAs: Formulações suaves ("Descubra conosco", "Veja como outros...")
+    - Extensões e Assets:
+      - Destacar associações/parcerias de prestígio
+      - Enfatizar longevidade e estabilidade da empresa
+      - Incluir elementos de honra/status corporativo
+  - Hierarquias Rígidas (Japão, Coreia):
+    - Configuração de Tom:
+      - Linguagem formal e respeitosa
+      - Evitar abordagens diretas/confrontadoras
+      - Utilizar títulos e honoríficos adequados
+    - Landing Pages:
+      - Estrutura de informação hierárquica
+      - Conteúdo detalhado e abrangente
+      - Destaque para validação por autoridades
+
+#### Tela: Hierarchical Decision Mapping
+- Configuração de Targeting Hierárquico:
+  - Estruturas Decisórias Específicas:
+    - Japão:
+      - Campanhas para influenciadores iniciais (Nemawashi)
+      - Campanhas para aprovadores intermediários (Ringi-sho)
+      - Campanhas para decisores finais (altos executivos)
+    - China:
+      - Segmentação para relações-chave (Guanxi)
+      - Campanhas para influenciadores governamentais
+      - Targeting para comitês decisórios coletivos
+    - Índia:
+      - Campanhas para decisores técnicos
+      - Targeting para influenciadores familiares/pessoais
+      - Segmentação para aprovadores financeiros
+  - Sequenciamento Adaptado:
+    - Fase 1: Estabelecimento de credibilidade
+    - Fase 2: Construção de relacionamento
+    - Fase 3: Apresentação de proposta formal
+
+#### Tela: Estratégia de Comunicação por País
+- Configuração de Mensagens Específicas:
+  - Japão:
+    - Palavras-chave: Foco em termos técnicos, precisos, detalhados
+    - Assets: Gráficos detalhados, especificações completas
+    - Timelines: Extensos, detalhados, sequenciais
+  - China:
+    - Palavras-chave: Termos relacionados a crescimento, prosperidade
+    - Assets: Casos de sucesso de grandes empresas conhecidas
+    - Destaque para relacionamentos e conexões existentes
+  - Singapura/Hong Kong:
+    - Abordagem bilíngue (chinês e inglês)
+    - Mix de valores ocidentais e asiáticos
+    - Foco em eficiência e resultados práticos
+
+### 27. Natalia Wulfe (Rússia)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Universal App Campaigns (UAC)
+- Objetivo: Instalações de app com qualidade
+- Estratégia de Lance: Target CPI otimizado para qualidade
+- Orçamento: Dividido por qualidade de usuário (não volume)
+- Redes: Google Play, Search, YouTube, Display
+- Idiomas: Russo e mercados leste europeu
+
+#### Tela: App User Quality Index
+- Configuração de Avaliação de Qualidade:
+  - Desenvolvimento do Sistema de Pontuação:
+    - Configurar eventos de app para pontuação:
+      - Finalização de registro: 10 pontos
+      - Configuração de perfil completo: 15 pontos
+      - Primeira ação principal: 25 pontos
+      - Retorno em 24h: 20 pontos
+      - Retorno em 72h: 15 pontos
+      - Ação de monetização: 25 pontos
+    - Total máximo: 110 pontos (permite superar 100)
+  - Implementação em Campanha:
+    - Criar segmentos baseados em score:
+      - Alta qualidade: 70+ pontos
+      - Média qualidade: 40-69 pontos
+      - Baixa qualidade: <40 pontos
+    - Ajustar bids por segmento:
+      - Fontes gerando score 70+: +40-50% no CPI base
+      - Fontes gerando score 40-69: lance base
+      - Fontes gerando score <40: -30-40% ou pausar
+
+#### Tela: Retention-Focused Acquisition Strategy
+- Configuração de Estratégia de Retenção:
+  - Análise de Retenção:
+    - Configurar tracking de métricas-chave:
+      - D1 Retention (retenção dia 1): Meta mínima 40%
+      - D7 Retention (retenção dia 7): Meta mínima 20%
+      - D30 Retention (retenção dia 30): Meta mínima 10%
+    - Correlação com comportamentos iniciais:
+      - Identificar ações preditivas de retenção
+      - Monitorar tempo de primeira sessão
+      - Rastrear completude de onboarding
+  - Implementação em UAC:
+    - Otimizar para eventos de alto valor:
+      - Configurar conversão primária como evento preditivo
+      - Atribuir valor superior a ações correlacionadas com retenção
+      - Otimizar para LTV, não apenas instalações
+    - Ajustes de campanha:
+      - Orçamento maior para fontes com alta retenção
+      - Pausar fontes com retenção D7 abaixo de 10%
+      - Relatórios semanais de qualidade por origem
+
+#### Tela: Configurações Específicas para Mercados Russos
+- Ajuste para Mercados do Leste Europeu:
+  - Linguagem e Mensagens:
+    - Copys diretos e práticos
+    - Foco em benefícios tangíveis e imediatos
+    - Destacar robustez e confiabilidade
+  - Aspectos Técnicos:
+    - Otimizar para conexões variáveis (áreas rurais)
+    - Considerar tamanho do app para downloads em 3G
+    - Adaptar para dispositivos mais comuns na região
+
+### 28. Thomas Petit (França)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Universal App Campaigns avançado
+- Objetivo: LTV e retenção (não apenas instalações)
+- Estratégia de Lance: tROAS com valor baseado em LTV
+- Orçamento: Distribuição por qualidade projetada
+- Dispositivos: Segmentação específica iOS vs. Android
+- Redes: Play Store, App Store, Search, Display, YouTube
+
+#### Tela: Cohort Value Optimization
+- Configuração de Análise de Coortes:
+  - Estruturação de Dados:
+    - Criar segmentação por cohortes temporais:
+      - Agrupar usuários por semana de aquisição
+      - Trackear performance por 90+ dias
+      - Comparar métricas-chave: retenção, monetização, engajamento
+    - Implementar tracking específico:
+      - Fonte/campanha de origem
+      - Criativo específico
+      - Variáveis contextuais (sazonalidade, eventos)
+  - Aplicação em Campanhas:
+    - Otimizar baseado em performance de coorte:
+      - Orçamento baseado em LTV por coorte, não diário
+      - Implementar períodos específicos antes de escalada:
+        - Fase 1 (validação): 7 dias, volume controlado
+        - Fase 2 (análise): 14-21 dias, dados de retenção inicial
+        - Fase 3 (escala): 30+ dias, LTV confirmado
+    - Benchmarks específicos:
+      - Definir KPIs mínimos por fonte/campanha
+      - Implementar alertas para desvios de performance
+      - Documentar padrões de qualidade por coorte
+
+#### Tela: Platform-Specific Behavior Targeting
+- Configuração por Plataforma:
+  - iOS:
+    - Ajustes específicos para iOS:
+      - Foco em qualidade/valor (usuários premium)
+      - Targeting para dispositivos mais recentes
+      - Otimização para métricas de in-app purchase
+    - Parâmetros específicos:
+      - CPI maior aceitável (+30-50% vs. Android)
+      - Expectativa de LTV superior (+40-60%)
+      - Foco em retenção de longo prazo
+  - Android:
+    - Ajustes específicos para Android:
+      - Estratégia de volume com qualidade controlada
+      - Segmentação por fabricante/modelo
+      - Otimização para mix de monetização (ads + IAP)
+    - Parâmetros específicos:
+      - CPI mais baixo, volume maior
+      - Expectativa de retenção diferenciada por país
+      - Foco em engagement consistente
+
+#### Tela: Creative Optimization por Plataforma
+- Configuração de Assets Específicos:
+  - iOS:
+    - Assets visuais:
+      - Design minimalista, limpo
+      - Alinhado com guidelines Apple
+      - Destaque para UX/UI premium
+    - Mensagens:
+      - Foco em valor e exclusividade
+      - Destaque para segurança/privacidade
+      - Tom sofisticado e elegante
+  - Android:
+    - Assets visuais:
+      - Mais coloridos e chamativos
+      - Destaque para funcionalidades
+      - Demonstrações mais explícitas
+    - Mensagens:
+      - Foco em versatilidade/personalização
+      - Destaque para recursos e capacidades
+      - Tom mais direto e prático
+
+### 29. Mike Rhodes (Austrália)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Smart Bidding avançado
+- Objetivo: Conversões com otimização algorítmica
+- Estratégia de Lances: tROAS/tCPA com controles humanos
+- Orçamento: Adaptado por fase de aprendizado
+- Redes: Search principalmente, Display complementar
+- Dispositivos: Sem restrição para maximizar dados de aprendizado
+
+#### Tela: Algorithm Feeding Protocol
+- Configuração de Preparação Algorítmica:
+  - Dados Estratégicos:
+    - Preparar histórico de conversões:
+      - Mínimo de 30 conversões nos últimos 30 dias
+      - Conversões consistentes (não sazonais/esporádicas)
+      - Valores de conversão precisos e diferenciados
+    - Estruturar campanhas para aprendizado:
+      - Keywords agrupadas logicamente
+      - Ad groups com temas consistentes
+      - Eliminar segmentações excessivamente restritivas
+  - Fase de Treinamento:
+    - Configurar período de aprendizado:
+      - Meta de 15-20% de "perdas" iniciais aceitáveis
+      - Período mínimo de 2 semanas sem intervenções
+      - Orçamento suficiente para dados significativos
+    - Alimentar com dados históricos:
+      - Importar conversões offline quando possível
+      - Utilizar dados de CRM para enriquecimento
+      - Fornecer valores de conversão diferenciados
+
+#### Tela: Implementação Progressiva
+- Configuração de Liberação Gradual:
+  - Fase 1 - Controle Inicial:
+    - Configurar limites rígidos:
+      - CPC máximo: 150% do CPC médio histórico
+      - Oscilação de orçamento: máximo 20% diário
+      - Restrição de posição média: não inferior a posição 4
+    - Monitoramento intensivo:
+      - Alertas diários de performance
+      - Análise de tendência a cada 3 dias
+      - Intervenção apenas em desvios >30%
+  - Fase 2 - Expansão Gradual:
+    - Relaxar restrições baseado em performance:
+      - Remover limites de CPC (se ROAS dentro do alvo)
+      - Permitir oscilações de orçamento de até 30%
+      - Eliminar restrições de posição média
+    - Adicionar novos sinais:
+      - Habilitar dados demográficos
+      - Incluir dados de localização
+      - Adicionar ajustes de dispositivo
+  - Fase 3 - Automação Supervisionada:
+    - Configuração final:
+      - Automação completa de lances
+      - Orçamento flexível com limites amplos
+      - Uso de todos os sinais disponíveis
+    - Supervisão estratégica:
+      - Revisões semanais apenas
+      - Intervenção apenas para mudanças estratégicas
+      - Foco em testes de assets e expansão
+
+#### Tela: Conversion Quality Optimization
+- Configuração de Qualificação de Conversões:
+  - Sistema de Valor Diferenciado:
+    - Configurar valores por tipo:
+      - Criar conversões diferenciadas por qualidade/valor
+      - Atribuir valores proporcionais ao impacto no negócio
+      - Implementar ponderação para leads vs. vendas
+    - Implementar valores dinâmicos:
+      - Integrar com CRM para valores baseados em dados reais
+      - Ajustar valores por sazonalidade/promoções
+      - Atualizar regularmente baseado em performance de vendas
+  - Otimização de Sinais de Conversão:
+    - Refinar implementação:
+      - Verificar precisão de tracking (dupla contagem, atribuição)
+      - Validar server-side quando possível
+      - Ajustar janelas de conversão por tipo de produto/serviço
+    - Priorização inteligente:
+      - Configurar importância relativa das conversões
+      - Estabelecer metas específicas por tipo
+      - Implementar segmentação por valor potencial
+
+### 30. Gianpaolo Lorusso (Itália)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Híbrida (automação + controle humano)
+- Objetivo: Conversões com equilíbrio homem-máquina
+- Estratégia de Lances: Smart Bidding com supervisão humana
+- Orçamento: Flexível com limites estratégicos
+- Redes: Multiple (Search, Display, Shopping)
+- Rotação de Anúncios: Otimizar para conversões com testes
+
+#### Tela: Algorithmic Learning Acceleration
+- Configuração de Aceleração de Aprendizado:
+  - Otimização de Dados Iniciais:
+    - Preparação de campanha:
+      - Estrutura clara e lógica (ad groups temáticos)
+      - Keywords com volume suficiente (min. 100 impressões/mês)
+      - Assets diversos mas relacionados (min. 3 por tipo)
+    - Alimentação de dados:
+      - Importar conversões históricas (offline e online)
+      - Fornecer dados de CRM para enriquecimento
+      - Criar públicos-alvo precisos para direcionamento inicial
+  - Configurações de Aprendizado:
+    - Ajustes para fase inicial:
+      - CPC inicial: 110-130% da média histórica
+      - Orçamento: 120% do necessário para assegurar dados
+      - Remoção de restrições geográficas/horárias desnecessárias
+    - Facilitação de padrões:
+      - Agrupamento lógico de produtos/serviços
+      - Consistência em naming e estrutura
+      - Etiquetagem clara para análise posterior
+
+#### Tela: Refinamento Contínuo
+- Configuração de Intervenção Estratégica:
+  - Gatilhos de Intervenção:
+    - Configurar alertas para situações específicas:
+      - CPA 30% acima do alvo por 3+ dias consecutivos
+      - Volume de conversões 40% abaixo do esperado
+      - CTR caindo mais de 20% em 7 dias
+    - Checklist de otimização:
+      - Auditoria semanal de search terms (negativas)
+      - Revisão quinzenal de performance por segmento
+      - Auditoria mensal de estrutura e relevância
+  - Aplicação de Aprendizados:
+    - Documentação estruturada:
+      - Registro de todas intervenções e resultados
+      - Análise de causa-efeito para cada mudança
+      - Biblioteca de táticas eficazes por tipo de situação
+    - Sistema de implementação:
+      - Aplicação gradual de mudanças (A/B quando possível)
+      - Monitoramento pós-implementação (14 dias)
+      - Rollback preparado para mudanças ineficazes
+
+#### Tela: Hybrid Optimization Model
+- Configuração de Papéis Homem-Máquina:
+  - Divisão de Responsabilidades:
+    - Decisões algorítmicas:
+      - Ajustes de lance em nível de keyword/audiência
+      - Segmentação horária/geográfica baseada em dados
+      - Alocação de orçamento entre grupos de anúncios
+    - Decisões humanas:
+      - Estratégia global e objetivos
+      - Criação e otimização de assets
+      - Estrutura da conta e expansões
+      - Testes estratégicos e inovação
+  - Implementação Balanceada:
+    - Níveis de automação específicos:
+      - Alta automação: Lances, programação, device targeting
+      - Automação parcial: Budget, targeting geográfico
+      - Controle humano: Estrutura, criação, estratégia
+    - Calendário de intervenção:
+      - Diário: Monitoramento sem intervenção
+      - Semanal: Ajustes táticos menores
+      - Mensal: Revisões estratégicas completas
+
+## ESPECIALISTAS EM CAMPANHAS DE PESQUISA PARA MERCADOS EMERGENTES
+
+### 31. Guru Lara (Brasil)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search adaptado para LATAM
+- Objetivo: Conversões em mercados latinos
+- Estratégia de Lances: CPC manual inicial, evoluindo para Target CPA
+- Orçamento: Ajustado para realidades econômicas locais
+- Redes: Google Search com parceiros selecionados
+- Idiomas: Português, Espanhol com regionalismos
+
+#### Tela: Latin America Market Adaptation Framework
+- Configuração de Adaptação Regional:
+  - Comportamento de Compra Local:
+    - Configurar extensões de anúncio específicas:
+      - Destacar opções de parcelamento ("em até 12x sem juros")
+      - Informar métodos de pagamento locais (Boleto, Oxxo, etc.)
+      - Mencionar políticas de frete específicas por país
+    - Adaptar CTAs regionais:
+      - Brasil: Foco em parcelamento e facilidade de pagamento
+      - México: Ênfase em segurança e garantia
+      - Argentina: Destaque para preço final e economia
+  - Preferências de Dispositivo:
+    - Ajustes específicos por país:
+      - Brasil/Colômbia: Mobile-first (+30% nos lances mobile)
+      - Chile/Argentina: Desktop ainda relevante (paridade)
+      - México: Mix equilibrado com foco crescente em mobile
+    - Adaptações técnicas:
+      - Otimização para conexões de qualidade variável
+      - Versões leves de landing pages para 3G
+      - Conteúdo adaptado para telas menores
+
+#### Tela: Calendário Estratégico Regional
+- Configuração de Sazonalidade LATAM:
+  - Eventos Regionais:
+    - Criar campanhas específicas para:
+      - Natal/Ano Novo (foco em novembro e dezembro)
+      - Carnaval (Brasil, 40 dias antes da Páscoa)
+      - Día de los Muertos (México, 1-2 novembro)
+      - Black Friday (crescente em todos mercados LATAM)
+    - Ajustes orçamentários:
+      - Incrementos de 30-50% em períodos sazonais
+      - Reduções em períodos tradicionalmente fracos
+  - Ciclos Econômicos Locais:
+    - Estratégias específicas:
+      - Brasil: Aumento nos períodos de 13º salário (dez) e FGTS (aniversário)
+      - México: Ajustes para períodos de aguinaldo (dez)
+      - Todos: Consideração de datas de pagamento (início/fim do mês)
+    - Ajustes para períodos inflacionários:
+      - Monitoramento de CPCs por condições econômicas
+      - Ajustes de meta CPA em períodos de alta inflação
+      - Adaptação de messaging durante crises econômicas
+
+#### Tela: Parcelamento Optimization System
+- Configuração de Estratégia de Parcelamento:
+  - Messaging de Parcelamento:
+    - Implementar em anúncios:
+      - Headline: Destacar número máximo de parcelas
+      - Descrição: Informar valor da parcela + "sem juros"
+      - Path/URL: Incluir termos como "parcelado" quando relevante
+    - Testes A/B específicos:
+      - Valor total vs. valor da parcela em destaque
+      - "12x sem juros" vs. "parcelas a partir de R$XX"
+      - Mensagem de economia total vs. facilidade de pagamento
+  - Otimização Técnica:
+    - Extensões específicas:
+      - Criar extensões de snippet estruturado para opções de pagamento
+      - Implementar extensões promocionais destacando parcelamento
+      - Utilizar extensões de preço mostrando valor parcelado
+    - Landing pages:
+      - Calculadora de parcelamento visível
+      - Destaque visual para opções sem juros
+      - Informações completas sobre todas formas de pagamento
+
+### 32. Martin Röttgerding (Alemanha)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search com análise estatística avançada
+- Objetivo: Conversões com otimização baseada em dados
+- Estratégia de Lances: Personalizada com base em modelos estatísticos
+- Orçamento: Calculado com base em significância estatística
+- Rotação de Anúncios: Rotação uniforme para testes
+- Período de Teste: Determinado por volume para significância
+
+#### Tela: Engagement Prediction Model
+- Configuração de Modelo Preditivo:
+  - Análise de Dados Históricos:
+    - Implementar tracking avançado:
+      - Engajamento com conteúdo similar (categorias/tags)
+      - Padrões de navegação anteriores (profundidade, tempo)
+      - Comportamento sazonal (dia da semana, hora, mês)
+    - Criar modelo de regressão:
+      - Identificar fatores preditivos de engajamento
+      - Atribuir pesos específicos por fator
+      - Validar com dados históricos (min. 6 meses)
+  - Implementação em Campanhas:
+    - Sistema de ajuste de lances:
+      - Criar scripts personalizados para ajustes automáticos
+      - Configurar regras baseadas no modelo preditivo
+      - Implementar ajustes em tempo real quando possível
+    - Segmentação avançada:
+      - Criar públicos com base em probabilidade de engajamento
+      - Ajustar messaging para diferentes scores
+      - Otimizar landing pages por perfil de engajamento
+
+#### Tela: Creative Component Testing
+- Configuração de Testes Isolados:
+  - Metodologia de Teste:
+    - Isolar componentes específicos:
+      - Testar headlines separadamente (manter descrições idênticas)
+      - Testar descrições separadamente (manter headlines idênticos)
+      - Testar extensões isoladamente (manter anúncio base)
+    - Controles estatísticos:
+      - Calcular tamanho mínimo de amostra por teste
+      - Definir nível de confiança (mínimo 95%)
+      - Estabelecer período mínimo para significância
+  - Biblioteca de Componentes:
+    - Organização de aprendizados:
+      - Documentar performance por tipo de elemento
+      - Categorizar por métrica (CTR, conversão, engajamento)
+      - Identificar padrões de sucesso por segmento
+    - Sistema de implementação:
+      - Aplicar elementos vencedores em novas campanhas
+      - Combinar componentes de alto desempenho
+      - Testar iterações de elementos bem-sucedidos
+
+#### Tela: Análise de Significância Estatística
+- Configuração de Framework Estatístico:
+  - Cálculos de Amostra:
+    - Implementar fórmulas estatísticas:
+      - Determinar tamanho mínimo de amostra por teste
+      - Calcular período necessário baseado em volume histórico
+      - Ajustar para nível de confiança desejado (95-99%)
+    - Configurar alertas automáticos:
+      - Notificação quando testes atingem significância
+      - Alertas para testes sem conclusão após período esperado
+      - Sugestões de ajustes para aumentar velocidade de dados
+  - Documentação Estatística:
+    - Criar relatórios estruturados:
+      - Hipótese inicial de cada teste
+      - Resultados com intervalos de confiança
+      - Conclusões e recomendações baseadas em dados
+    - Implementar biblioteca de insights:
+      - Organizar aprendizados por categoria
+      - Documentar magnitude do impacto por mudança
+      - Criar repositório de casos para referência futura
+
+### 33. Ruth Burr Reedy (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search para SaaS/B2B
+- Objetivo: Leads qualificados de ciclo longo
+- Estratégia de Lances: Ajustada por valor de estágio do funil
+- Orçamento: Distribuição por estágio do ciclo de venda
+- Dispositivos: Ênfase em desktop para B2B (+20-30%)
+- Período de Conversão: Estendido (90 dias para ciclos longos)
+
+#### Tela: SaaS Revenue Mapping Framework
+- Configuração de Mapeamento de Jornada:
+  - Pontos-Chave de Decisão:
+    - Criar campanhas específicas por estágio:
+      - Awareness: Termos educacionais sobre o problema
+      - Research: Termos comparativos e de solução
+      - Evaluation: Termos de marca + categoria/funcionalidade
+      - Purchase: Termos de preço, trial, demo
+    - Objeções por estágio:
+      - Configurar conteúdo para abordar objeções específicas
+      - Criar landing pages dedicadas por tipo de objeção
+      - Implementar extensões de anúncio respondendo preocupações comuns
+  - Valor Econômico por Etapa:
+    - Atribuir valores específicos:
+      - Lead inicial: Valor base (ex: 10% do LTV médio)
+      - Demo solicitada: Valor médio (ex: 30% do LTV médio)
+      - Trial iniciado: Valor alto (ex: 50% do LTV médio)
+      - Conversão: Valor completo (100% do LTV médio)
+    - Implementar em campanhas:
+      - Configurar valores de conversão diferenciados
+      - Ajustar lances proporcionalmente ao valor
+      - Otimizar para mix ideal de volume/qualidade
+
+#### Tela: Multi-touch Attribution Model para SaaS
+- Configuração de Atribuição Avançada:
+  - Modelos Além de Last-Click:
+    - Implementar atribuição baseada em dados:
+      - Configurar modelo data-driven no Google Analytics
+      - Período lookback estendido (90+ dias para B2B)
+      - Inclusão de touchpoints offline (CRM)
+    - Comparação de modelos:
+      - Analisar diferenças entre last-click e modelos alternativos
+      - Quantificar impacto nos canais de topo/meio de funil
+      - Identificar canais subestimados no modelo padrão
+  - Implementação Prática:
+    - Ajustar investimento baseado em atribuição real:
+      - Realocar budget para canais subvalorizados
+      - Otimizar campanhas de topo de funil adequadamente
+      - Criar estrutura balanceada por estágio do funil
+    - Integração com CRM:
+      - Importar dados de qualidade de lead/fechamento
+      - Rastrear contribuição por canal até venda final
+      - Refinar modelo baseado em dados de negócio reais
+
+#### Tela: SaaS Campaign Structure
+- Configuração de Estrutura Específica SaaS:
+  - Segmentação por Ciclo de Compra:
+    - Campanhas por estágio:
+      - Problema (awareness): Foco em conteúdo educacional
+      - Solução (consideração): Foco em diferenciais e benefícios
+      - Produto (decisão): Foco em features específicas
+      - Comparação (avaliação): Foco em vantagens competitivas
+    - KPIs alinhados:
+      - Definir métricas específicas por estágio
+      - Avaliar baseado em progressão pelo funil
+      - Alinhar expectativas de CPA por estágio
+  - Configurações específicas:
+    - Período de atribuição: 90 dias (ciclos longos B2B)
+    - Avaliação de performance: Mínimo 60 dias para conclusões
+    - Teste de criativo: Períodos estendidos para volume adequado
+  - Ajustes para sales cycles:
+    - Análise trimestral de ciclos orçamentários
+    - Sazonalidade específica do setor
+    - Adaptação para períodos de decisão corporativa
+
+### 34. Luca Bizzotto (Itália)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Display GDPR-compliant
+- Objetivo: Awareness e conversões dentro das restrições europeias
+- Estratégia de Lances: Ajustada por compliance regional
+- Orçamento: Distribuição por mercado europeu
+- Segmentação: Contextual avançada (não baseada em dados pessoais)
+- Rede: Google Display Network com controles de posicionamento
+
+#### Tela: GDPR-Compliant Display Framework
+- Configuração de Targeting Compliant:
+  - Utilização de Dados First-Party:
+    - Implementar estratégia baseada em consentimento:
+      - Criar segmentos apenas com dados consentidos explicitamente
+      - Implementar CMP (Consent Management Platform) rigorosa
+      - Documentar base legal para cada tipo de segmentação
+    - Configurações técnicas:
+      - Restrição de cookie duration conforme regulamentação
+      - Opt-out claramente implementado em todas landing pages
+      - Auditoria regular de compliance de dados
+  - Targeting Contextual Avançado:
+    - Configurar alternativas a targeting pessoal:
+      - Segmentação por conteúdo da página (temas, keywords)
+      - Targeting por tipo de site e categoria
+      - Placement manual em sites selecionados
+    - Restrições específicas:
+      - Evitar categorias sensíveis (saúde, política, etc.)
+      - Implementar exclusões de conteúdo inadequado
+      - Preferência por environments premium/controlados
+
+#### Tela: European Market Adaptation System
+- Configuração de Adaptação Regional:
+  - Localização Cultural:
+    - Adaptar campanhas por mercado:
+      - Versões por idioma (não apenas tradução direta)
+      - Consideração de valores culturais locais
+      - Adaptação de humor/tom por país
+    - Ajustes visuais:
+      - Modelos/cenários culturalmente apropriados
+      - Símbolos e cores adaptados por região
+      - Estética alinhada com preferências locais
+  - Calendário Sazonal Específico:
+    - Eventos regionais importantes:
+      - Feriados específicos por país europeu
+      - Períodos de férias variáveis (ex: férias agosto Itália/França)
+      - Eventos esportivos/culturais locais
+    - Ajustes estratégicos:
+      - Budget para períodos-chave por mercado
+      - Pausas durante períodos de baixo engajamento
+      - Promoções alinhadas com oportunidades locais
+
+#### Tela: Compliance Documentation System
+- Configuração de Sistema de Documentação:
+  - Registro de Compliance:
+    - Implementar documentação abrangente:
+      - Base legal para processamento de dados
+      - Consentimento obtido e sua extensão
+      - Período de retenção de dados por tipo
+    - Auditoria regular:
+      - Checagem mensal de conformidade
+      - Verificação de mudanças regulatórias
+      - Atualização de políticas quando necessário
+  - Landing Pages Compliant:
+    - Elementos obrigatórios:
+      - Política de privacidade acessível e clara
+      - Mecanismos de opt-out facilmente visíveis
+      - Informações transparentes sobre uso de dados
+    - Adaptações regionais:
+      - Ajustes específicos por jurisdição
+      - Consideração de requisitos locais além do GDPR
+      - Traduções jurídicas precisas por mercado
+
+### 35. Michelle Morgan (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Integração multi-formato
+- Objetivo: Performance integrada entre canais
+- Estratégia de Lances: Coordenada entre formatos
+- Orçamento: Distribuição estratégica por canal
+- Redes: Mix de Search, Display, Video, Performance Max
+- Atribuição: Modelo avançado para avaliação cross-channel
+
+#### Tela: Channel Agnostic Testing Model
+- Configuração de Ambiente de Teste:
+  - Avaliação de Conceito Independente:
+    - Configurar testes pré-canal:
+      - Testar mensagens com pequenos grupos de usuários
+      - Utilizar surveys/pesquisas para validação inicial
+      - Implementar testes A/B em tráfego orgânico
+    - Isolar variáveis críticas:
+      - Testar um elemento por vez (mensagem, visual, oferta)
+      - Manter demais elementos constantes
+      - Documentar impacto específico por elemento
+  - Biblioteca de Conhecimento:
+    - Criar repositório estruturado:
+      - Categorizar aprendizados por tipo de elemento
+      - Documentar performance por segmento/contexto
+      - Identificar elementos universais vs. específicos
+    - Sistema de aplicação:
+      - Procedimento para implementação de aprendizados
+      - Metodologia para combinação de elementos
+      - Processo de iteração baseado em performance
+
+#### Tela: Hybrid Campaign Architecture
+- Configuração de Estrutura Integrada:
+  - Mix de Formatos:
+    - Criar estrutura complementar:
+      - Search: Captura de demanda explícita
+      - Display: Awareness e remarketing
+      - Video: Storytelling e consideração
+      - Discovery: Expansão para audiências relevantes
+    - Coordenação estratégica:
+      - Messaging consistente entre canais
+      - Sequenciamento planejado de exposição
+      - Hand-off entre formatos no funil
+  - Otimização Integrada:
+    - Implementar métricas cross-canal:
+      - Atribuição considerando múltiplos touchpoints
+      - Avaliação de impacto incremental por canal
+      - KPIs específicos por função no funil
+    - Ajustes baseados em performance holística:
+      - Realocar orçamento entre canais complementares
+      - Otimizar mix baseado em contribuição relativa
+      - Testar diferentes combinações de canais
+
+#### Tela: Emerging Formats Integration
+- Configuração de Novos Formatos:
+  - Estratégia de Adoção:
+    - Implementar abordagem estruturada:
+      - Fase 1: Teste com 10-15% do orçamento
+      - Fase 2: Escala gradual baseada em performance
+      - Fase 3: Integração completa se bem-sucedido
+    - Critérios de avaliação:
+      - Métricas de performance vs. canais estabelecidos
+      - Eficiência de custos (CPA comparativo)
+      - Escalabilidade e estabilidade
+  - Combinação com Formatos Tradicionais:
+    - Criar estratégia complementar:
+      - Identificar funções específicas do novo formato
+      - Estabelecer métricas adequadas à função
+      - Integrar na jornada do cliente existente
+    - Otimização contínua:
+      - Ajustar baseado em dados de performance
+      - Refinar segmentação específica por formato
+      - Desenvolver assets otimizados por canal
+
+## ESPECIALISTAS EM SHOPPING E E-COMMERCE
+
+### 36. Liz Lockard (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Shopping avançado
+- Objetivo: Conversões e ROAS
+- Estratégia de Lances: Manual por produto inicialmente, evoluindo para Smart Shopping
+- Orçamento: Distribuição por categoria e margem
+- Dispositivos: Ajustes baseados em performance por categoria
+- Redes: Google Shopping, parceiros selecionados
+
+#### Tela: Title Engineering Framework
+- Configuração de Títulos Otimizados:
+  - Análise de Padrões de Busca:
+    - Implementar pesquisa para padrões por categoria:
+      - Identificar sequência de termos mais buscados
+      - Analisar ordem de palavras em consultas frequentes
+      - Mapear modificadores específicos por categoria
+    - Criar templates padronizados:
+      - Estrutura para categorias principais (60-70 caracteres)
+      - Ordem de elementos consistente por categoria
+      - Sistema de abreviações para informações secundárias
+  - Testes Sistemáticos:
+    - Criar experimentos estruturados:
+      - A/B testing de diferentes ordens de elementos
+      - Comparação de títulos curtos vs. longos
+      - Teste de diferentes densidades de keywords
+    - Implementar tracking de performance:
+      - Impressões e CTR por tipo de título
+      - Taxa de conversão por estrutura
+      - Comparativo com concorrentes principais
+
+#### Tela: Attribute Enhancement Model
+- Configuração de Otimização de Atributos:
+  - Identificação de Atributos Críticos:
+    - Mapear atributos-chave por categoria:
+      - Produtos de moda: tamanho, cor, material, estilo
+      - Eletrônicos: especificações técnicas, compatibilidade, modelo
+      - Decoração: tamanho, material, estilo, cor
+    - Priorizar por impacto:
+      - Dados históricos de performance
+      - Volume de busca por atributo
+      - Diferenciais vs. concorrentes
+  - Implementação em Feed:
+    - Otimizar campos específicos:
+      - Garantir cobertura completa de atributos principais
+      - Padronizar formatação (unidades, abreviações, ordem)
+      - Implementar linguagem específica da categoria
+    - Sistema de verificação:
+      - Auditoria automática de completude
+      - Checagem de consistência por categoria
+      - Comparativo com feeds de alta performance
+
+#### Tela: Feed Management Schedule
+- Configuração de Gerenciamento de Feed:
+  - Calendário de Atualizações:
+    - Implementar frequência estratégica:
+      - Produtos de alta rotatividade: atualização diária
+      - Produtos sazonais: verificação 2x semana
+      - Catálogo base: verificação semanal
+    - Automação de processos:
+      - Scripts para verificação de erros
+      - Alertas para quedas de aprovação
+      - Notificações para changes de estoque críticas
+  - Otimização Contínua:
+    - Criar ciclos de melhoria:
+      - Análise quinzenal de search terms
+      - Ajustes mensais baseados em performance
+      - Revisão trimestral de estratégia de categorização
+    - Monitoramento competitivo:
+      - Benchmark de títulos vs. concorrentes
+      - Análise de preços de mercado
+      - Adaptação por tendências sazonais
+
+### 37. Menachem Ani (Israel)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Shopping internacional
+- Objetivo: Vendas em múltiplos mercados
+- Estratégia de Lances: Baseada em margem real por mercado
+- Orçamento: Distribuição por performance de país
+- Redes: Google Shopping em múltiplos países
+- Idiomas: Múltiplos conforme mercados-alvo
+
+#### Tela: Multi-Market Feed Strategy
+- Configuração de Feed Internacional:
+  - Adaptação Linguística:
+    - Implementar tradução e localização profunda:
+      - Tradução nativa de títulos e descrições
+      - Adaptação de terminologia para mercados locais
+      - Inclusão de termos regionais específicos
+    - Ajustes técnicos:
+      - Conversão de unidades métricas por mercado
+      - Adaptação de formatos de tamanho (EU vs. US)
+      - Ajuste de formatos de número/moeda
+  - Adaptação de Categorização:
+    - Implementar taxonomias locais:
+      - Utilizar categorias Google específicas por país
+      - Ajustar hierarquia conforme mercado local
+      - Adaptar sazonalidade por hemisfério/região
+    - Priorização por mercado:
+      - Personalizar ênfase de atributos por país
+      - Destacar certificações reconhecidas localmente
+      - Adaptar descrições para preferências culturais
+
+#### Tela: Profit-Driven Bid Strategy
+- Configuração de Bidding por Margem:
+  - Integração com Dados de Custos:
+    - Implementar cálculo completo:
+      - Custo de produto (COGS) por SKU
+      - Custos de fulfillment específicos por mercado
+      - Taxas de devolução históricas por categoria/país
+      - Overhead operacional proporcional
+    - Interfaces com sistemas externos:
+      - Conexão com ERP para dados atualizados
+      - API com sistema de estoque
+      - Integração com ferramentas de gerenciamento de custos
+  - Ajustes Dinâmicos:
+    - Criar regras baseadas em margem:
+      - Alta margem (>60%): bids agressivos (70-90% da margem)
+      - Média margem (40-60%): bids moderados (50-60% da margem)
+      - Baixa margem (<40%): bids conservadores (30-40% da margem)
+    - Implementar modificadores:
+      - Ajustes por sazonalidade
+      - Modificações por velocidade de vendas
+      - Consideração de valor estratégico (produtos chamariz)
+
+#### Tela: International Pricing Strategy
+- Configuração de Preços por Mercado:
+  - Análise Competitiva:
+    - Implementar monitoramento por país:
+      - Rastreamento de preços por mercado principal
+      - Análise de políticas promocionais locais
+      - Benchmark de preços vs. concorrentes locais
+    - Sistema de resposta:
+      - Regras de ajuste automático para competitividade
+      - Limites de margem mínima por mercado
+      - Aprovação manual para mudanças significativas
+  - Estratégia de Preço Dinâmico:
+    - Configurar fatores de ajuste:
+      - Paridade de poder de compra por mercado
+      - Sensibilidade a preço por país/categoria
+      - Estratégia de posicionamento por mercado
+    - Implementação técnica:
+      - Scripts para ajustes automatizados
+      - Análise de elasticidade por mercado
+      - Testes A/B de estratégias de preço
+
+## ESPECIALISTAS EM SEARCH AVANÇADO
+
+### 38. Navah Hopkins (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search avançado
+- Objetivo: Conversões com qualidade máxima
+- Estratégia de Lances: Manual otimizado por QS
+- Orçamento: Distribuição por qualidade de campanha
+- Redes: Apenas Google Search (não parceiros)
+- Rotação de Anúncios: Otimizar para conversões após período de teste
+
+#### Tela: Holistic Quality Score Optimization Framework
+- Configuração de Análise Multidimensional:
+  - CTR Esperado:
+    - Implementar análise histórica:
+      - CTR por posição média
+      - Desempenho por segmento (dispositivo, hora, local)
+      - Benchmark vs. concorrentes no mesmo nicho
+    - Otimização específica:
+      - Criar elementos compelling nos anúncios (números, pontuação, CTA forte)
+      - Implementar keywords no headline sem saturação
+      - Utilizar assets de alta performance (extensões)
+  - Relevância do Anúncio:
+    - Maximizar alinhamento semântico:
+      - Correspondência exata entre keyword e texto do anúncio
+      - Presença de keywords em posições estratégicas
+      - Variações de palavras-chave naturalmente incorporadas
+    - Reorganizar estrutura:
+      - Criar grupos de anúncios ultra-específicos (10-20 keywords máximo)
+      - Implementar SKAGs para termos de alto valor
+      - Organizar hierarquia temática consistente
+
+#### Tela: Quality Score Dashboard
+- Configuração de Monitoramento de QS:
+  - Acompanhamento de Componentes:
+    - Criar relatórios específicos:
+      - Evolução de QS por campanha/grupo
+      - Detalhamento por componente (CTR, relevância, landing)
+      - Histórico de mudanças após otimizações
+    - Alertas automáticos:
+      - Notificações para quedas de QS significativas
+      - Alerts para oportunidades de melhoria
+      - Lembretes para revisão regular
+  - Otimização Contínua:
+    - Implementar ciclos de melhoria:
+      - Priorização de keywords abaixo do score 7
+      - Foco inicial em componentes com pior avaliação
+      - Testes A/B específicos por componente fraco
+    - Documentação de impacto:
+      - Registro de mudanças implementadas
+      - Análise de resultados por intervenção
+      - Biblioteca de táticas eficazes por componente
+
+#### Tela: Incrementality Testing Protocol
+- Configuração de Testes de Incrementalidade:
+  - Estrutura Experimental:
+    - Implementar metodologia científica:
+      - Criação de grupos controle vs. teste
+      - Segmentação geográfica para isolamento
+      - Períodos alternados para validação temporal
+    - Controles estatísticos:
+      - Cálculo de tamanho mínimo de amostra
+      - Definição de período necessário para significância
+      - Nível de confiança mínimo (95%)
+  - Análise de Resultados:
+    - Métricas de incrementalidade:
+      - Cálculo de lift líquido vs. canibalização
+      - Avaliação de impacto em outros canais
+      - Determinação de valor incremental real
+    - Framework decisório:
+      - Implementação baseada em incrementalidade comprovada
+      - Priorização de investimento por contribuição única
+      - Documentação de aprendizados para futuras decisões
+
+### 39. Wijnand Meijer (Holanda)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Search B2B ciclo longo
+- Objetivo: Leads qualificados em processo multi-stakeholder
+- Estratégia de Lances: Ajustada por fase de ciclo B2B
+- Orçamento: Distribuição por fase de decisão
+- Redes: Google Search com Display complementar
+- Dispositivos: Ênfase em desktop (+20-30%) para B2B
+
+#### Tela: B2B Decision Cycle Segmentation
+- Configuração por Fase do Ciclo:
+  - Awareness (Educação Inicial):
+    - Estrutura de Campanha:
+      - Keywords amplas focadas em problemas do setor
+      - Grupos de anúncios por tipo de desafio/problema
+      - Correspondência modificada ampla e de frase
+    - Configuração de Anúncios:
+      - Headlines educacionais, não promocionais
+      - Descrições focadas em problemas comuns
+      - CTAs suaves ("Saiba mais", "Explore")
+    - Landing Pages:
+      - Conteúdo informativo, não promocional
+      - Recursos educacionais sem formulários extensos
+      - Opções de aprofundamento temático
+  - Research (Exploração de Soluções):
+    - Estrutura de Campanha:
+      - Keywords relacionadas a métodos/abordagens
+      - Grupos de anúncios por tipo de solução
+      - Termos comparativos e metodológicos
+    - Configuração de Anúncios:
+      - Headlines presentando abordagens/métodos
+      - Descrições comparativas e de benefícios
+      - CTAs moderados ("Veja como funciona", "Compare opções")
+    - Landing Pages:
+      - Conteúdo detalhando abordagens
+      - Comparativos de metodologias
+      - Casos de uso e aplicações
+
+#### Tela: Multi-Stakeholder Targeting Framework
+- Configuração por Perfil Decisor:
+  - Segmentação por Função:
+    - Perfil Técnico:
+      - Keywords relacionadas a especificações, implementação
+      - Linguagem técnica e focada em detalhes
+      - Landing pages com informações detalhadas, white papers
+      - CTAs orientados para demonstrações técnicas
+    - Perfil Financeiro:
+      - Keywords relacionadas a ROI, TCO, eficiência
+      - Linguagem focada em métricas e resultados financeiros
+      - Landing pages com calculadoras, case studies com números
+      - CTAs orientados para avaliações financeiras
+    - Perfil Executivo:
+      - Keywords estratégicas, visão geral, vantagem competitiva
+      - Linguagem concisa focada em resultados de negócio
+      - Landing pages com conteúdo estratégico, estudos de tendências
+      - CTAs orientados para visão executiva, insights estratégicos
+  - Coordenação Multi-Stakeholder:
+    - Implementação de navegação cruzada:
+      - Links internos conectando conteúdos para diferentes perfis
+      - Possibilidade de compartilhamento fácil entre stakeholders
+      - Recursos unificados para decisão conjunta
+
+#### Tela: B2B Metrics Framework
+- Configuração de Métricas Específicas:
+  - KPIs por Fase:
+    - Early-stage:
+      - Engagement com conteúdo (tempo, profundidade)
+      - Downloads de materiais educativos
+      - Retorno ao site após primeira visita
+    - Mid-stage:
+      - Solicitações de informação
+      - Participação em webinars/eventos
+      - Visitas a múltiplas páginas de produto
+    - Late-stage:
+      - Solicitações de demonstração
+      - Requisições de contato com vendas
+      - Configurações de produto/orçamentos
+  - Atribuição Especializada:
+    - Implementar modelo adequado a ciclos longos:
+      - Lookback window estendido (90+ dias)
+      - Consideração de touchpoints offline
+      - Valorização de micro-conversões intermediárias
+    - Integração com dados de CRM:
+      - Conexão entre leads e fechamentos finais
+      - Ajuste de valor baseado em dados de vendas
+      - Refinamento contínuo de modelos
+
+### 40. Tara Zirker (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Video sequencial
+- Objetivo: Conversões via narrativa estruturada
+- Estratégia de Lances: Ajustada por etapa da sequência
+- Orçamento: Distribuição por etapa (maior % no início)
+- Redes: YouTube e Network de vídeo
+- Dispositivos: Ajuste baseado em dados de engajamento
+
+#### Tela: Sequential Video Storytelling Framework
+- Configuração da Sequência Narrativa:
+  - Episódio 1 - Introdução ao Problema:
+    - Configuração de vídeo inicial:
+      - Duração: 60-90 segundos
+      - Hook emocional nos primeiros 5 segundos
+      - Apresentação clara do problema/desafio
+      - Final aberto para criar expectativa
+    - Targeting amplo:
+      - Interesses relacionados ao problema
+      - Dados demográficos do público-alvo
+      - In-market para categoria
+    - Objetivo: Alto volume de visualizações qualificadas
+  - Episódio 2 - Exploração de Soluções:
+    - Configuração de remarketing:
+      - Público: Viewers que assistiram >50% do Episódio 1
+      - Duração: 2-3 minutos
+      - Estrutura: Validação do problema, soluções convencionais e limitações
+    - Targeting específico:
+      - Remarketing preciso por engajamento
+      - Exclusão de conversores
+      - Frequência controlada (max. 3-4 impressões)
+    - Objetivo: Qualificar audiência e aprofundar relação
+
+#### Tela: Implementation de Sequência Completa
+- Configuração de Campanha Sequencial:
+  - Episódios Subsequentes:
+    - Episódio 3 - Solução Inovadora:
+      - Targeting: Viewers que assistiram >50% do Episódio 2
+      - Duração: 3-4 minutos
+      - Conteúdo: Apresentação da solução diferenciada
+      - CTA: Suave, direcionando para mais informações
+    - Episódio 4 - Prova e Resultados:
+      - Targeting: Viewers que interagiram com Episódio 3
+      - Duração: 3-5 minutos
+      - Conteúdo: Casos de sucesso, testemunhos, resultados
+      - CTA: Moderado, incentivando avaliação
+    - Episódio 5 - Chamada para Ação:
+      - Targeting: Viewers de alta intenção (múltiplos episódios)
+      - Duração: 1-2 minutos
+      - Conteúdo: Oferta específica, eliminação de objeções
+      - CTA: Forte, direto para conversão
+  - Métricas de Acompanhamento:
+    - Taxa de progressão entre episódios
+    - Pontos de abandono na sequência
+    - Correlação entre sequência completa e conversão
+
+#### Tela: Emotional Trigger Mapping
+- Configuração de Gatilhos Emocionais:
+  - Análise Emocional:
+    - Mapeamento de gatilhos específicos:
+      - Medos primários do público-alvo
+      - Aspirações e desejos principais
+      - Frustrações recorrentes
+    - Hierarquização por impacto:
+      - Testando diferentes intensidades
+      - Validação através de métricas de engajamento
+      - Documentação de padrões emocionais por segmento
+  - Implementação em Vídeos:
+    - Estrutura emocional planejada:
+      - Introdução com gatilho de alto impacto
+      - Desenvolvimento de tensão emocional
+      - Resolução associada ao produto/serviço
+    - Monitoramento de resposta:
+      - Análise de comentários e reações
+      - Correlação entre intensidade emocional e conversão
+      - Refinamento baseado em respostas reais
+
+### 41. Aleric Heck (EUA)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: YouTube para conversão direta
+- Objetivo: Conversões imediatas (não apenas awareness)
+- Estratégia de Lances: Maximizar conversões
+- Orçamento: Baseado em ROAS alvo
+- Redes: YouTube (TrueView for Action)
+- Dispositivos: Ajustes baseados em dados de conversão
+
+#### Tela: Direct Response Video Framework
+- Configuração de Estrutura de Vídeo:
+  - Hook (0-15 segundos):
+    - Elementos de qualificação imediata:
+      - Menção direta do público-alvo (ex: "Se você...")
+      - Apresentação clara do problema/dor
+      - Credenciais ou prova social impactante
+    - Aspectos técnicos:
+      - Ritmo rápido e direto
+      - Elementos visuais de alto contraste
+      - Script específico eliminando audiência não-alvo
+  - Story (15-90 segundos):
+    - Estrutura narrativa completa:
+      - Desenvolvimento claro do problema
+      - Jornada pessoal ou case study
+      - Elementos de transformação visível
+      - Destaque para pontos de dor específicos
+    - Aspectos técnicos:
+      - Storytelling emocional com arco completo
+      - Demonstração visível de antes/depois
+      - Eliminação de objeções comuns
+
+#### Tela: Offer Implementation
+- Configuração da Oferta:
+  - Offer (90-120 segundos):
+    - Proposta clara e específica:
+      - Oferta direta com benefícios tangíveis
+      - Elementos de urgência genuína (limitação real)
+      - Garantias para redução de risco
+      - Bônus complementares
+    - CTA específico:
+      - Instrução clara e diretiva ("Clique abaixo agora")
+      - Repetição do CTA em momentos estratégicos
+      - Linguagem de ação específica
+  - Elementos de Resposta Direta:
+    - Implementação técnica:
+      - CTAs em momentos específicos (30s, 60s, 90s)
+      - Cards e end screens com links diretos
+      - Descrições com links em formatos otimizados
+      - Call-to-action overlay durante todo o vídeo
+
+#### Tela: Demo-Driven Campaign Structure
+- Configuração de Demonstrações Estratégicas:
+  - Demonstração Focada:
+    - Implementação eficaz:
+      - Foco em 1-3 benefícios-chave apenas
+      - Demonstração de transformação visível
+      - Prova em tempo real (não editada/acelerada)
+    - Técnicas específicas:
+      - Comparações lado-a-lado
+      - Demonstrações em etapas claras
+      - Reações autênticas de primeira vez
+  - Segmentação Específica:
+    - Targeting por problema:
+      - Audiências com problema específico abordado
+      - Segmentação por comportamento indicativo
+      - Keywords relacionadas ao problema específico
+    - Otimização por conversão:
+      - Teste de diferentes ângulos de demonstração
+      - Ajuste de duração/detalhamento
+      - Refinamento baseado em dados de conversão
+
+### 42. Louisa Dahl (Austrália)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Video B2B para APAC
+- Objetivo: Leads qualificados em mercados regionais
+- Estratégia de Lances: Ajustada por mercado
+- Orçamento: Distribuição por importância regional
+- Redes: YouTube e Display
+- Idiomas: Múltiplos conforme mercados-alvo
+
+#### Tela: APAC Market Adaptation System
+- Configuração de Adaptação Regional:
+  - Mercados Específicos:
+    - Austrália/Nova Zelândia:
+      - Sazonalidade invertida (verão: dez-fev)
+      - Períodos específicos: EOFY (junho/julho)
+      - Tom: Direto, informal, prático
+    - Sudeste Asiático:
+      - Feriados específicos: Lunar New Year, Ramadan, Diwali
+      - Adaptação para múltiplos idiomas oficiais
+      - Tom: Respeitoso, relacional, status-orientado
+    - Japão/Coreia:
+      - Ciclos fiscais específicos (Japão: abril)
+      - Considerações hierárquicas
+      - Tom: Formal, detalhado, preciso
+  - Ajustes Técnicos:
+    - Configurações de conexão:
+      - Otimização para velocidades variáveis (SEA)
+      - Adaptação de peso/tamanho de assets
+      - Versões light para mercados emergentes
+    - Fusos horários:
+      - Programação específica por país
+      - Ajustes para horas de negócio locais
+      - Consideração de diferenças UTC
+
+#### Tela: B2B Video Content Matrix
+- Configuração de Matriz de Conteúdo:
+  - Eixo 1 - Estágio do Funil:
+    - Awareness:
+      - Conteúdo educacional amplo
+      - Foco em tendências do setor
+      - Videos curtos (60-90s) com alto impacto visual
+    - Consideração:
+      - Comparativos de metodologias
+      - Casos de uso diversos
+      - Videos médios (2-3min) com informações detalhadas
+    - Decisão:
+      - Demonstrações específicas
+      - Depoimentos de clientes locais
+      - Videos detalhados (3-5min) com prova concreta
+  - Eixo 2 - Perfil do Decisor:
+    - Técnico:
+      - Detalhamento de funcionalidades
+      - Demonstrações hands-on
+      - Linguagem técnica e específica
+    - Financeiro:
+      - Foco em ROI, TCO, eficiência
+      - Dados quantitativos e gráficos
+      - Comparativos de custos/benefícios
+    - Executivo:
+      - Visão estratégica e tendências
+      - Cases de transformação
+      - Mensagens concisas de alto impacto
+
+#### Tela: Adaptação Cultural de Video Ads
+- Configuração de Elementos Culturais:
+  - Ajustes Visuais:
+    - Modelos e cenários locais
+    - Cores apropriadas culturalmente
+    - Vestuário e comportamento adequados
+    - Considerações de hierarquia visual (APAC)
+  - Adaptação de Script:
+    - Tradução cultural (não literal)
+    - Ajuste de ritmo e duração (ex: Japão - mais detalhado)
+    - Referências culturalmente apropriadas
+    - Humor adaptado por mercado
+  - CTAs Regionais:
+    - Adaptação de diretividade
+    - Consideração de processos decisórios locais
+    - Phraseology específica por mercado
+
+### 43. Elena Kruczek (Polônia)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Performance Max regional
+- Objetivo: Conversões adaptadas para mercados europeus
+- Estratégia de Lances: Target ROAS específico por região
+- Orçamento: Distribuição ponderada por mercado
+- Redes: Mix completo (Search, Display, Video, Discovery)
+- Idiomas: Múltiplos europeus com adaptações regionais
+
+#### Tela: Regional Performance Matrix
+- Configuração de Adaptação Regional:
+  - Diferenças Culturais:
+    - Europa Ocidental:
+      - Estrutura de campanha: Equilibrada, múltiplos formatos
+      - Messaging: Foco em qualidade, durabilidade, valor
+      - Assets: Estética clean, sofisticada, detalhada
+    - Europa Central/Leste:
+      - Estrutura de campanha: Ênfase em preço/valor, promoções
+      - Messaging: Prático, direto, benefícios tangíveis
+      - Assets: Visual impactante, ofertas destacadas
+    - Escandinávia:
+      - Estrutura de campanha: Foco em sustentabilidade, qualidade
+      - Messaging: Minimalista, funcional, valores éticos
+      - Assets: Design clean, natureza, autenticidade
+  - Nuances Linguísticas:
+    - Adaptação Beyond Translation:
+      - Headlines nativos (não traduzidos literalmente)
+      - Expressões idiomáticas locais quando apropriado
+      - Consideração de extensão de palavras por idioma
+    - Termos de pesquisa regionais:
+      - Keywords com variações dialetais
+      - Termos específicos por país mesmo em idioma comum
+      - Adaptação para diferentes formatações (datas, medidas)
+
+#### Tela: Seasonal Adjustment Protocol
+- Configuração de Sazonalidade Europeia:
+  - Eventos Específicos:
+    - Calendário detalhado por país:
+      - Feriados nacionais específicos
+      - Períodos promocionais locais
+      - Eventos culturais regionais
+    - Implementação de campanhas sazonais:
+      - Criação com 30-45 dias de antecedência
+      - Assets específicos por ocasião
+      - Orçamento suplementar para períodos-chave
+  - Ajustes Proativos:
+    - Adaptações antecipadas:
+      - Aumento de orçamento antes de picos sazonais
+      - Ajuste de bidding para competitividade sazonal
+      - Preparação de assets específicos por evento
+    - Monitoramento de resultados:
+      - Sistema de alertas para variações de performance
+      - Ajustes táticos baseados em dados iniciais
+      - Documentação para planejamento futuro
+
+#### Tela: Cross-Border Campaign Management
+- Configuração de Gestão Multi-país:
+  - Harmonização vs. Localização:
+    - Estrutura central:
+      - Template principal de campanha
+      - Elementos de marca consistentes
+      - KPIs e métricas unificados
+    - Adaptações locais:
+      - Mensagens-chave adaptadas por país
+      - Ajustes de targeting regional
+      - Orçamento flexível baseado em performance
+  - Implementação Eficiente:
+    - Gestão centralizada:
+      - Dashboard unificado para todos mercados
+      - Análise comparativa de performance
+      - Aplicação rápida de aprendizados cross-border
+    - Flexibilidade local:
+      - Permissões específicas para ajustes regionais
+      - Processos de feedback das equipes locais
+      - Balanceamento global-local nas decisões
+
+### 44. Benji Ard (Reino Unido)
+
+#### Tela: Configurações de Campanha
+- Tipo de Campanha: Performance Max para leads B2B
+- Objetivo: Leads qualificados (não volume)
+- Estratégia de Lances: Valor baseado em qualidade
+- Orçamento: Distribuição por nível de qualificação
+- Redes: Mix completo (Search, Display, Video, Discovery)
+- Atribuição: Modelo personalizado para ciclos B2B longos
+
+#### Tela: PMax Lead Qualification System
+- Configuração de Qualificação Progressiva:
+  - Fase 1 - Atração Inicial:
+    - Targeting amplo controlado:
+      - Interesses relacionados ao nicho
+      - In-market para categoria relevante
+      - Semelhantes limitados (1-3%)
+    - Assets de qualificação implícita:
+      - Headers mencionando indústria/setor específico
+      - Imagens mostrando contexto B2B relevante
+      - Descrições que pré-qualificam (porte, setor)
+  - Fase 2 - Pré-qualificação:
+    - Conteúdo seletivo:
+      - Assets direcionados para problemas específicos
+      - Vídeos com exemplos de casos relevantes
+      - Textos mencionando requisitos/escala
+    - Landing pages estratégicas:
+      - Conteúdo detalhando perfil ideal de cliente
+      - Informações sobre requisitos mínimos
+      - FAQs que qualificam implicitamente
+
+#### Tela: Progressive Qualification Sequence
+- Configuração de Sequência Completa:
+  - Fase 3 - Qualificação Explícita:
+    - Formulários estratégicos:
+      - Campos qualificadores (orçamento, tamanho, necessidades)
+      - Questões de exclusão gentil
+      - Processo em etapas para qualificação gradual
+    - Assets específicos:
+      - CTAs direcionados para leads qualificados
+      - Mensagens mencionando fit ideal
+      - Imagens representando clientes ideais
+  - Fase 4 - Aprofundamento:
+    - Processos para leads de alta qualidade:
+      - Conteúdo exclusivo detalhado
+      - Webinars/demonstrações específicas
+      - Discussões consultivas guiadas
+    - Assets de conversão final:
+      - Casos de estudo detalhados
+      - Materiais de avaliação aprofundada
+      - Propostas/simulações personalizadas
+
+#### Tela: Hybrid Value Model
+- Configuração de Valoração Híbrida:
+  - Modelo Integrado:
+    - Métricas combinadas:
+      - Indicadores quantitativos (volume, taxa)
+      - Indicadores qualitativos (pontuação, feedback)
+      - Valor temporal (imediato vs. pipeline)
+    - Sistema de pontuação:
+      - Atribuição de pesos por fator qualitativo
+      - Ajuste dinâmico baseado em fechamentos
+      - Threshold mínimo para qualificação
+  - Implementação em Campanhas:
+    - Bidding por valor composto:
+      - Ajustes baseados em score completo
+      - Alocação de orçamento por segmento de qualidade
+      - Otimização para valor total, não apenas volume
+    - Monitoramento contínuo:
+      - Correlação entre indicadores e vendas finais
+      - Refinamento de modelo baseado em resultados
+      - Adaptação de pesos por mudanças de mercado
