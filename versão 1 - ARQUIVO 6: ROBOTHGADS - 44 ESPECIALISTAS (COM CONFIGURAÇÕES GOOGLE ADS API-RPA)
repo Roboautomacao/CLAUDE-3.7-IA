@@ -1,0 +1,1156 @@
+Entendido. Iniciando a compilação do ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA).
+
+Este arquivo detalha como as metodologias dos especialistas em tráfego pago (e, indiretamente, o conhecimento agregado dos especialistas em mineração, copywriting e criativos) são traduzidas em configurações e ações concretas que o RobotHGAds executará, com foco máximo na Google Ads API e recorrendo à RPA apenas quando indispensável. O Gemini 2.5 Pro Preview 05-06 é a IA primária para o RobotHGAds.
+
+ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA) - COMPILADO (Parte 1)
+
+Introdução ao Arquivo 6:
+
+O RobotHGAds recebe como input principal do DropHunter um "pacote de inteligência do produto". Este pacote contém:
+
+Produto Qualificado: Com scores de oportunidade, análise de mercado, potencial de escala, etc. (baseado nos especialistas do Arquivo 3).
+
+Inteligência de Fornecedor: Recomendações de fornecedores da lista "Melhores Fornecedores", análise de confiabilidade, e estratégia de sourcing (baseado nos especialistas do Arquivo 3 e na lista de fornecedores).
+
+Inteligência de Copywriting: Ângulos de marketing, headlines, descrições, propostas de valor, tom de voz (baseado nos especialistas do Arquivo 4).
+
+Inteligência de Criativos: Conceitos visuais, diretrizes de design, estilos de marca (baseado nos especialistas do Arquivo 5).
+
+O RobotHGAds, utilizando o Gemini 2.5 Pro Preview, combina essa inteligência de produto com os "Expert Templates" baseados nos especialistas em tráfego pago/Google Ads para gerar configurações "API-ready" e, quando necessário, scripts RPA.
+
+Especialistas em Tráfego Pago / Google Ads (do doc "ESTRATÉGIAS ULTRA-ESPECIALIZADAS" e outros implícitos):
+
+Vou detalhar cada um, mostrando como sua metodologia é aplicada pelo RobotHGAds.
+
+1. TOM BREEZE (AquaTherapy™ LED Shower Head - UK)
+
+Metodologia Agregada: AIDA Framework + Emotional Resolution Advertising (para YouTube).
+
+Objetivo no RobotHGAds: Criar e otimizar campanhas de YouTube TrueView for Action (agora parte de Video Action Campaigns - VAC) altamente persuasivas, focadas na jornada emocional e na conversão direta.
+
+Tradução para Componentes do RobotHGAds: CampaignSpecificationService (com Gemini), CampaignCreatorService, GoogleAdsAdapter, CampaignManagerService.
+
+Configurações e Ações via Google Ads API:
+
+Criação da Campanha de Vídeo (YouTube VAC):
+
+Serviço API: CampaignService.MutateCampaigns
+
+Objeto Campaign (Gerado por Gemini com base no input do DropHunter e template Breeze):
+
+advertising_channel_type: VIDEO
+
+video_campaign_setting.campaign_type: VIDEO_ACTION
+
+name: "{PAÍS} - {Produto} - YouTube VAC - Breeze AIDA" (Ex: "UK - AquaTherapy Shower - YouTube VAC - Breeze AIDA")
+
+status: PAUSED (para revisão inicial, depois ENABLED)
+
+campaign_budget: Referência a CampaignBudget (valor inicial do DropHunter/config do usuário).
+
+bidding_strategy_type: MAXIMIZE_CONVERSIONS ou TARGET_CPA. Gemini sugere target_cpa_micros inicial baseado no CAC esperado (do DropHunter) e margem.
+
+network_settings: target_youtube_search = true, target_youtube_videos = true, target_google_video_partners = false (foco YouTube).
+
+frequency_caps: (ex: 2 impressões/dia/usuário).
+
+geo_target_constant: Apontar para location_constants do país alvo (ex: UK).
+
+Criação do Grupo de Anúncios (Ad Group):
+
+Serviço API: AdGroupService.MutateAdGroups
+
+Objeto AdGroup (Gerado por Gemini):
+
+name: "VAC AG - {SegmentoPrincipal} - {País}" (Ex: "VAC AG - Wellbeing Enthusiasts - UK")
+
+campaign: Referência à campanha.
+
+type_: VIDEO_RESPONSIVE (para VAC).
+
+Segmentação do Grupo de Anúncios (Targeting - via AdGroupCriterionService.MutateAdGroupCriteria):
+
+Gemini seleciona as audiências com base no pacote do DropHunter (que já pode ter usado especialistas como Alina Benny ou Daniel Snow para identificar comunidades/interesses) e na estratégia de Breeze:
+
+Custom Audiences (CustomAudienceService):
+
+Tipo INTEREST: Usar termos do DropHunter (bem-estar holístico, tecnologia para casa).
+
+Tipo SEARCH_TERMS: Usar termos de busca de problemas/soluções (cromoterapia benefícios, reduzir estresse).
+
+In-Market Audiences: Selecionar IDs de audiências relevantes do Google (Home Improvement, Bath & Body).
+
+Demographics: Idade (28-45), Renda (se targeting disponível/eficaz).
+
+Exclusões: UserList de visitantes de páginas de "instalações complexas" (se DropHunter identificar essa objeção).
+
+Criação do Anúncio de Vídeo Responsivo (VAC - AdGroupAdService com VideoResponsiveAdInfo):
+
+Assets de Vídeo (AdVideoAsset): Links para os vídeos de 90-120s no YouTube (roteiros e conceitos visuais vieram do DropHunter, aplicando Bencivenga/Wolf/Breeze).
+
+Assets de Texto (AdTextAsset - Gerados por Gemini usando copy do DropHunter):
+
+headlines: (curtos) Ex: "Banho Terapêutico Já!", "Sinta a Diferença LED".
+
+long_headlines: (mais longos) Ex: "Transforme Seu Banho em Spa", "Cromoterapia em Casa".
+
+descriptions: Ex: "Reduza o estresse com nosso chuveiro LED. Instalação 5 min!", "Benefícios clínicos da luz no seu banho.".
+
+call_to_actions: Ex: "Compre Agora", "Descubra Mais".
+
+final_urls: Para a LP otimizada (DropHunter forneceu diretrizes de LP).
+
+Monitoramento de Performance (GAQL - GoogleAdsService.SearchStream):
+
+CampaignManagerService busca métricas: impressions, video_views, clicks, cost_micros, conversions, conversions_value, video_quartile_p25_rate a p100_rate.
+
+Analisar taxas de visualização para otimizar o vídeo (onde as pessoas param de assistir, alinhado com AIDA/Emotional Resolution).
+
+Otimização (Ações API pelo CampaignManagerService): Ajustar lances (Target CPA), pausar/ativar assets/audiências, testar novos vídeos/textos, ajustar orçamentos (sazonalidade UK: Out-Fev pico).
+
+Ações via RPA (Se Indispensável): Mínimas. Talvez para verificar a aparência do anúncio na UI do YouTube em contextos específicos se houver dúvidas sobre como os overlays de CTA estão funcionando, mas a API e o preview de anúncios do Google geralmente cobrem isso.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Pacote AquaTherapy do DropHunter (produto, público UK 28-45 £50k+, interesse bem-estar/mindfulness, copy focado em prova científica + benefício emocional, criativos visuais focados em transformação antes/depois e gatilhos emocionais de "refúgio seguro"). Template "Tom Breeze - YouTube AIDA & Emotional Resolution".
+
+Tarefa do Gemini:
+
+Gerar a estrutura completa da campanha YouTube VAC (nome, budget inicial, estratégia de lance com target CPA inicial).
+
+Definir os critérios de targeting para os Ad Groups (Custom Audiences, In-Market, Demographics, Exclusões) em formato API.
+
+Gerar todos os assets de texto (headlines, long headlines, descriptions, CTAs) para os anúncios de vídeo, adaptando o copy do DropHunter para os limites de caracteres e o estilo de resposta direta do YouTube.
+
+Sugerir um plano de teste A/B para diferentes vídeos ou headlines.
+
+Definir o plano de ajuste de budget sazonal para o UK (Out-Fev, etc.).
+
+Prompt para Gemini (Exemplo para gerar targeting):
+
+"Produto: AquaTherapy LED Shower Head (UK). Estratégia: Tom Breeze YouTube VAC.
+Público Alvo (do DropHunter): Profissionais urbanos UK, 28-45 anos, Renda £50k+, Interesse em bem-estar mental, mindfulness, eficiência energética. Compradores de produtos de banho premium.
+Objeção a excluir: Preocupação com instalação complexa.
+
+Gere as configurações de targeting para um Ad Group desta campanha YouTube VAC, em um formato que possa ser usado para criar AdGroupCriteria na Google Ads API:
+1.  **Custom Audiences:**
+    *   Tipo INTEREST: Forneça 3-5 termos de interesse.
+    *   Tipo SEARCH_TERMS: Forneça 5-7 termos de busca que este público faria no Google/YouTube.
+2.  **In-Market Audiences:** Sugira 2-3 IDs de audiência in-market relevantes do Google.
+3.  **Demographics:** Especifique os AgeRangeInfos e IncomeTier (se aplicável e estimável para API).
+4.  **UserList para Exclusão:** Nome da lista (ex: 'SiteVisitors_ComplexInstallPage_30D').
+Justifique brevemente cada escolha de targeting."
+
+2. JOE MARTINEZ (WildPaws™ Treat Dispenser - UK)
+
+Metodologia Agregada: Asset Group Isolation Strategy + Sistema Progressivo de Sinais (para Performance Max).
+
+Objetivo no RobotHGAds: Lançar e otimizar campanhas Performance Max (PMax) de forma estruturada e controlada, garantindo que os sinais de audiência e os assets sejam progressivamente refinados.
+
+Tradução para Componentes do RobotHGAds: CampaignSpecificationService (Gemini), CampaignCreatorService, GoogleAdsAdapter, AssetManagerService, AudienceSignalManagerService, FeedManagerService (PMax para e-comm usa feed).
+
+Configurações e Ações via Google Ads API:
+
+Criação da Campanha Performance Max:
+
+Serviço API: CampaignService.MutateCampaigns
+
+Objeto Campaign (Gerado por Gemini):
+
+advertising_channel_type: PERFORMANCE_MAX
+
+name: "{PAÍS} - {Produto} - PMax - Martinez Progressive"
+
+bidding_strategy_type: MAXIMIZE_CONVERSION_VALUE (com target_roas opcional) ou MAXIMIZE_CONVERSIONS (com target_cpa opcional).
+
+final_url_expansion_opt_out: true (para controle inicial, conforme algumas estratégias de Martinez) ou false (padrão). Gemini decide com base no template Martinez.
+
+Conectar ao Google Merchant Center ID (ShoppingSetting.merchant_id) se for e-commerce.
+
+Criação de Asset Groups Isolados (3 grupos: Ansiedade Separação, Tech-Savvy, Primeira Viagem):
+
+Serviço API: AssetGroupService.MutateAssetGroups
+
+Objeto AssetGroup (Gerado por Gemini para cada tema):
+
+name: "PMax_AG_{TemaSegmento}_{País}" (Ex: "PMax_AG_SeparationAnxiety_UK")
+
+final_urls, final_mobile_urls: Para LPs hiper-relevantes para o tema do Asset Group (DropHunter/Gemini especificam o conteúdo dessas LPs).
+
+Adição de Assets Relevantes a Cada Asset Group:
+
+Serviço API: AssetService.MutateAssets, AssetGroupAssetService.MutateAssetGroupAssets
+
+Lógica: Gemini gera conjuntos de assets de texto (headlines, descrições, etc.) e especificações para imagens/vídeos (do DropHunter) que são altamente específicos para o tema de cada Asset Group.
+
+Ex: AG "Ansiedade Separação": Textos focam em "monitore seu pet", "alivie a solidão do seu cão". Imagens/Vídeos mostrando pets calmos e tutores interagindo remotamente.
+
+Implementação do Sistema Progressivo de Sinais (via AssetGroupSignalService.MutateAssetGroupSignals):
+
+AudienceSignalManagerService orquestra isso via API:
+
+Fase 1 (Dias 1-7 - Sinais de Alto Valor):
+
+AssetGroupSignal com audience contendo UserList (remarketing de visitantes de páginas de produtos para pets - ID da lista do AudienceManagerService).
+
+(Feed de produtos do FeedManagerService é um sinal implícito forte).
+
+Gemini especifica lances conservadores (ex: Target CPA 20-30% abaixo do recomendado pelo Google Ads) e CampaignManagerService monitora o orçamento.
+
+Fase 2 (Dias 8-14 - Expansão Cautelosa):
+
+Adicionar novos AssetGroupSignal com audience contendo:
+
+UserList de compradores anteriores (para SimilarUserList de 1-3%).
+
+GoogleAudience (in-market para "Pet Technology").
+
+CampaignManagerService aumenta orçamento para 75%.
+
+Fase 3 (Dias 15+ - Expansão Máxima):
+
+Expandir SimilarUserList para 3-10%.
+
+Adicionar audiências customizadas mais amplas (interesse em raças específicas, etc.).
+
+CampaignManagerService aumenta orçamento para 100%.
+
+Avaliação Automatizada de Assets (via AssetManagerService e GAQL):
+
+Coletar asset_group_asset.performance_label (PENDING, LEARNING, LOW, GOOD, BEST) e métricas associadas via GAQL.
+
+Se performance_label = LOW após X dias/impressões, AssetManagerService pausa o AssetGroupAsset (status = PAUSED ou remove) e solicita a Gemini/DropHunter uma nova variação para aquele field_type (ex: novo headline se um headline estiver "LOW").
+
+Otimização da Campanha PMax:
+
+Ajustar target_cpa / target_roas da campanha com base na performance geral.
+
+Refinar os sinais de audiência (adicionar/remover audiências nos AssetGroupSignal).
+
+Rotacionar e otimizar assets continuamente.
+
+Ações via RPA (Se Indispensável): Mínimas para PMax. Talvez para verificar a aba "Insights" da PMax na UI se houver suspeita de que a API não está retornando todos os dados de tendências de busca ou audiências que a PMax está descobrindo (improvável, mas um ponto de verificação).
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Pacote WildPaws™ do DropHunter (produto, 3 segmentos de público UK, copy/criativos iniciais focados em cada segmento). Template "Joe Martinez - PMax Progressive Signals".
+
+Tarefa do Gemini:
+
+Gerar a estrutura da campanha PMax.
+
+Para cada um dos 3 Asset Groups isolados (Ansiedade Separação, Tech-Savvy, Primeira Viagem):
+
+Gerar todos os assets de texto (headlines, long headlines, descriptions, CTAs) especificamente para o tema do AG.
+
+Gerar descrições detalhadas para os assets de imagem e vídeo que o usuário/sistema de imagem precisa criar para aquele AG.
+
+Definir as audiências exatas (UserLists, Custom Audiences, Google Audiences) para cada uma das 3 fases do sistema progressivo de sinais, para cada Asset Group.
+
+Sugerir a estratégia de lance inicial e o plano de escalonamento de orçamento.
+
+Prompt para Gemini (Exemplo para Fase 1 de Sinais para um AG):
+
+"Produto: WildPaws™ Treat Dispenser (UK). Metodologia: Joe Martinez PMax.
+Asset Group: 'PMax_AG_TechSavvy_UK'
+Fase do Sistema Progressivo de Sinais: Fase 1 (Dias 1-7 - Sinais de Alto Valor).
+
+Defina os AssetGroupSignals para este Asset Group e Fase, em formato API-ready:
+1.  **Sinal de Audiência Principal (UserList):**
+    *   Nome da UserList a ser usada (ex: 'SiteVisitors_TechPetProducts_UK_30D').
+    *   Tipo de UserList (ex: 'REMARKETING').
+    *   Critérios para esta UserList (se o AudienceManagerService precisar criá-la).
+2.  **Outros Sinais de Alto Valor para Fase 1 (se houver):** (ex: Customer Match com lista de compradores de gadgets).
+3.  **Recomendação de Lance/Budget para esta Fase:** (ex: Target CPA conservador, 50% do budget total da campanha alocado para este AG nesta fase).
+Justifique por que estes são sinais de 'alto valor' para o segmento 'Tech-Savvy'."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Continuarei com Frederick Vallaeys, seguindo a mesma estrutura e profundidade.
+
+Entendido. Prosseguindo com o ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA), detalhando as estratégias dos especialistas em tráfego pago.
+
+Exemplo 3: Baseado em Frederick Vallaeys (Estratégia para PureNorth™ Therapy Lamp - UK) - RECOMPILADO E DETALHADO (Já havíamos feito este, mas vou re-apresentá-lo no fluxo para manter a continuidade e garantir que o nível de detalhe está consistente com os demais.)
+
+Especialista/Metodologia: Frederick Vallaeys - Method 1-3-10 + Smart Bidding com Circuit Breakers (Regras de Automação).
+
+Objetivo no RobotHGAds: Implementar um sistema de gerenciamento de campanhas Search (especialmente SKAGs/STAGs) altamente estruturado com ciclos de otimização de curto, médio e longo prazo, e controle robusto sobre Smart Bidding através de regras automatizadas.
+
+Tradução para Componentes do RobotHGAds: CampaignManagerService (orquestrador do Method 1-3-10 e regras), GoogleAdsAdapter, AutomatedRulesEngine (lógica para Circuit Breakers), ReportingService, CampaignCreatorService (para SKAGs/STAGs).
+
+Configurações e Ações via Google Ads API:
+
+Estrutura de Campanha SKAGs/STAGs (via CampaignCreatorService):
+
+Serviços API: CampaignService, AdGroupService, AdGroupCriterionService, AdGroupAdService.
+
+Lógica de Criação (Gemini gera especificações):
+
+Campanhas Search (advertising_channel_type = SEARCH).
+
+Cada AdGroup focado em uma única keyword (criterion.keyword.text com criterion.keyword.match_type = EXACT ou PHRASE) ou tema muito restrito.
+
+Ex: AdGroup "SKAG - SAD Lamp UK", Keyword [seasonal affective disorder lamp].
+
+Ex: AdGroup "STAG - Light Therapy Benefits", Keywords ["light therapy benefits", "benefits of light therapy"].
+
+AdGroupAd com ResponsiveSearchAdInfo: Headlines e Descrições (AdTextAsset) gerados por Gemini para espelhar a keyword/tema do AdGroup, com forte relevância. Pinagem estratégica:
+
+Headline 1: Keyword exata ou variação muito próxima.
+
+Headline 2: Benefício principal.
+
+Headline 3: CTA ou diferencial.
+
+Uso extensivo de NegativeKeywordList e AdGroupNegativeKeyword (SharedSetService, CampaignSharedSetService, AdGroupCriterionService) para garantir o roteamento correto das buscas (negativas em cascata).
+
+Method 1-3-10 (Implementado pelo CampaignManagerService usando dados do ReportingService e ações via GoogleAdsAdapter):
+
+Monitoramento Diário (1) - Foco em Performance Imediata:
+
+GAQL para Métricas por Hora/AdGroup/Keyword:
+
+SELECT segments.hour, campaign.name, ad_group.name, ad_group_criterion.keyword.text, metrics.impressions, metrics.clicks, metrics.cost_micros, metrics.conversions, metrics.ctr, metrics.average_cpc
+FROM keyword_view
+WHERE segments.date = TODAY
+  AND campaign.id = {ID_CAMPANHA_VALLAEYS} // Filtrar pela campanha específica
+ORDER BY segments.hour, metrics.cost_micros DESC
+
+
+Ações API:
+
+Ajustes de Lance por Horário: Se dados mostrarem performance significativamente diferente por hora (ex: manhãs para "therapy lamp"), CampaignManagerService pode instruir CampaignCriterionService.MutateCampaignCriteria para ajustar bid_modifier para ad_schedule relevantes.
+
+Pausar Keywords/Anúncios de Baixo Desempenho Imediato: Se uma keyword nova (últimas 24-48h) tiver muitas impressões, baixo CTR (<1.5% como no exemplo) e nenhum clique/conversão, CampaignManagerService pode pausar o AdGroupCriterion (status = PAUSED). Se um anúncio específico dentro de um RSA tiver performance muito ruim (via asset_field_type_view), pode ser desassociado ou o sistema pode pedir a Gemini para gerar uma substituição.
+
+Otimização Semanal (3) - Foco em Tendências e Refinamento:
+
+Testes A/B de Anúncios (API): CampaignManagerService com AdCopyOptimizerService introduz novas variações de AdTextAsset (headlines/descrições) nos RSAs dos AdGroups mais importantes. A API permite adicionar assets e, após um período, verificar a performance_label de cada asset (asset_field_type_view). Pausar/remover assets com LOW performance. Gemini gera as novas variações com base nos temas sazonais (SAD vs. produtividade vs. bem-estar geral).
+
+Avaliação e Ajuste por Dispositivo/Geográfico (API):
+
+GAQL (para dados):
+
+SELECT segments.device, segments.geo_target_city (ou region/country), campaign_criterion.bid_modifier, metrics.conversions, metrics.cost_per_conversion_micros, metrics.roas
+FROM campaign_view // Usar campaign_view e segmentar
+WHERE segments.date DURING LAST_7_DAYS AND campaign.id = {ID_CAMPANHA_VALLAEYS}
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+Gaql
+IGNORE_WHEN_COPYING_END
+
+CampaignManagerService analisa esses dados. Se, por exemplo, Desktop tiver AOV maior e ROAS bom, Gemini pode sugerir um bid_modifier positivo. CampaignCriterionService.MutateCampaignCriteria aplica o ajuste para criterion.device.type = DESKTOP ou criterion.location.geo_target_constant (ex: Escócia +25% no inverno).
+
+Análise de Termos de Pesquisa (SQR) e Negativação (API):
+
+GAQL:
+
+SELECT search_term_view.search_term, search_term_view.ad_group, metrics.clicks, metrics.conversions, metrics.cost_micros
+FROM search_term_view
+WHERE segments.date DURING LAST_7_DAYS AND campaign.id = {ID_CAMPANHA_VALLAEYS}
+  AND search_term_view.status = 'UNKNOWN' // Ou outros status, dependendo do objetivo
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+Gaql
+IGNORE_WHEN_COPYING_END
+
+Gemini analisa a lista de search_term_view.search_term.
+
+Termos irrelevantes são adicionados como KeywordInfo com match_type = EXACT a uma NegativeKeywordList (SharedSetService) e essa lista é associada à campanha (CampaignSharedSetService), ou como negativas de AdGroup (AdGroupCriterionService com negative = true).
+
+Termos de alta performance são adicionados como novas keywords em SKAGs/STAGs.
+
+Planejamento de Longo Prazo (10) - Foco em Estratégia e Sazonalidade:
+
+Calendário Sazonal (API): CampaignManagerService usa o calendário interno (Out-Fev = 80% budget PureNorth) para ajustar Campaign.campaign_budget (via CampaignBudgetService) e pode mudar Campaign.status para campanhas específicas (ex: ativar campanha "PureNorth - Winter Peak" 45 dias antes do outono).
+
+Estratégias de Hibernação (API): Para meses de baixa (verão), CampaignManagerService reduz drasticamente o budget e pode pausar a maioria dos AdGroups, mantendo apenas alguns de remarketing ou de marca com lances mínimos.
+
+Smart Bidding com "Circuit Breakers" (Regras Automatizadas via AutomatedRulesEngine + API):
+
+"Circuit Breaker" aqui significa regras de automação do RobotHGAds, não o CircuitBreakerService do core.
+
+Fase 1 (Pausar Keywords sem Conversão após X cliques): O AutomatedRulesEngine monitora dados da API (via GAQL). Se keyword_view.metrics.conversions = 0 E keyword_view.metrics.clicks > 80 (configurável) por Y dias, ele dispara uma ação para AdGroupCriterionService.MutateAdGroupCriteria para mudar status = PAUSED.
+
+Fase 2 (Queda de Conversões >20% em 3 dias): Se campaign_view.metrics.conversions (ou ad_group_view) cair >20% em 3 dias consecutivos comparado aos 3 anteriores (GAQL para buscar dados, lógica no AutomatedRulesEngine), o sistema pode:
+
+Enviar alerta para humano.
+
+Ação API: Mudar Campaign.bidding_strategy_type para MANUAL_CPC temporariamente (se estava em Smart Bidding), ou reduzir TargetCpa.target_cpa_micros / TargetRoas.target_roas_value em X%.
+
+Fase 3 (Target ROAS Sazonal - API): CampaignManagerService agenda mutações em Campaign.bidding_strategy.target_roas.target_roas via CampaignService para os valores sazonais (3.5x Out/Inv, 2.5x Prim/Ver).
+
+Fase 4 (Limites Máximos de CPC - API, se aplicável):
+
+Se a estratégia for MANUAL_CPC ou ENHANCED_CPC, o sistema define AdGroupCriterion.cpc_bid_micros.
+
+Com Smart Bidding (Target CPA/ROAS), não há controle direto de Max CPC. O sistema monitora metrics.average_cpc. Se estiver muito alto e o ROAS/CPA não estiver sendo atingido, Gemini pode sugerir ajustar o Target CPA para baixo ou o Target ROAS para cima, o que indiretamente influencia o CPC médio.
+
+Otimização de Quality Score (QS) (API):
+
+O QSMonitorService usa GAQL para buscar quality_info (QS, Ad Relevance, LP Experience, Exp. CTR) em nível de keyword_view.
+
+Se um componente estiver BELOW_AVERAGE ou AVERAGE, Gemini é acionado:
+
+Para ad_relevance ou expected_click_through_rate baixos: Gemini gera novas variações de AdTextAsset (headlines, descrições) para o RSA, focando em maior alinhamento com a keyword e benefícios mais fortes. Essas são atualizadas via AdGroupAdService.
+
+Para landing_page_experience baixo: O LandingPageFeedbackModule informa o usuário/DropHunter para otimizar a LP. RobotHGAds pode pausar a keyword/ad group se o problema persistir, via API.
+
+Ações via RPA (Se Indispensável): Mínimas. Talvez para verificar a interface "Recomendações" do Google Ads se houver suspeita de que ela tem insights sobre QS ou otimizações que a API não reflete claramente (o que é raro, pois a API está cada vez mais completa).
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados do produto PureNorth™ (do DropHunter, que já aplicou copywriting/criativos), pesquisa de keywords detalhada, template "Frederick Vallaeys - Method 1-3-10 & SKAGs", dados de performance da API.
+
+Tarefa do Gemini:
+
+Gerar a estrutura SKAG/STAG inicial: Nomes de Ad Groups, keywords exatas/frase, e múltiplas variações de RSAs altamente relevantes para cada um, prontos para a API.
+
+Sugerir os textos para os testes A/B semanais de anúncios, focando em diferentes benefícios (SAD, produtividade, bem-estar) e ângulos sazonais.
+
+Analisar os Search Query Reports (SQRs) (fornecidos como texto pelo ReportingService) e classificar termos para adição como keywords ou negativas.
+
+Interpretar dados de performance do QS: Se o QSMonitorService envia dados de uma keyword com QS baixo e seus componentes (ex: Ad Relevance = BELOW_AVERAGE), Gemini sugere novos headlines/descrições para o RSA daquele Ad Group para melhorar a relevância.
+
+Sugerir ajustes de lance para Smart Bidding: Se o Target CPA/ROAS não está sendo atingido, Gemini pode analisar as métricas e sugerir um novo valor alvo.
+
+Prompt para Gemini (Exemplo para otimizar um anúncio com base no QS):
+
+"Produto: PureNorth™ Therapy Lamp (UK)
+Campanha: 'UK - PureNorth Lamp - Search - Vallaeys SKAGs'
+Ad Group: 'SKAG - Light Therapy for Winter Blues'
+Keyword: '[light therapy winter blues]'
+Dados de Quality Score (via API):
+- Quality Score: 6/10
+- Expected Click-Through Rate: AVERAGE
+- Ad Relevance: BELOW_AVERAGE
+- Landing Page Experience: ABOVE_AVERAGE
+Anúncio Responsivo de Pesquisa Atual (RSA):
+- Headlines: {lista_headlines_atuais}
+- Descrições: {lista_descricoes_atuais}
+Landing Page: {url_lp_relevante}
+Metodologia: Otimização de QS de Frederick Vallaeys.
+
+Com base nestes dados:
+1.  **Diagnóstico:** Qual o principal fator que está puxando o Quality Score para baixo?
+2.  **Recomendação para Ad Relevance:** Gere 3 novos Headlines e 2 novas Descrições para este RSA que sejam EXTREMAMENTE relevantes para a keyword '[light therapy winter blues]' e que provavelmente melhorarão o score de Ad Relevance.
+3.  **Recomendação para Expected CTR:** Embora 'AVERAGE', sugira 2 headlines que poderiam ter um CTR ainda maior, talvez usando um gancho de curiosidade ou um benefício mais forte.
+As sugestões devem estar prontas para uso na Google Ads API (limites de caracteres respeitados)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Continuarei com Justin Brooke, seguindo a mesma estrutura e profundidade.
+
+Entendido. Prosseguindo com o ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA), detalhando as estratégias dos especialistas em tráfego pago.
+
+Exemplo 7: Baseado em Savannah Sanchez (Estratégia para TechWear™ Cooling Sleeves - Espanha) - RECOMPILADO E DETALHADO (Já havíamos feito este, mas vou re-apresentá-lo no fluxo para manter a continuidade e garantir que o nível de detalhe está consistente com os demais.)
+
+Especialista/Metodologia: Savannah Sanchez - Sistema 3U para UGC (Urgência, Utilidade, Unicidade) + Framework TikTok-to-YouTube.
+
+Objetivo no RobotHGAds: Utilizar conteúdo gerado pelo usuário (UGC) ou criativos no estilo UGC, otimizados com o sistema 3U, para campanhas de vídeo (especialmente YouTube Shorts e, se o RobotHGAds se estender, TikTok Ads). Reformatar conteúdo eficazmente entre plataformas de vídeo curto e formatos um pouco mais longos do YouTube.
+
+Tradução para Componentes do RobotHGAds: CampaignSpecificationService (Gemini), AssetManagerService (para vídeos UGC), CampaignCreatorService, GoogleAdsAdapter, VideoAdOptimizerService.
+
+Configurações e Ações via Google Ads API (Foco em YouTube Ads):
+
+Campanhas de Vídeo para YouTube Shorts e In-Feed (usando UGC ou estilo UGC):
+
+Serviço API: CampaignService.MutateCampaigns
+
+Objeto Campaign (Gerado por Gemini):
+
+advertising_channel_type: VIDEO
+
+video_campaign_setting.campaign_type: VIDEO_ACTION (foco conversão) ou VIDEO_REACH (foco viralidade inicial).
+
+name: "{PAÍS} - {Produto} - YouTube UGC 3U - Sanchez" (Ex: "ES - TechWear Sleeves - YouTube UGC 3U - Sanchez")
+
+Targeting YouTube Shorts: Os VideoAsset devem ser verticais (9:16) e curtos (idealmente <60s). Campanhas VAC/Reach podem veicular em Shorts.
+
+Assets de Vídeo (UGC ou Estilo UGC - Foco nos 3U via AssetService, AdGroupAdService):
+
+Lógica de Conteúdo (Definida por Gemini com base nos inputs do DropHunter e metodologia 3U):
+
+DropHunter fornece os conceitos de vídeo UGC baseados nos 3Us (Urgência: "Sol se intensificando!", estatísticas UV Espanha; Utilidade: demonstração redução 5°C, versatilidade; Unicidade: tecnologia resfriamento, UPF 50+).
+
+Gemini transforma esses conceitos em scripts curtos e especificações para os vídeos que o usuário irá produzir/obter.
+
+Os vídeos resultantes são enviados como VideoAsset.
+
+Os anúncios VideoResponsiveAdInfo usam esses vídeos, com textos de acompanhamento (headlines, descrições, CTAs) gerados por Gemini para reforçar os 3Us.
+
+Framework TikTok-to-YouTube (Reformatação e Reutilização - Lógica no VideoAdOptimizerService, Ações API):
+
+API para YouTube:
+
+Se um vídeo curto (15-20s, estilo TikTok, testado como YouTube Short) performa bem, o VideoAdOptimizerService instrui Gemini a gerar um script para uma versão de 30-45s.
+
+Prompt para Gemini: "O vídeo YouTube Short de 15s '{nome_video_curto}' sobre TechWear Sleeves (foco: Utilidade - demonstração de resfriamento) teve alto VTR. Gere um roteiro para uma versão de 35s que adicione: (a) um gancho de Urgência nos primeiros 3s, (b) mais um caso de uso (Utilidade), e (c) um CTA mais forte no final."
+
+O novo vídeo (produzido externamente) é carregado como novo VideoAsset e testado em um novo AdGroupAd.
+
+Modelo de Teste e Escala (Implementado pelo CampaignManagerService e VideoAdOptimizerService via API):
+
+Fase de Teste (Dias 1-5):
+
+Múltiplos AdGroupAd em uma campanha Video Action, cada um com uma variação de vídeo UGC (diferentes 3U, apresentadores, ganchos).
+
+Orçamentos controlados. Monitorar CTR, VTR, CPV, Taxa de Conclusão, Conversões (se VAC).
+
+Fase de Escala (Dias 6-14): Aumentar campaign_budget. Pausar anúncios de baixa performance. Alocar mais para vencedores.
+
+Fase de Maximização (Dias 15+): Implementar regra 70/20/10 (70% budget para vídeos comprovados, 20% para iterações, 10% para novos conceitos UGC).
+
+Estratégia Sazonal (API): CampaignManagerService ajusta campaign_budget (Pico Abril-Agosto para Espanha). Gemini gera variações de texto/sobreposições para os vídeos UGC alinhados com a estação (ex: "Verano Sin Quemaduras!", "Protección UV Inteligente para el Sol Español").
+
+Ações via RPA (Se Indispensável):
+
+Justificativa: Se o RobotHGAds também gerenciasse TikTok Ads e a API fosse limitada, RPA para upload/configuração/coleta de métricas no TikTok Ads Manager.
+
+Para Google Ads/YouTube: Mínima.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Pacote TechWear™ do DropHunter (produto, público Espanha, conceitos UGC 3U). Template "Savannah Sanchez - 3U UGC & TikTok-to-YouTube".
+
+Tarefa do Gemini:
+
+Analisar/refinar os conceitos de vídeo UGC do DropHunter, garantindo que cada um maximize Urgência, Utilidade e Unicidade.
+
+Gerar os scripts detalhados ou storyboards para esses vídeos UGC.
+
+Gerar os textos de acompanhamento (headlines, descrições, CTAs) para os anúncios de vídeo no YouTube.
+
+Sugerir como reformatar vídeos curtos (estilo TikTok) para formatos YouTube Shorts mais longos ou anúncios In-Feed.
+
+Propor variações de ganchos e demonstrações para os testes A/B.
+
+Prompt para Gemini (Exemplo para gerar roteiro de vídeo UGC baseado nos 3Us):
+
+"Produto: TechWear™ UV Protection Cooling Sleeves (Espanha). Metodologia: Savannah Sanchez 3U.
+Conceito UGC do DropHunter: 'Demonstração rápida da manga reduzindo a temperatura do braço sob o sol espanhol, mostrando versatilidade em ciclismo e caminhada.'
+
+Gere um roteiro para um vídeo de 30 segundos no estilo UGC para YouTube Shorts/Anúncio, incorporando os 3Us:
+1.  **Hook de Urgência (0-5s):** (Ex: 'Sol forte na Espanha? Não arrisque sua pele!')
+2.  **Demonstração de Utilidade (5-20s):** (Ex: Visual do termômetro mostrando queda de temperatura, pessoa pedalando confortavelmente).
+3.  **Destaque de Unicidade (20-25s):** (Ex: 'Tecnologia UPF50+ que RESPIRA!').
+4.  **Call to Action (25-30s):** (Ex: 'Clique e refresque seu verão!').
+Descreva as cenas visuais e o tom do narrador/usuário."
+
+
+Exemplo 8: Baseado em Nicolas Gendron (Estratégia para SiestaRevive™ Cooling Pillow Insert - Espanha) - RECOMPILADO E DETALHADO (Já havíamos feito este, mas vou re-apresentá-lo no fluxo para manter a continuidade e garantir que o nível de detalhe está consistente com os demais.)
+
+Especialista/Metodologia: Nicolas Gendron - Feed Localization Matrix + Estratégia de Preço Dinâmico (para Shopping/PMax).
+
+Objetivo no RobotHGAds: Otimizar campanhas Performance Max ou Shopping que utilizam um feed de produtos, com foco na localização profunda do feed para o mercado espanhol e na implementação de uma estratégia de lances e (potencialmente) preços dinâmica.
+
+Tradução para Componentes do RobotHGAds: FeedManagerService, PricingEngine (se preço dinâmico implementado), BiddingStrategyModule, GoogleAdsAdapter (e Merchant Center API).
+
+Configurações e Ações via Google Ads API (e Merchant Center API):
+
+Feed Localization Matrix (via FeedManagerService e Gemini, usando Merchant Center API):
+
+Merchant Center API: Usar products.insert, products.custombatch para criar/atualizar produtos no feed.
+
+Conteúdo Localizado Gerado por Gemini:
+
+title: Títulos em espanhol idiomático, termos locais ("Inserto Refrescante para Almohada Siesta").
+
+description: Descrições refletindo clima/hábitos espanhóis.
+
+google_product_category: Taxonomia correta para Espanha.
+
+custom_label_0 (Margem), custom_label_1 (Velocidade Venda), custom_label_2 (Sazonalidade), custom_label_3 (Região Espanha). Gemini atribui esses labels com base em regras de negócio e dados do produto/mercado.
+
+Estrutura de Campanhas Multi-Dimensional (Shopping ou PMax com feed - API):
+
+CampaignService, AdGroupService/AssetGroupService.
+
+Criar campanhas ou AGs/AssetGroups segmentados pelos custom_labels usando filtros de grupo de produtos (ProductGroupInfo para Shopping legado, ou ListingGroupInfo para PMax) ou filtros de inventário.
+
+Ex: PMax Campanha "SiestaRevive - Margen_Alta_Verano_ES" com ListingGroupInfo para product_custom_attribute.value = "Margen_Alta" AND product_custom_attribute.value = "Sazon_Pico_Verano".
+
+Estratégia de Lances por Segmento (API):
+
+BiddingStrategyModule define target_roas ou target_cpa diferentes para cada campanha/grupo segmentado pelos custom_labels.
+
+Ex: "Margen_Alta + Venta_Rapida + Sazon_Pico_Verano": target_roas mais baixo (ex: 250%) para mais volume, ou target_cpa mais alto.
+
+Monitoramento de Preços Competitivos e Preço Dinâmico (Lógica Externa + API de E-commerce):
+
+Coleta de preços de concorrentes (RPA ou ferramenta terceira).
+
+PricingEngine (se implementado) ajusta preço de venda na plataforma e-commerce via API da plataforma. O feed no Merchant Center é atualizado (via API ou automaticamente).
+
+Estratégia Sazonal (Ajustes de Orçamento e Lances via API):
+
+CampaignManagerService monitora previsões meteorológicas (API de clima). Em ondas de calor, aumenta campaign_budget de campanhas "Sazon_Pico_Verano" e pode tornar target_roas mais agressivo.
+
+Ações via RPA (Se Indispensável): Coleta de Preços de Concorrentes e, como fallback, dados de temperatura.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados do produto SiestaRevive™ (DropHunter), template "Nicolas Gendron", regras de negócio para labels.
+
+Tarefa do Gemini:
+
+Gerar conteúdo localizado (títulos, descrições) para o feed em espanhol.
+
+Sugerir valores para os custom_labels baseado nas regras e características do produto.
+
+Propor estrutura de campanhas PMax/Shopping segmentadas pelos labels.
+
+Sugerir target_roas/target_cpa iniciais por segmento.
+
+Gerar lógica (regras) para o PricingEngine (se preço dinâmico).
+
+Prompt para Gemini (Exemplo para gerar conteúdo do feed localizado):
+
+"Produto: SiestaRevive™ Cooling Pillow Insert System (Kit Completo, 4 peças)
+Mercado: Espanha
+Metodologia: Feed Localization Matrix de Nicolas Gendron.
+Atributos Chave do Produto (do DropHunter): {tecnologia_resfriamento}, {material_hipoalergenico}, {ideal_para_clima_quente}.
+Termos Espanhóis Relevantes: 'almohada para siesta', 'inserto refrescante', 'dormir fresco verano'.
+
+Gere os seguintes campos localizados para o feed do Google Merchant Center para a Espanha:
+1.  **Título Otimizado (máx 150 caracteres):** (Deve ser idiomático e incluir termos chave).
+2.  **Descrição (máx 5000 caracteres, mas focar nos primeiros 500-1000):** (Deve destacar os benefícios para o sono e a siesta no contexto espanhol, mencionando o alívio do calor).
+3.  **Sugestão para `custom_label_2` (Sazonalidade: Pico_Verano/Normal_Ano):**
+Justifique suas escolhas, especialmente para a descrição, explicando como ela se alinha às nuances culturais e climáticas da Espanha."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Continuarei com Elena Kruczek.
+
+Entendido. Prosseguindo com o ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA), detalhando as estratégias dos especialistas em tráfego pago.
+
+Exemplo 9: Baseado em Elena Kruczek (Estratégia para OliveEssence™ Oil Diffuser - Espanha) - RECOMPILADO E DETALHADO (Já havíamos feito este, mas vou re-apresentá-lo no fluxo para manter a continuidade e garantir que o nível de detalhe está consistente com os demais.)
+
+Especialista/Metodologia: Elena Kruczek - Regional Performance Matrix + Seasonal Adjustment Protocol.
+
+Objetivo no RobotHGAds: Implementar campanhas Google Ads (mix de Search, Display, Video) culturalmente ressonantes para a Espanha, aproveitando aprendizados de mercados europeus ocidentais similares. Gerenciar sazonalidade proativamente com assets específicos.
+
+Tradução para Componentes do RobotHGAds: CampaignSpecificationService (Gemini), FeedManagerService (se PMax/Shopping), AssetManagerService, CampaignCreatorService, GoogleAdsAdapter, CampaignManagerService, ReportingService.
+
+Configurações e Ações via Google Ads API:
+
+Regional Performance Matrix (Implementação e Monitoramento via API):
+
+Estrutura de Campanha Equilibrada (Espanha - via CampaignService, AdGroupService, AdGroupAdService, AssetService):
+
+Gemini define a proporção de budget e o foco para campanhas Search, Display, Video.
+
+Messaging (Assets): Gemini gera copy focado em qualidade, durabilidade, valor cultural espanhol (tradição mediterrânea de óleos), e visuais com estética clean/sofisticada e elementos espanhóis (sugeridos pelo DropHunter).
+
+Nuances Linguísticas e Termos de Pesquisa Regionais (API - AdGroupCriterionService): Gemini gera keywords em espanhol (variantes dialetais, termos específicos de aromaterapia/bem-estar na Espanha) e copy correspondente.
+
+Monitoramento Cross-Border (Lógica no CampaignManagerService):
+
+ReportingService coleta dados de campanhas similares em outros países da Europa Ocidental (se houver).
+
+CampaignManagerService (com análise de Gemini) compara KPIs (ajustados por poder de compra/CAC local).
+
+"Aprendizados cross-border" (ex: headline que funcionou em Portugal) são testados na Espanha (Gemini gera versão localizada para API).
+
+Seasonal Adjustment Protocol (Implementação API - CampaignManagerService):
+
+Calendário Detalhado Específico: Sistema com calendário interno de feriados/eventos espanhóis.
+
+Campanhas Sazonais (API):
+
+CampaignService: Criar campanhas com start_date/end_date para períodos chave (Navidad, Semana Santa, Rebajas).
+
+AssetManagerService + AdGroupAdService: Usar assets específicos para cada ocasião (Gemini gera estes).
+
+CampaignBudgetService: Alocar budget suplementar para picos.
+
+Ajustes Proativos (API): Aumentar campaign_budget e ajustar target_cpa/target_roas 30 dias antes dos picos. Regras (via AutomatedRulesEngine) para escalar lances/orçamentos se resultados iniciais bons.
+
+Estratégia Multi-Nicho (Estrutura de Campanhas/Ad Groups via API):
+
+Campanhas ou Ad Groups/Asset Groups separados para cada ângulo (Decorativo, Bem-Estar, Cultural), cada um com keywords, audiências (interesse em decoração, mindfulness, cultura espanhola), e assets visuais/textuais específicos gerados por Gemini.
+
+Ações via RPA (Se Indispensável): Mínimas. Talvez para coletar dados de performance de concorrentes em mercados europeus vizinhos se ferramentas de espionagem não tiverem API.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados do OliveEssence™ (DropHunter), template "Elena Kruczek", calendário espanhol, performance de outros mercados EU (se houver).
+
+Tarefa do Gemini:
+
+Gerar copy localizado (nuances culturais) para anúncios/feed (Espanha).
+
+Sugerir keywords regionais/dialetais.
+
+Criar conceitos de assets visuais (clean/sofisticado, elementos espanhóis).
+
+Gerar assets específicos para cada campanha sazonal (Navidad, etc.).
+
+Definir estrutura/assets para campanhas multi-nicho (Decorativo, Bem-Estar, Cultural).
+
+Analisar dados de outros mercados EU, sugerir adaptações/testes para Espanha.
+
+Prompt para Gemini (Exemplo para campanha multi-nicho):
+
+"Produto: OliveEssence™ Ceramic Ultrasonic Oil Diffuser (Espanha)
+Metodologia: Elena Kruczek - Estratégia Multi-Nicho.
+Nicho Alvo: 'Posicionamento Cultural' (conexão com tradição mediterrânea de óleos essenciais).
+
+Gere os seguintes componentes para uma campanha Google Search focada neste nicho cultural:
+1.  **Nome da Campanha e Ad Group.**
+2.  **5-7 Keywords Principais:** (Ex: 'difusor óleos tradição mediterrânea', 'presente espanhol autêntico bem-estar', 'aromaterapia herança espanhola').
+3.  **1 RSA Completo (3 Headlines, 2 Descrições):** O copy deve evocar a tradição, o artesanato (se aplicável à cerâmica), e a conexão com o estilo de vida mediterrâneo.
+4.  **Sugestões de Audiências de Interesse para uma campanha Display complementar:** (Ex: Interesse em 'Cultura Espanhola', 'Produtos Artesanais', 'Viagens Mediterrâneas').
+Justifique as escolhas de keywords e o ângulo do copy para o tema cultural."
+
+
+Exemplo 10: Baseado em Ruth Burr Reedy (Estratégia para CurlPower™ Cabelos Cacheados - Brasil) - RECOMPILADO E DETALHADO (Já havíamos feito este, mas vou re-apresentá-lo no fluxo para manter a continuidade e garantir que o nível de detalhe está consistente com os demais.)
+
+Especialista/Metodologia: Ruth Burr Reedy - SaaS Revenue Mapping Framework (adaptado para e-commerce) + Multi-touch Attribution Model.
+
+Objetivo no RobotHGAds: Estruturar campanhas Google Ads que mapeiem a jornada de decisão do cliente para produtos de beleza/cuidados pessoais, otimizar lances com base no valor econômico de cada etapa do funil, e usar um modelo de atribuição mais sofisticado.
+
+Tradução para Componentes do RobotHGAds: CampaignSpecificationService (Gemini), AudienceManagerService, ConversionTrackingManagerService, ReportingService, AttributionModelerService, GoogleAdsAdapter.
+
+Configurações e Ações via Google Ads API:
+
+Mapeamento de Pontos-Chave de Decisão em Estruturas de Campanha (API - CampaignService, AdGroupService, AdGroupCriterionService, AdGroupAdService):
+
+Awareness (Problemas cachos): Search (keywords informativas "cabelo cacheado ressecado"), YouTube (vídeos educativos). Leva a blog/quiz.
+
+Research (Produtos por curvatura): Search (keywords comparativas "leave-in vs creme cachos 3B"), Remarketing Display/Video (para quem viu conteúdo Awareness, mostrando guias por tipo de cacho).
+
+Evaluation (Marca/Produto vs. concorrentes): Search (keywords marca+genéricas "CurlPower é bom?"), Remarketing (testemunhos, antes/depois).
+
+Purchase (Pronto para comprar): Search (keywords transacionais "comprar CurlPower cachos"), Shopping. Remarketing para abandono de carrinho.
+
+Valor Econômico por Etapa e Lances Proporcionais (API):
+
+ConversionActionService.MutateConversionActions: Criar ações de conversão para Quiz Completado, Download Guia, Pedido Amostra, Primeira Compra. Atribuir valores (se possível, ou sistema interno calcula "valor ponderado").
+
+Estratégias de Lance: Se MAXIMIZE_CONVERSION_VALUE com target_roas, o valor da conversão influencia. Se TARGET_CPA, o target_cpa_micros ajustado por campanha/AG para refletir valor da etapa (CPA baixo para lead quiz, CPA alto para compra).
+
+Multi-touch Attribution Model (Análise Externa, Informa Otimização API):
+
+ReportingService baixa dados. AttributionModelerService aplica modelos (First, Last, Linear, Time Decay, Data-Driven). Compara para entender papel de cada canal/campanha. Informa ajustes manuais ou de Smart Bidding.
+
+Estrutura de Campanha Específica por Tipo de Cacho (API):
+
+Campanhas/Ad Groups por curvatura (2A-4C).
+
+Targeting (Keywords: "produtos cabelo cacheado tipo 3A Brasil"; Audiências: CustomAudience baseada em URLs de sites/blogs sobre tipos de cacho).
+
+Assets (Anúncios/LPs): Gemini gera copy/visuais com modelos/dicas para aquele tipo de cacho.
+
+Ações via RPA (Se Indispensável): Mínimas. Se quiz de "tipo de cacho" em plataforma externa sem API, RPA para rastrear conclusões para UserLists.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados CurlPower™ (DropHunter), template "Ruth Burr Reedy", perfis consumidor por tipo de cacho Brasil, valores econômicos por etapa.
+
+Tarefa do Gemini:
+
+Mapear jornada de decisão por tipo de cacho.
+
+Gerar keywords, textos de anúncio, conceitos LP por estágio/tipo de cacho.
+
+Sugerir parâmetros de lance (Target CPA/ROAS) por campanha baseado no valor da etapa.
+
+Analisar/explicar insights de modelo multi-touch (se dados fornecidos), sugerir realocação de budget.
+
+Prompt para Gemini (Exemplo para copy de Awareness para um tipo de cacho):
+
+"Produto: CurlPower™ Sistema Completo para Cabelos Cacheados (Brasil)
+Tipo de Cacho Alvo: 4A (Crespo)
+Estágio do Funil: Awareness (Foco em educar sobre problemas comuns do cabelo 4A e a existência de soluções especializadas)
+Metodologia: Ruth Burr Reedy - Mapeamento de Jornada.
+Output Desejado: Conteúdo para um anúncio de vídeo curto no YouTube (topo de funil).
+
+Gere os seguintes para este cenário:
+1.  **Conceito Principal do Vídeo (15-30 segundos):** Qual problema do cabelo 4A (ex: extremo ressecamento, definição difícil, quebra) o vídeo deve abordar de forma empática?
+2.  **Hook para o Vídeo (Primeiros 5 segundos):** Um gancho que prenda a atenção de quem tem cabelo 4A.
+3.  **Mensagem Educacional Chave:** Qual insight ou dica rápida sobre cuidados com cabelo 4A o vídeo pode fornecer?
+4.  **Call-to-Action Sutil:** Para onde direcionar o espectador (ex: 'Saiba mais sobre como cuidar do seu crespo tipo 4A no nosso blog!', 'Descubra seu tipo de cacho exato em nosso quiz!').
+5.  **Sugestões de Targeting no YouTube para este vídeo de awareness.**"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Continuarei com Duane Brown.
+
+Entendido. Prosseguindo com o ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA), detalhando as estratégias dos especialistas em tráfego pago para os nichos globais.
+
+Exemplo 14: Baseado em Amy Hebdon (Estratégia para EcoDisc™ Cleansing Set - Skincare Global)
+
+Especialista/Metodologia: Amy Hebdon - Visual First Framework + Engagement Quality Scoring.
+
+Objetivo no RobotHGAds: Criar e otimizar campanhas Google Display, YouTube Ads e Performance Max com forte apelo visual, seguindo princípios de design hierárquico. Otimizar com base na qualidade do engajamento do usuário, não apenas em cliques/conversões finais, para construir uma audiência qualificada.
+
+Tradução para Componentes do RobotHGAds: CreativeBriefGeneratorService (Gemini), AssetManagerService, CampaignCreatorService, GoogleAdsAdapter, EngagementAnalyticsService, AudienceManagerService.
+
+Configurações e Ações via Google Ads API:
+
+Visual First Framework (Diretrizes para Assets, implementados via API):
+
+Briefs Criativos (Gerados por Gemini via CreativeBriefGeneratorService): Gemini usa os princípios de Hebdon (Hierarquia Visual, Paleta de Cores - verde/branco/terra para EcoDisc™, Texto Minimal na Imagem - "Reutilizável 1000+ vezes", Regra 70/30 produto/contexto, Demonstração de Uso, Contraste 7:1, Padrão Z) para gerar especificações para os designers/IA de imagem.
+
+O DropHunter já forneceu conceitos visuais (do Arquivo 5). Gemini os refina e detalha para produção.
+
+Upload de Assets (API - AssetService.MutateAssets): As imagens/vídeos produzidos (limpos, com foco no produto e na textura do bambu/algodão, uso com modelo) são enviados.
+
+Anúncios Display Responsivos (RDAs) e Anúncios de Vídeo Responsivos (API - AdGroupAdService):
+
+Usar múltiplos ImageAsset e VideoAsset que sigam o Visual First Framework.
+
+Textos (AdTextAsset - headlines, descrições) são curtos, gerados por Gemini para complementar os visuais (ex: "Limpeza Suave e Sustentável", "Diga Adeus aos Discos Descartáveis").
+
+Engagement Quality Scoring (Lógica no EngagementAnalyticsService, Ações via API):
+
+Rastreamento de Micro-Conversões e Engajamento (API - ConversionActionService):
+
+Configurar no Google Ads ações de conversão para: Scroll profundo na LP EcoDisc™ (75%), Tempo na página (>45s), Visualização de vídeo de demonstração na LP (>50%), Cliques em "Como Lavar os EcoDiscs".
+
+Para anúncios YouTube, monitorar metrics.video_quartile_p..._rate, metrics.average_watch_time_seconds.
+
+Cálculo do Score e Criação de UserLists (API - UserListService):
+
+O EngagementAnalyticsService coleta métricas via GAQL, calcula um "Engagement Quality Score" (EQS) interno.
+
+Cria listas: EQS_High_EcoDisc_Users_30D (Score > 70), EQS_Medium_EcoDisc_Users_30D (40-70), EQS_Low_EcoDisc_Users_30D (<40).
+
+Ajustes de Lance ou Targeting Diferenciado (API - AdGroupCriterionService ou CampaignCriterionService):
+
+Aplicar bid_modifier mais alto para EQS_High em campanhas de remarketing ou Search.
+
+Usar EQS_High como sinal forte para PMax (AssetGroupSignalService).
+
+Excluir EQS_Low de campanhas de fundo de funil ou direcioná-los para conteúdo de reeducação sobre sustentabilidade.
+
+Cross-Platform Asset Testing (Lógica Externa, Informa API):
+
+Se testes em Meta Ads identificaram os visuais de EcoDisc™ mais eficazes, esses são priorizados para upload via AssetService no Google Ads.
+
+Ações via RPA (Se Indispensável): Mínimas. Talvez para verificar a renderização exata de RDAs em placements específicos se houver problemas não diagnosticáveis via API.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados do produto EcoDisc™ (do DropHunter, com foco em sustentabilidade e suavidade), template "Amy Hebdon - Visual First & Engagement Scoring", persona do público (eco-consciente, interessado em beleza natural).
+
+Tarefa do Gemini:
+
+Gerar os briefs detalhados para os criativos visuais (imagens e vídeos curtos) do EcoDisc™, especificando hierarquia, paleta, texto minimalista, etc., conforme o Visual First Framework.
+
+Sugerir os eventos de engajamento na LP a serem rastreados como micro-conversões.
+
+Definir a lógica e os pesos para o cálculo do Engagement Quality Score.
+
+Gerar os textos curtos (headlines, descrições) para RDAs e anúncios de vídeo que complementem os visuais "Visual First".
+
+Prompt para Gemini (Exemplo para gerar textos de RDA):
+
+"Produto: EcoDisc™ Reusable Bamboo Cotton Cleansing Set (Skincare Global)
+Visual Principal do Anúncio (Conceito do DropHunter): Close-up da textura macia dos discos, com um em uso suavemente no rosto de uma modelo com aparência natural. Paleta de cores: verdes suaves, branco, bege.
+Metodologia: Amy Hebdon - Visual First.
+Objetivo do Anúncio: Gerar cliques para a página do produto, despertar interesse.
+
+Gere os seguintes assets de texto para um Anúncio Display Responsivo (RDA) que acompanhará este visual:
+1.  3 Headlines Curtos (máx 30 caracteres): Devem ser concisos e destacar o principal apelo (ex: 'Pele Limpa, Planeta Feliz', 'Suavidade Reutilizável', 'Adeus Algodão Descartável').
+2.  1 Long Headline (máx 90 caracteres): Expandir no benefício principal.
+3.  2 Descrições (máx 90 caracteres): Reforçar a sustentabilidade e a experiência de uso.
+4.  Nome da Empresa (EcoDisc™ ou nome da loja).
+O texto deve ser mínimo e complementar ao forte apelo visual."
+
+
+Exemplo 15: Baseado em Oli Gardner (Estratégia para BioDome™ Terrarium System - Home Decor Global)
+
+Especialista/Metodologia: Oli Gardner - Conversion-Centered Design (CCD) System + Attention Ratio Optimization.
+
+Objetivo no RobotHGAds: Garantir que as Landing Pages (LPs) para o BioDome™ sejam otimizadas para conversão (via especificações geradas para o usuário/DropHunter) e que os anúncios Google Ads tenham um "Message Match" perfeito com essas LPs.
+
+Tradução para Componentes do RobotHGAds: LandingPageSpecGeneratorService (Gemini, para gerar specs de LP), LandingPageAuditorService (RPA/HTML-parsing para Attention Ratio), AdCopyOptimizerService (para Message Match), GoogleAdsAdapter.
+
+Configurações e Ações via Google Ads API (e Lógica Externa para LPs):
+
+Conversion-Centered Design System (Especificações para LPs, Ações de Anúncio API):
+
+Geração de Especificações de LP (via LandingPageSpecGeneratorService com Gemini):
+
+Gemini recebe o produto BioDome™, público (interesse em decoração, plantas, design minimalista), oferta, e o template "Oli Gardner - CCD".
+
+Gera um documento para o usuário/DropHunter construir a LP, especificando: Foco (1 objetivo), Contraste (CTAs visíveis), Direção (pistas visuais), Hierarquia de texto (H1, H2), Contexto, Congruência (Message Match com anúncios), Fechamento.
+
+Message Match (Implementação via API pelo AdCopyOptimizerService):
+
+AdGroupAdService.MutateAdGroupAds: Gemini gera assets para RSAs (ResponsiveSearchAdInfo) e RDAs (ResponsiveDisplayAdInfo) garantindo que:
+
+Headline principal do anúncio ESPELHE o H1 da LP do BioDome™.
+
+Descrições do anúncio REFORCEM a promessa principal da LP.
+
+Visuais do anúncio (para Display/Video) sejam CONSISTENTES com a imagem de herói da LP.
+
+Ad.final_urls: Sempre apontar para a LP específica otimizada para aquele anúncio/segmento.
+
+Attention Ratio Optimization (Análise pela LandingPageAuditorService, Informa Estratégia de LP):
+
+Lógica:
+
+DropHunter/usuário fornece a URL da LP do BioDome™.
+
+O serviço (RPA ou HTML parsing) conta todos os links clicáveis e o(s) link(s) de conversão principal (ex: "Comprar BioDome™ Agora").
+
+Calcula o Attention Ratio. Se alto (ex: > 5:1), Gemini sugere quais links "distrativos" remover da LP (ex: links excessivos no menu/rodapé, ícones sociais).
+
+Feedback Loop: RobotHGAds pode priorizar tráfego para LPs com melhor Attention Ratio.
+
+Testes A/B de Landing Pages (Via ExperimentService ou parâmetros de URL):
+
+RobotHGAds pode usar o ExperimentService da API para criar um experimento de campanha, dividindo o tráfego entre duas LPs do BioDome™ com diferentes otimizações de CCD (ex: uma com Attention Ratio 3:1, outra com 1:1) e comparar taxas de conversão.
+
+Ações via RPA (Se Indispensável):
+
+Análise de LP para Attention Ratio: Para LPs muito dinâmicas (SPAs) onde o scraping de HTML é difícil, RPA (Puppeteer/Playwright) renderiza a página e conta os elementos clicáveis.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds, Claude 3.7 Sonnet no DropHunter para LP):
+
+DropHunter (Claude 3.7): Gera as especificações da Landing Page do BioDome™ seguindo os princípios do CCD (incluindo sugestões de conteúdo textual/visual para cada seção e um Attention Ratio alvo).
+
+RobotHGAds (Gemini 2.5):
+
+Input: Especificações da LP do BioDome™ (do DropHunter), produto, template "Oli Gardner".
+
+Tarefa do Gemini:
+
+Gerar os textos dos anúncios (RSAs, RDAs) garantindo "Message Match" perfeito com o H1 e a promessa da LP.
+
+Sugerir parâmetros para ExperimentService se testando LPs diferentes.
+
+Se o LandingPageAuditorService reportar um Attention Ratio ruim para uma LP existente, Gemini sugere quais links podem ser removidos (feedback para o usuário/DropHunter).
+
+Prompt para Gemini (Gerar RDA com Message Match para LP do BioDome™):
+
+"Produto: BioDome™ Self-Sustaining Terrarium System.
+Landing Page Principal do BioDome™ (especificada pelo DropHunter/Claude 3.7):
+- H1 da LP: 'Seu Jardim Interno Autossuficiente: Beleza Viva, Zero Manutenção.'
+- Imagem de Herói da LP: {BioDome™ em um ambiente de casa moderno e iluminado, com plantas vibrantes dentro}.
+Metodologia: Oli Gardner - Message Match.
+
+Gere os seguintes assets para um Anúncio Display Responsivo (RDA) que direcione para esta LP:
+1.  **3 Headlines Curtos (máx 30 chars):** Pelo menos um deve ser uma variação concisa do H1 da LP.
+2.  **1 Long Headline (máx 90 chars):** Que capture a essência da promessa da LP.
+3.  **2 Descrições (máx 90 chars):** Que reforcem os benefícios de 'beleza viva, zero manutenção'.
+4.  **Sugestão para Imagens do RDA (além da principal):** Devem ser consistentes em estilo e qualidade com a imagem de herói da LP. Descreva 2-3 conceitos.
+5.  **Nome da Empresa.**"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Continuarei com Aleyda Solis.
+
+Entendido. Prosseguindo com o ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA), detalhando as estratégias dos especialistas em tráfego pago.
+
+Exemplo 16: Baseado em Aleyda Solis (Estratégia para OceanJewel™ Recycled Jewellery - Fashion Sustentável Global)
+
+Especialista/Metodologia: Aleyda Solis - Owned Channel Integration Framework + Organic-Paid Synergy System.
+
+Objetivo no RobotHGAds: Criar campanhas Google Ads pagas (Search, Display, YouTube, PMax) que trabalhem em sinergia com os esforços de SEO e canais próprios (blog, CRM da marca OceanJewel™), usando dados de comportamento do usuário e performance orgânica para informar e otimizar os anúncios pagos, com foco em construir uma marca forte e sustentável.
+
+Tradução para Componentes do RobotHGAds: OrganicDataIntegrationService (integra com GSC/GA4 APIs), CRMIntegrationService (integra com CRM), CampaignManagerService, AudienceManagerService, GoogleAdsAdapter, CampaignCreatorService.
+
+Configurações e Ações via Google Ads API (e APIs de GSC/GA4/CRM):
+
+Owned Channel Integration Framework (Coleta de Dados e Criação de Audiências via API):
+
+OrganicDataIntegrationService (GA4 Data API): Puxa dados de eventos do GA4 configurados no site OceanJewel™ (scrolls em páginas de "Nossa Missão Sustentável", visualizações de vídeo sobre o processo de reciclagem, tempo na página de histórias das peças).
+
+CRMIntegrationService (API do CRM do Usuário): Importa segmentos de clientes (ex: "Compradores Anteriores de Joias Sustentáveis", "Inscritos na Newsletter Eco-Consciente") para o Google Ads como CustomerMatchUserListInfo (via UserListService.MutateUserLists). Requer adesão às políticas de Customer Match.
+
+AudienceManagerService (UserListService): Cria UserList no Google Ads baseadas nesses dados:
+
+EngagedContentReaders_OceanJewel_SustainableStory_60D
+
+ViewedRecyclingProcessVideo_OceanJewel_90D
+
+HighIntentCRM_EcoBuyers_OceanJewel
+
+Usar essas UserLists para targeting em campanhas de remarketing (AdGroupCriterionService) ou como sinais fortes para PMax (AssetGroupSignalService).
+
+Organic-Paid Synergy System (Ações via API):
+
+Campanhas para Keywords Orgânicas em Posições 4-10 (Synergy Search):
+
+Coleta de Dados GSC API (via OrganicDataIntegrationService): Identificar keywords como "joias de plástico reciclado oceano", "moda sustentável ética joias" onde OceanJewel™ rankeia em posições 4-10 com boas impressões mas CTR baixo.
+
+Criação de Campanhas Search Dedicadas (API - CampaignCreatorService): Campanhas/Ad Groups focados nessas keywords.
+
+Gemini gera RSAs (AdGroupAdService) com copy que complementa o snippet orgânico, talvez com um CTA mais direto ou uma oferta que o orgânico não tem (ex: "Veja a Nova Coleção Reciclada!" ou "Frete Grátis em Joias do Oceano").
+
+Lances (BiddingStrategyModule) podem ser configurados para buscar um "Total Share of Voice" alto na SERP para esses termos.
+
+Amplificação de Conteúdo Orgânico de Alto Engajamento (Synergy Display/Video/Discovery):
+
+Identificação (GA4 API - OrganicDataIntegrationService): Páginas do blog OceanJewel™ ou vídeos do YouTube sobre "o impacto do plástico nos oceanos" ou "a beleza da reciclagem" com alto engajamento.
+
+Criação de Campanhas de Amplificação (API - CampaignCreatorService):
+
+Campanhas Display, Discovery, ou YouTube Video Action.
+
+Targeting: Audiências semelhantes a quem engajou com o conteúdo, ou audiências de interesse amplo em sustentabilidade, conservação marinha.
+
+Anúncios (AdGroupAdService) que promovem diretamente esse conteúdo de alto valor (ex: "Descubra Como Transformamos Lixo Marinho em Luxo Sustentável - Assista Nossa História!"). CTA para consumir o conteúdo.
+
+Métricas de Integração e Sinergia (Análise Externa, Informa Otimização API):
+
+ReportingService coleta dados de Google Ads, GA4, GSC.
+
+CampaignManagerService (com análise de Gemini) calcula: Lift Total, Share de Cliques Combinado, CPA Integrado. Informa realocação de budget (CampaignBudgetService) entre campanhas de sinergia e outras.
+
+Ações via RPA (Se Indispensável): Mínimas. Se CRM do usuário para Customer Match for muito antigo e sem API, RPA como fallback (com ressalvas de segurança).
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados do produto OceanJewel™ (do DropHunter, com forte apelo à sustentabilidade e storytelling), template "Aleyda Solis", dados de GSC/GA4, segmentos CRM.
+
+Tarefa do Gemini:
+
+Analisar dados GSC, identificar keywords para Synergy Search, gerar os RSAs complementares.
+
+Analisar dados GA4, identificar conteúdo para amplificação, gerar anúncios Display/Video/Discovery para promovê-lo.
+
+Definir as UserLists (e critérios para CombinedAudienceInfo ou CustomAudienceInfo se necessário) com base no comportamento em canais próprios e CRM.
+
+Sugerir estratégias de lance para as campanhas de sinergia.
+
+Gerar copy para anúncios de remarketing para as audiências de OwnedChannelIntegration.
+
+Prompt para Gemini (Exemplo para gerar audiência customizada para PMax Signal):
+
+"Produto: OceanJewel™ Recycled Ocean Plastic Statement Pieces
+Estratégia: Aleyda Solis - Owned Channel Integration para Performance Max.
+Dados Disponíveis:
+-   Usuários que visitaram URLs do blog contendo '/sustentabilidade/' ou '/impacto-ambiental/' nos últimos 60 dias.
+-   Usuários que assistiram mais de 75% do vídeo no YouTube 'Nossa Missão de Limpeza dos Oceanos'.
+-   Lista de Customer Match de 'Doadores para ONGs Ambientais' (do CRM).
+
+Defina os componentes para um sinal de audiência forte (AssetGroupSignal) para uma campanha Performance Max para OceanJewel™, combinando esses dados:
+1.  **Nome da Audiência Combinada Sugerido para Google Ads.**
+2.  **Estrutura da `AudienceInfo` (para API):**
+    *   Como você combinaria `UserListInfo` (para os visitantes do blog e espectadores do vídeo) e `CustomerMatchUserListInfo` (para a lista do CRM) para criar uma audiência de alta intenção e alinhamento com a marca?
+    *   (Nota: Gemini descreveria a lógica de combinação, ex: AND/OR, ou sugeriria múltiplas audiências para testar como sinais separados).
+3.  **Justificativa:** Por que esta combinação de sinais é poderosa para OceanJewel™?"
+
+
+Exemplo 17: Baseado em Aleric Heck (Estratégia para WhiskerPlay™ Laser System - Tech para Pets Global) - RECOMPILADO E DETALHADO (Já havíamos feito este, mas vou re-apresentá-lo no fluxo para manter a continuidade e garantir que o nível de detalhe está consistente com os demais.)
+
+Especialista/Metodologia: Aleric Heck - Direct Response Video Framework + Demo-Driven Campaign Structure (para YouTube Ads).
+
+Objetivo no RobotHGAds: Criar e gerenciar campanhas de YouTube Ads focadas em resposta direta, utilizando vídeos que seguem uma estrutura persuasiva (Hook-Story-Offer) e que demonstram claramente os benefícios chave do produto WhiskerPlay™.
+
+Tradução para Componentes do RobotHGAds: CampaignSpecificationService (Gemini), VideoScriptGeneratorService (Gemini), AssetManagerService, CampaignCreatorService, GoogleAdsAdapter, CampaignManagerService.
+
+Configurações e Ações via Google Ads API:
+
+Direct Response Video Framework (Implementação de Conteúdo de Vídeo):
+
+Criação de Roteiros (via VideoScriptGeneratorService com Gemini):
+
+Gemini gera roteiros para os vídeos (30s-2min) seguindo a estrutura Hook-Story-Offer.
+
+Hook (0-15s): Qualifica público, problema ("gato entediado?"), credencial ("desenvolvido por especialistas").
+
+Story (15-90s): Narrativa de transformação (gato de estressado para ativo), demo de resultados, eliminação de objeções (segurança, facilidade).
+
+Offer (90-120s): Proposta específica (sistema + app + garantia), urgência (edição limitada), CTAs estratégicos.
+
+Campanhas YouTube Video Action (API - CampaignService, AdGroupService, AdGroupAdService):
+
+Campanha: advertising_channel_type = VIDEO, video_campaign_setting.campaign_type = VIDEO_ACTION. Nome: "Global - WhiskerPlay Laser - YouTube DR - Heck". Bidding: MAXIMIZE_CONVERSIONS ou TARGET_CPA.
+
+Ad Group: Pode ter múltiplos para testar vídeos HSO ou segmentações.
+
+Anúncio (VideoResponsiveAdInfo): videos (AdVideoAsset dos vídeos produzidos), headlines, long_headlines, descriptions, call_to_actions (textos de Gemini reforçando HSO), companion_banner.
+
+Demo-Driven Campaign Structure (Foco em Benefícios Chave - API):
+
+Criar variações de anúncios de vídeo, cada um focando em demonstrar um dos 3 benefícios-chave do WhiskerPlay™ (IA que aprende, autonomia 8h, plug-and-play). Testar qual benefício/demo gera melhor resposta.
+
+Segmentação Ultra-Específica (API - AdGroupCriterionService):
+
+CustomAudience (INTEREST/SEARCH_TERMS: "proprietários gatos indoor", "brinquedos interativos gatos", "solução tédio felino").
+
+LifeEvent: "Recentemente Adotou Animal de Estimação".
+
+Placement: Canais YouTube sobre gatos, reviews produtos pet.
+
+Keyword (YouTube Search): "melhor laser gatos", "brinquedo automático gato".
+
+Monitoramento de Performance de Vídeo (GAQL): Conversões, CPA, ROAS, video_views, VTCs, engagement_rate, average_watch_time_seconds, CTRs nos CTAs.
+
+Ações via RPA (Se Indispensável): Mínimas. Talvez para extrair comentários de vídeos de anúncios no YouTube para análise de sentimento por Claude/Gemini, se a API do YouTube Data for restritiva.
+
+Interação com IA (Gemini 2.5 Pro Preview no RobotHGAds):
+
+Input: Dados WhiskerPlay™ (DropHunter), template "Aleric Heck", "Grand Slam Offer" (Hormozi/DropHunter), 3 benefícios-chave.
+
+Tarefa do Gemini:
+
+Gerar roteiros detalhados para os vídeos Hook-Story-Offer.
+
+Criar textos de acompanhamento (headlines, descrições, CTAs) para os anúncios de vídeo.
+
+Definir audiências de targeting ultra-específico.
+
+Sugerir estrutura de testes A/B para vídeos ou componentes HSO.
+
+Prompt para Gemini (Exemplo para gerar a seção 'Story' do vídeo):
+
+"Produto: WhiskerPlay™ AI-Driven Laser Entertainment System
+Público Alvo: Proprietários de gatos que ficam muito tempo sozinhos em casa.
+Hook do Vídeo (já definido): 'Seu gato destrói a casa por tédio? Apresentamos a solução inteligente...'
+Metodologia: Direct Response Video Framework de Aleric Heck - Seção 'Story' (15-90 segundos).
+Benefícios a demonstrar: IA que aprende os padrões do gato, autonomia de 8h, configuração fácil.
+
+Gere a narração e as principais sugestões visuais para a seção 'Story' deste vídeo de resposta direta. A história deve:
+1.  Mostrar a transformação de um gato (de entediado/destrutivo para engajado/feliz).
+2.  Demonstrar visivelmente pelo menos dois dos benefícios chave em ação.
+3.  Abordar e eliminar uma objeção comum (ex: 'meu gato vai se cansar rápido disso?' ou 'é seguro para os olhos?').
+O tom deve ser informativo, mas com um toque emocional mostrando o bem-estar do pet."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Com estes 17 exemplos detalhados (cobrindo os especialistas em tráfego pago e como eles interagem com os outputs dos especialistas de mineração/copy/criativos processados pelo DropHunter), a estrutura de como o RobotHGAds funcionaria para os "44 especialistas" torna-se mais clara. Os demais especialistas em tráfego seguiriam padrões de tradução para a API similares, adaptados às suas metodologias específicas.
+
+A chave é sempre:
+
+DropHunter fornece o QUÊ (produto, público, mensagem central, conceito visual).
+
+RobotHGAds, com Gemini e templates de especialistas em tráfego, define o COMO (configuração da campanha Google Ads via API, estratégia de lance, otimização).
+
+Podemos agora prosseguir para a compilação do ARQUIVO 7: PONTOS DE VERIFICAÇÃO E MÉTRICAS DE VALIDAÇÃO (REVISADO E EXPANDIDO).
+
+
+
+
+
+
+

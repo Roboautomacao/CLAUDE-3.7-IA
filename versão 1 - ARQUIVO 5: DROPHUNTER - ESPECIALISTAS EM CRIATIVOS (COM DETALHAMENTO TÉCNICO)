@@ -1,0 +1,1491 @@
+Entendido. Iniciando a compilação do ARQUIVO 5: DROPHUNTER - ESPECIALISTAS EM CRIATIVOS (COM DETALHAMENTO TÉCNICO).
+
+Este arquivo detalha como as metodologias dos 25 especialistas em criação de criativos são tecnicamente implementadas ou traduzidas em algoritmos, heurísticas e prompts para o Claude 3.7 Sonnet dentro do DropHunter, para gerar diretrizes, conceitos e especificações para criativos visuais.
+
+ARQUIVO 5: DROPHUNTER - ESPECIALISTAS EM CRIATIVOS DE ALTA PERFORMANCE (COM DETALHAMENTO TÉCNICO) - COMPILADO
+
+Utiliza primariamente o Claude 3.7 Sonnet (com janela de 200K, "Computer Use", e potencial multimodal assumido ou simulado por análise de descrições textuais).
+
+PARTE II: OS 25 MAIORES ESPECIALISTAS EM CRIATIVOS DE ALTA PERFORMANCE
+
+1. TIM FERRISS
+
+Especialidade: Títulos e headlines disruptivos para conteúdo viral (aplicado a texto sobre ou em criativos)
+
+Metodologia principal: "Headline Engineering"
+
+Estratégia distintiva: 25 Headlines Method
+
+Configurações dos Algoritmos da Estratégia:
+
+DisruptiveHeadlineGeneratorForCreatives:
+
+Input: Produto, benefício principal, público, tipo de criativo.
+
+Lógica (Claude 3.7 Sonnet): Aplica princípios de Ferriss (Especificidade Numérica, Promessa Ousada + Credibilidade, Benefício + Curiosidade) para gerar headlines/textos curtos para usar em/com criativos visuais.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Benefício: {beneficio_chave}. Tipo Criativo: {ex_Thumbnail_YouTube}. Objetivo: Maximizar cliques.
+'Headline Engineering' (Tim Ferriss): Gere 10 variações de texto para thumbnail (máx 8-10 palavras). Incorporar: No. específico, Promessa ousada/alcançável, Benefício + Curiosidade."
+
+
+FerrissHeadlineOptimizer (Simulação do Método dos 25):
+
+Input: Conceito criativo/vídeo, lista de 10 headlines gerados.
+
+Lógica (Claude 3.7 Sonnet): Analisa os 10, identifica elementos fortes, sugere 3-5 "headlines finais combinados" otimizados, com justificativa.
+
+Prompt para Claude 3.7:
+
+"Conceito Criativo: {descricao_conceito}. Lista 10 Headlines: {lista_headlines}.
+Simulando '25 Headlines Method' (Tim Ferriss):
+1.  Análise Elementos Fortes: Para cada, qual o mais forte?
+2.  Geração 3 Headlines Otimizados: Crie 3 'campeões' combinando elementos fortes ou refinando.
+3.  Justificativa: Por que cada um é potencialmente mais eficaz?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa DisruptiveHeadlineGeneratorForCreatives para textos de sobreposição, títulos de vídeo, copy curto para anúncios visuais.
+
+FerrissHeadlineOptimizer (Claude 3.7) refina para as opções mais promissoras.
+
+DropHunter fornece ao RobotHGAds "Pacote de Headlines Disruptivos Tim Ferriss" (opções de headlines/textos curtos, lista "campeões" com justificativas) para elementos textuais de anúncios visuais.
+
+2. RYAN DEISS (Digital Marketer)
+
+Especialidade: Funções criativas integradas para funil completo
+
+Metodologia principal: "Customer Value Journey" (CVJ)
+
+Estratégia distintiva: Micro-Commitment Maximizer
+
+Configurações dos Algoritmos da Estratégia:
+
+CustomerValueJourneyMapper:
+
+Input: Produto, público, oferta principal.
+
+Lógica (Claude 3.7 Sonnet): Mapeia as 8 etapas da CVJ (Aware, Engage, Subscribe, Convert, Excite, Ascend, Advocate, Promote) para o produto. Para cada etapa, define objetivo, sugere 1-2 tipos de conteúdo/criativos, e oferta/micro-compromisso.
+
+Prompt para Claude 3.7:
+
+"Produto Principal: {nome_produto_core}, Preço: ${preco_core}. Público: {descricao_publico}.
+Mapeie 'Customer Value Journey' (8 etapas Ryan Deiss). Para cada etapa:
+1. Objetivo principal para este produto.
+2. Sugira 1-2 tipos de CONTEÚDO/CRIATIVOS eficazes.
+3. Se aplicável, sugira OFERTA ou 'micro-compromisso'."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+CVJStageSpecificCreativeGenerator:
+
+Input: Produto, etapa específica da CVJ, objetivo da etapa.
+
+Lógica (Claude 3.7 Sonnet): Gera conceitos de criativos (visuais/textuais) otimizados para o objetivo da etapa (Aware: vídeos educativos; Subscribe: criativos para lead magnet; Convert: criativos para tripwire; Ascend: remarketing com demos). Garante consistência visual/mensagem, adaptando tom/CTA.
+
+MicroCommitmentPathDesigner:
+
+Input: Mapeamento CVJ, lista de ofertas/conteúdos por etapa.
+
+Lógica (Claude 3.7 Sonnet): Projeta sequência lógica de "pequenos sins" que o criativo busca em cada etapa. Garante que cada CTA peça compromisso proporcional ao nível de relacionamento.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+MarketAnalysisService ou CopywritingAssistantService (Claude 3.7) usa CustomerValueJourneyMapper.
+
+CreativeAssistantService (Claude 3.7) usa CVJStageSpecificCreativeGenerator para conceitos de criativos por etapa e MicroCommitmentPathDesigner para sequência de CTAs.
+
+DropHunter fornece "Plano de Criativos para Funil Completo Ryan Deiss" (mapa CVJ, sugestões de criativos/mensagens/CTAs por etapa, caminho de micro-compromissos) para RobotHGAds construir funis de marketing sofisticados.
+
+3. DAN KENNEDY
+
+Especialidade: Criativos de resposta direta de alta conversão
+
+Metodologia principal: "Magnetic Marketing"
+
+Estratégia distintiva: Message-Market-Media Match
+
+Configurações dos Algoritmos da Estratégia:
+
+UltraSpecificMarketSegmenter:
+
+Input: Produto, público-alvo geral.
+
+Lógica (Claude 3.7 Sonnet): Subdivide público geral em segmentos menores, homogêneos, com dores/desejos ultra-específicos.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}. Público Geral: {descricao_publico_geral}.
+'Direcionamento Ultra-Específico' (Dan Kennedy):
+1. Identifique 3-5 sub-segmentos (micro-nichos) dentro do público com MAIOR e MAIS URGENTE interesse.
+2. Para cada: Dor/problema agudo, Desejo forte, Linguagem específica, Onde 'congregam' (mídias, fóruns)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+IrresistibleOfferCrafterDK:
+
+Input: Produto, sub-segmento, preço base.
+
+Lógica (Claude 3.7 Sonnet): Gera oferta "quase estúpida não aceitar" (Produto Principal, Bônus Alto Valor Percebido, Garantia Forte, Preço Justificado, Urgência/Escassez, Opções Pagamento).
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Preço Base: ${preco}. Sub-Segmento: {descricao_sub_segmento}.
+Crie 'Oferta Irresistível' (Dan Kennedy): Nome da Oferta, Componentes (Produto + 2-3 Bônus com valor percebido para ESTE sub-segmento), Garantia Poderosa, Preço Oferta/Justificativa Valor, Urgência/Escassez."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+MessageMarketMediaMatcher:
+
+Input: Sub-segmento, oferta irresistível, mensagem chave.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Para o sub-segmento, identifica mídias mais eficazes (Tool Use para pesquisar hábitos de consumo de mídia). Adapta mensagem e criativo visual para formato/contexto de cada mídia.
+
+SystematicFollowUpSequencePlannerDK:
+
+Input: Sub-segmento, oferta, leads não-convertidos.
+
+Lógica (Claude 3.7 Sonnet): Planeja sequência de follow-up multi-passos (3-7 contatos), cada passo com novo valor, abordando objeção diferente, ou nova perspectiva da oferta. Pode usar formatos diferentes.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+DropHunter (Claude 3.7) usa UltraSpecificMarketSegmenter e IrresistibleOfferCrafterDK.
+
+CreativeAssistantService e CopywritingAssistantService (Claude 3.7) colaboram no MessageMarketMediaMatcher.
+
+DropHunter fornece "Kit de Marketing Magnético Dan Kennedy" (perfis sub-segmentos, Ofertas Irresistíveis, diretrizes de Mensagem-Mercado-Mídia com sugestões visuais, plano de follow-up) para RobotHGAds executar campanhas de resposta direta focadas.
+
+4. ANDY CRESTODINA (Orbit Media)
+
+Especialidade: Criativos baseados em dados para conteúdo digital
+
+Metodologia principal: "Content Chemistry"
+
+Estratégia distintiva: Data-Driven Creative Matrix
+
+Configurações dos Algoritmos da Estratégia:
+
+StatisticalDataAggregatorForCreatives:
+
+Input: Tópico criativo, nicho.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Pesquisa e agrega dados estatísticos relevantes, estudos, pesquisas de fontes confiáveis (Pew, Statista, acadêmicos) sobre o tópico. Encontra "números que contam história".
+
+Prompt para Claude 3.7:
+
+"Tópico Criativo: {ex_beneficios_sono_produtividade}. Nicho Produto: {ex_suplementos_sono}.
+Usando 'Computer Use', pesquise e agregue 5-7 dados estatísticos impactantes/confiáveis sobre '{Tópico_Criativo}'. Para cada: Cite estatística, Fonte/Ano, Breve explicação da relevância/surpresa para público do {Nicho_Produto}."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+DataVisualizationConceptGenerator:
+
+Input: Dados estatísticos impactantes, mensagem chave.
+
+Lógica (Claude 3.7 Sonnet): Para cada estatística, sugere 2-3 formas de visualizá-la criativamente (infográfico, gráfico animado, comparação visual) para fácil digestão em criativo.
+
+Prompt para Claude 3.7:
+
+"Dado Estatístico: '{estatistica_ex_70%_profissionais_burnout_falta_sono}'. Fonte: {fonte}. Mensagem Chave: 'Melhore sono, combata burnout.' Produto: {nome_produto_sono}.
+Sugira 2-3 conceitos visuais (imagem/frame vídeo) para representar esta estatística/mensagem de forma clara/impactante. Descreva cada conceito."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+DataDrivenCreativeMatrixAnalyzer:
+
+Input: SearchTrendData, ContentGapAnalysis, AvailableStatisticalData.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Cruza dados para identificar oportunidades de criativos (Relevantes - Tendência Busca, Originais - Gap Conteúdo, Críveis - Dados Estatísticos).
+
+Prompt para Claude 3.7:
+
+"Nicho: {nicho_produto}. Tendências Busca: {dados_tendencias}. Gaps Conteúdo SERP: {resumo_gaps}. Estatísticas Relevantes: {lista_estatisticas_chave}.
+'Data-Driven Creative Matrix' (Andy Crestodina): Identifique 3 oportunidades de criativos (infográfico, vídeo dados, artigo visual) combinando tendência busca, preenchendo gap, e apoiado por estatística. Para cada: Conceito Criativo, Keyword/Tendência Alvo, Gap Preenchido, Dado Estatístico Principal e como usar."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7 com Tool Use) usa StatisticalDataAggregatorForCreatives e DataVisualizationConceptGenerator.
+
+DataDrivenCreativeMatrixAnalyzer (Claude 3.7 com Tool Use) identifica oportunidades estratégicas.
+
+DropHunter fornece "Pacote de Criativos Baseados em Dados Andy Crestodina" (estatísticas impactantes, conceitos de visualização, oportunidades de criativos pela Matriz com conceito/keyword/gap/dado) para RobotHGAds criar anúncios/conteúdo críveis, informativos e compartilháveis.
+
+5. PERRY MARSHALL
+
+Especialidade: Criativos de alta performance para Google e Facebook Ads
+
+Metodologia principal: "80/20 Marketing"
+
+Estratégia distintiva: Ad Creative Swiss Army Knife (14 elementos modulares para teste)
+
+Configurações dos Algoritmos da Estratégia:
+
+CriticalCreativeElementIdentifier:
+
+Input: Tipo de anúncio, nicho, produto, dados históricos (se houver).
+
+Lógica (Claude 3.7 Sonnet): Identifica 2-3 elementos criativos com maior impacto histórico/teórico na performance (o "20% que gera 80%"). (Ex: FB Image Ad: Imagem Principal, Headline; Google RSA: Headlines, Descrições; YouTube In-Stream: Hook 5s, Thumbnail).
+
+Prompt para Claude 3.7:
+
+"Tipo Anúncio: {ex_Anuncio_Carrossel_Instagram}. Produto: {nome_produto}, Nicho: {nicho_produto}. Objetivo: {ex_Gerar_Cliques_Pagina_Produto}. Dados Históricos (se houver): {resumo_dados_historicos}.
+Princípio 80/20 (Perry Marshall): Quais 2-3 elementos criativos MAIS CRÍTICOS neste tipo de anúncio para este produto/nicho provavelmente terão maior impacto na performance? Justifique."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+SwissArmyKnifeElementVariator:
+
+Input: Elementos críticos, produto, oferta, ângulos marketing. Lista dos "14 elementos" (Headline, Imagem/Vídeo, CTA, Oferta, Prova, Urgência, etc.).
+
+Lógica (Claude 3.7 Sonnet): Para cada um dos "14 elementos" (ou subconjunto), gera 2-3 variações distintas, criando componentes modulares para teste.
+
+Prompt para Claude 3.7 (exemplo Headline e Imagem):
+
+"Produto: {nome_produto}, Oferta: {oferta}. 'Ad Creative Swiss Army Knife' (Perry Marshall) - Elementos: Headline, Imagem Principal.
+Gere 3 variações distintas para cada:
+1.  **Headlines (FB Ad):** Var 1 (Benefício), Var 2 (Curiosidade), Var 3 (Problema/Solução).
+2.  **Conceitos Imagem Principal:** Conceito 1 (Produto em Uso), Conceito 2 (Resultado), Conceito 3 (Surpresa)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+AdCombinationAndTestPlanner:
+
+Input: Variações dos elementos.
+
+Lógica (Programática ou Claude 3.7): Cria plano de teste A/B (ou multivariado) para testar sistematicamente combinações, começando pelos elementos mais críticos. (Ex: Testar 3 headlines com mesma imagem/corpo/CTA. Com headline vencedor, testar 3 imagens).
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+CreativeAssistantService (Claude 3.7) usa CriticalCreativeElementIdentifier e SwissArmyKnifeElementVariator.
+
+DropHunter fornece "Kit de Teste de Criativos 80/20 Perry Marshall" (identificação de elementos críticos, conjunto de variações modulares prontas para teste, plano de teste A/B) para RobotHGAds ter abordagem sistemática e eficiente para otimização de criativos.
+
+6. MARIE FORLEO
+
+Especialidade: Criativos autênticos para brand building
+
+Metodologia principal: "Authenticity Marketing"
+
+Estratégia distintiva: P.S.V. Method (Personal Story Value)
+
+Configurações dos Algoritmos da Estratégia:
+
+AuthenticBrandPersonaDeveloper:
+
+Input: Valores marca/fundador (real ou arquetípico), história marca/produto, público e seus valores.
+
+Lógica (Claude 3.7 Sonnet): Define persona de marca autêntica, relacionável, que incorpore valores. Garante alinhamento proposta de valor com narrativa pessoal/marca.
+
+Prompt para Claude 3.7:
+
+"Para marca dropshipping '{nicho_produto}' valores: {lista_valores_marca}. História Origem: {conceito_historia_origem}. Público: {descricao_publico_e_seus_valores}.
+'Authenticity Marketing' (Marie Forleo):
+1.  Desenvolva 'Personalidade Genuína da Marca' (3-5 traços chave).
+2.  Guia Consistência Visual/Messaging: Elementos visuais (cores, fontes, fotos) e tipos de mensagem consistentes com personalidade.
+3.  Alinhamento Narrativa Pessoal com Proposta de Valor: Como {conceito_historia_origem} reforça proposta de valor autenticamente?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PSVStoryCraftingEngine:
+
+Input: Evento/experiência pessoal (real/arquetípica), produto, mensagem marketing.
+
+Lógica (Claude 3.7 Sonnet): Transforma história pessoal em ativo de marketing que cria conexão, ilustra problema/transformação, posiciona produto sutilmente. Contada de forma vulnerável/genuína.
+
+Prompt para Claude 3.7:
+
+"Evento Pessoal: '{ex_luta_confianca_antes_solucao_pele}'. Produto: {nome_produto_skincare}. Mensagem Marketing: 'Autoconfiança vem de cuidar de si'.
+'P.S.V. Method' (Marie Forleo): Escreva post blog/script vídeo curto (150-200 palavras) que:
+1. Compartilhe '{Evento_Pessoal}' autenticamente.
+2. Extraia lição/insight.
+3. Conecte lição à '{Mensagem_Marketing}'.
+4. Mencione sutilmente como {Produto_Relacionado} se encaixa."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+AuthenticCreativeConceptGenerator:
+
+Input: Persona marca autêntica, histórias PSV, produto.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para criativos visuais (fotos, vídeos) refletindo personalidade genuína e incorporando elementos de histórias PSV. Foco em pessoas/situações reais, evitar visuais excessivamente polidos se desalinhado.
+
+Prompt para Claude 3.7:
+
+"Persona Marca Autêntica: {output_AuthenticBrandPersonaDeveloper}. História PSV Principal: {resumo_historia_psv}. Produto: {nome_produto}.
+Sugira 3 conceitos criativos visuais (Instagram/Facebook) que:
+1. Reflitam personalidade autêntica.
+2. Comuniquem visualmente essência da História PSV.
+3. Mostrem produto natural/integrado à narrativa.
+Descreva estilo visual, cenário, emoção."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa AuthenticBrandPersonaDeveloper para identidade visual/verbal.
+
+PSVStoryCraftingEngine (Claude 3.7) gera narrativas, AuthenticCreativeConceptGenerator (Claude 3.7) traduz em ideias visuais.
+
+DropHunter fornece "Kit de Branding Autêntico Marie Forleo" (guia persona, banco de 'Histórias de Valor Pessoal', conceitos criativos visuais genuínos, diretrizes de consistência) para RobotHGAds criar campanhas que constroem marca com conexão pessoal.
+
+7. TALIA WOLF (GetUplift)
+
+Especialidade: Criativos baseados em psicologia para conversão
+
+Metodologia principal: "Emotion-Based CRO"
+
+Estratégia distintiva: Emotional Targeting Methodology
+
+Configurações dos Algoritmos da Estratégia:
+
+CustomerEmotionalMotivatorProfiler:
+
+Input: Produto, público (demografia/psicografia), problema, VoC.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Analisa dados para identificar motivadores emocionais primários/secundários (FOMO, Pertencer, Controle, Alívio, Esperança, Status). Pode usar "Computer Use" para pesquisar estudos de psicologia do consumidor.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, ajuda {publico_alvo_descricao} a resolver {problema_principal}. VoC: {resumo_voc_data_emocoes}. Psico: {detalhes_psicograficos}.
+'Emotional Targeting Methodology' (Talia Wolf):
+1.  Identifique Top 3-5 Motivadores Emocionais Chave para decisão de compra.
+2.  Como cada um se manifesta no comportamento/linguagem do público (baseado em VoC)?
+3.  Hierarquize os Motivadores: Qual o mais poderoso/primário?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+EmotionalTriggerToCreativeElementMapper:
+
+Input: Motivadores emocionais, produto.
+
+Lógica (Claude 3.7 Sonnet): Para cada motivador, sugere elementos visuais (cores, imagem, expressões, composição) e textuais (palavras de poder, tom, enquadramento) para acionar essa emoção.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}. Motivador Emocional Primário: {ex_Desejo_Paz_de_Espirito}. Motivador Secundário: {ex_Medo_Complicacao}.
+Para anúncio visual, sugira elementos criativos para ativar motivadores:
+1.  Para '{Motivador_Primario}': Cores e porquê, Tipo imagem/cena ideal, Expressão facial, Palavras/frases chave.
+2.  Para '{Motivador_Secundario}': Como visual pode contrastar/mostrar ausência medo? Palavras/frases que aliviem medo."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+EmotionBasedABTestDesigner:
+
+Input: Produto, dois motivadores emocionais diferentes (ou duas formas de apelar ao mesmo).
+
+Lógica (Claude 3.7 Sonnet): Sugere teste A/B com duas versões de criativo/LP, cada uma focando em apelo emocional diferente. Define hipótese, métricas para determinar qual mais eficaz.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+ProductAnalyzerService e MarketAnalysisService (Claude 3.7) usam CustomerEmotionalMotivatorProfiler.
+
+CreativeAssistantService (Claude 3.7) usa EmotionalTriggerToCreativeElementMapper para traduzir motivadores em diretrizes criativas, e EmotionBasedABTestDesigner para planos de teste.
+
+DropHunter fornece "Guia de Criativos Emocionalmente Inteligentes Talia Wolf" (perfil motivadores emocionais, diretrizes de como usar cores/imagens/expressões/palavras para ativar emoções, planos de teste A/B para apelos emocionais) para RobotHGAds criar anúncios com conexão emocional profunda.
+
+8. NEIL PATEL
+
+Especialidade: Criativos otimizados para tráfego e conversão
+
+Metodologia principal: "Traffic & Conversion Synergy"
+
+Estratégia distintiva: Triple Threat Content
+
+Configurações dos Algoritmos da Estratégia:
+
+SEOFriendlyCreativeConceptGenerator:
+
+Input: Produto, keywords SEO alvo, tipo de criativo.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para criativos otimizados para rankear em buscas orgânicas (YouTube, Pinterest, blog posts com imagens), considerando título, descrição, tags, conteúdo textual otimizado para keywords.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}. Keyword SEO Alvo: '{keyword_seo_principal}'. Tipo Criativo: {ex_Video_Curto_YouTube_TikTok}.
+Gere 3 conceitos para '{Tipo_Criativo_Desejado}' que seja:
+1.  Otimizado para Tráfego (SEO): Como título, desc, tags, conteúdo podem rankear para '{keyword_seo_principal}'?
+2.  Altamente Engajador: Elementos visuais/narrativos para compartilhamento/retenção?
+3.  Orientado à Conversão (Sutil): Como levar espectador a considerar {nome_produto}?
+Descreva conceito, ângulo SEO, gancho engajamento, CTA."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+TripleThreatContentOutlineGenerator:
+
+Input: Tópico/Ideia de conteúdo, produto, keyword SEO alvo.
+
+Lógica (Claude 3.7 Sonnet): Cria outline para peça de conteúdo (artigo, vídeo) otimizada para: Tráfego (SEO - keywords, H_tags, links), Engajamento (storytelling, visuais, exemplos), Conversão (transições suaves para produto, CTAs contextuais).
+
+ABTestingFrameworkForCreatives:
+
+Input: Criativo base, elementos a testar.
+
+Lógica (Claude 3.7 Sonnet ou programática): Gera plano de teste A/B estruturado/contínuo. Sugere métricas avançadas (heatmaps, gravação sessões, funil detalhado) para monitorar.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+CreativeAssistantService (Claude 3.7) usa SEOFriendlyCreativeConceptGenerator para ideias de criativos com potencial SEO.
+
+Claude 3.7 usa TripleThreatContentOutlineGenerator para conteúdo substancial.
+
+DropHunter fornece "Plano de Criativos de Alta Performance Neil Patel" (conceitos criativos otimizados SEO/engajamento/conversão, outlines "Triple Threat", framework/sugestões para testes A/B contínuos e análise avançada) para RobotHGAds implementar ciclo de melhoria contínua baseada em dados.
+
+9. RUSSELL BRUNSON (ClickFunnels)
+
+Especialidade: Criativos integrados para funis de venda
+
+Metodologia principal: "Value Ladder"
+
+Estratégia distintiva: Perfect Webinar Formula
+
+Configurações dos Algoritmos da Estratégia:
+
+ValueLadderDesigner:
+
+Input: Produto principal (core), público, problemas/desejos.
+
+Lógica (Claude 3.7 Sonnet): Projeta "escada de valor" (Bait -> Frontend/Tripwire -> Middle/Core -> Backend) com ofertas de valor ascendente. Para cada degrau, define oferta e propósito.
+
+Prompt para Claude 3.7:
+
+"Produto Principal (Core): {nome_produto_core}, Preço: ${preco_core}, resolve {problema_core_cliente}. Público: {descricao_publico}.
+Projete 'Value Ladder' (3-4 degraus) levando a {Produto_Principal}. Para cada (Bait, Frontend, Middle, opc. Backend):
+1.  Nome/Tipo Oferta.
+2.  Problema Específico Resolve / Valor Entrega.
+3.  Preço (se aplicável).
+4.  Como prepara cliente para próximo degrau?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PerfectWebinarScriptOutlineGeneratorRB:
+
+Input: Produto principal/oferta do meio da escada, Big Idea/mecanismo único.
+
+Lógica (Claude 3.7 Sonnet): Gera outline detalhado para script de webinar/VSL longa (Introdução/Gancho -> Conteúdo/3 Segredos -> A Pilha/Stack -> Fechamento). Claude 3.7 preenche seções com "segredos"/ângulos.
+
+FunnelStepCreativeIntegrator:
+
+Input: Value Ladder, tipos de criativos por etapa (anúncios, LPs, emails, upsell/downsell).
+
+Lógica (Claude 3.7 Sonnet): Para cada degrau/ponto de contato, sugere tipo de criativo, ângulo de mensagem, CTA específico. Garante progressão narrativa/valor consistente.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+CreativeAssistantService (Claude 3.7) usa ValueLadderDesigner.
+
+Claude 3.7 usa PerfectWebinarScriptOutlineGeneratorRB para script VSL/Webinar.
+
+FunnelStepCreativeIntegrator (Claude 3.7) detalha criativos por página/anúncio do funil.
+
+DropHunter fornece "Blueprint de Funil de Vendas Russell Brunson" (design Value Ladder, outlines VSL/Webinar, especificações de criativos para cada página/anúncio do funil) para RobotHGAds construir/automatizar funis de vendas complexos.
+
+10. SCOTT DIKKERS (The Onion)
+
+Especialidade: Criativos virais baseados em humor
+
+Metodologia principal: "11 Funny Filters"
+
+Estratégia distintiva: Irony Escalation Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+HumorStyleIdentifierForBrand:
+
+Input: Produto, público (sensibilidade/tipo de humor), persona marca. "11 Funny Filters" (Ironia, Sátira, Personificação, Exagero, etc.) definidos na base de conhecimento.
+
+Lógica (Claude 3.7 Sonnet): Analisa produto/público para determinar quais "Filtros" mais apropriados/eficazes, quais evitar. Considera risco de ofender.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Nicho: {nicho_produto}. Público: {descricao_publico_com_sensibilidade_humor}. Persona Marca: {persona_definida}. '11 Funny Filters' (Scott Dikkers): {link_ou_lista_filtros}.
+Para este produto/público/persona:
+1.  Filtros de Humor Mais Adequados: Selecione 3-4. Justifique.
+2.  Filtros de Humor a Evitar: Quais e por quê?
+3.  Tom Geral do Humor: Sutil, óbvio, negro, leve, etc.?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+HumorousCreativeConceptGenerator:
+
+Input: Produto, benefício/problema, estilo de humor selecionado.
+
+Lógica (Claude 3.7 Sonnet): Gera 3-5 conceitos para criativos (vídeos, memes, imagens com copy engraçado) usando estilo de humor para comunicar mensagem de forma memorável/compartilhável. Aplica "Irony Escalation Framework" se ironia for o estilo.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Benefício: {beneficio_chave}. Estilo Humor Selecionado: {ex_Exagero_Ironia_Observacional}.
+Gere 3 conceitos criativos humorísticos. Para cada:
+1.  Descreva cena/visual.
+2.  Escreva copy/diálogo principal.
+3.  Explique como usa humor para destacar {beneficio_chave} ou resolver problema de forma engraçada.
+4.  Avalie potencial viralização/compartilhamento (Baixo, Médio, Alto)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ViralSharingTriggerIdentifier:
+
+Input: Conceito criativo humorístico.
+
+Lógica (Claude 3.7 Sonnet): Analisa conceito para identificar/reforçar elementos que incentivam compartilhamento (relacionável, surpreendente, valida crença, fácil de remixar, valor intrínseco - humor/insight/emoção).
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para marcas/produtos que se beneficiam de humor, CreativeAssistantService (Claude 3.7) ativa módulos de Scott Dikkers.
+
+Claude 3.7 define estilo de humor, gera conceitos humorísticos, refina para viralidade.
+
+DropHunter fornece "Pacote de Criativos Virais e Humorísticos Scott Dikkers" (estilo de humor da marca, conceitos detalhados para criativos humorísticos com copy/visual, análise de gatilhos de compartilhamento) para RobotHGAds lançar campanhas com potencial de engajamento orgânico massivo.
+
+11. ALEX HORMOZI
+
+Especialidade: Criativos de oferta de alto valor percebido
+
+Metodologia principal: "Grand Slam Offer"
+
+Estratégia distintiva: Value-Price Disparity Method
+
+Configurações dos Algoritmos da Estratégia:
+
+OfferComponentBrainstormer:
+
+Input: Produto principal, público (dores, desejos, objeções), preço-alvo.
+
+Lógica (Claude 3.7 Sonnet): Gera lista extensa de potenciais bônus, garantias, urgência/escassez, ângulos de valor para construir "Grand Slam Offer". Foco em componentes que resolvem sub-problemas, aceleram resultado, reduzem risco/esforço, aumentam valor percebido com baixo custo marginal.
+
+Prompt para Claude 3.7:
+
+"Produto Principal: {nome_produto}, Preço Alvo Oferta: ${preco_oferta}. Público: {descricao_publico_dores_desejos_objecoes}.
+Para 'Grand Slam Offer' (Alex Hormozi):
+1.  Bônus Alto Valor Percebido: Sugira 5-7. Para cada, explique valor/complementaridade. Estime 'valor percebido'.
+2.  Elementos Garantia Fortes: Sugira 2-3 (reverter risco).
+3.  Fatores Urgência/Escassez (Éticos): Sugira 2-3.
+4.  Nome Oferta 'Grand Slam': Sugira nome atraente."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ValueStackSlideDesigner:
+
+Input: Produto principal, bônus selecionados com valores percebidos, preço final.
+
+Lógica (Claude 3.7 Sonnet): Estrutura apresentação da oferta (LP, VSL, slide webinar) para "empilhar valor": lista cada componente/valor individual -> valor total -> preço final como fração pequena, criando Value-Price Disparity.
+
+Prompt para Claude 3.7:
+
+"Componentes Oferta 'Grand Slam' {nome_produto}: Produto Principal ({nome_pp}, Valor: ${valor_pp}), Bônus 1 ({nome_b1}, Valor: ${valor_b1}), ..., Preço Final Oferta: ${preco_final_oferta}.
+Crie texto/estrutura para 'Value Stack Slide' (Alex Hormozi):
+1. Liste cada componente/valor individual.
+2. Some valor total percebido.
+3. Apresente preço final, destacando disparidade vs. valor total.
+4. Adicione frase justificando por que oferta é tão boa."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ObjectionEliminationMatrix:
+
+Input: Objeções comuns do público, componentes da Grand Slam Offer.
+
+Lógica (Claude 3.7 Sonnet): Mapeia cada componente da oferta para objeções específicas que ajuda a eliminar/reduzir. Garante que oferta aborde proativamente barreiras.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa OfferComponentBrainstormer para elementos da oferta.
+
+ValueStackSlideDesigner (Claude 3.7) estrutura apresentação para valor percebido.
+
+ObjectionEliminationMatrix (Claude 3.7) garante robustez contra objeções.
+
+DropHunter fornece "Blueprint da Grand Slam Offer Alex Hormozi" (oferta central valiosa/detalhada, texto/estrutura para apresentar oferta com disparidade valor-preço, análise de como oferta supera objeções) para RobotHGAds promover "ofertas irrecusáveis".
+
+12. AMY PORTERFIELD
+
+Especialidade: Criativos para digital e lançamentos de cursos (Adaptável para produtos físicos premium/bundles)
+
+Metodologia principal: "Digital Course Academy"
+
+Estratégia distintiva: 3-Part Video Series Launch
+
+Configurações dos Algoritmos da Estratégia:
+
+PreLaunchAuthorityBuilderContentPlanner:
+
+Input: Produto/Bundle a lançar, público, expertise marca.
+
+Lógica (Claude 3.7 Sonnet): Planeja série de conteúdo pré-lançamento (artigos, posts, vídeos) para educar, valorizar, posicionar marca como autoridade, sem vender ainda.
+
+Prompt para Claude 3.7:
+
+"Produto/Bundle Lançamento: {nome_produto_amy}, ajuda {publico_alvo} a {resultado_chave}. Expertise Marca: {area_expertise}.
+Planeje série 3 conteúdos pré-lançamento (Amy Porterfield) para autoridade/antecipação. Para cada:
+1. Título/Formato (Ex: Guia PDF, Mini-Workshop Vídeo).
+2. Principal Insight/Valor Entregue.
+3. Como sutilmente prepara para solução de {nome_produto_amy}?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ThreePartVideoSeriesLaunchScriptGenerator:
+
+Input: Produto/Oferta lançamento, conteúdo pré-lançamento.
+
+Lógica (Claude 3.7 Sonnet): Gera outlines/scripts para série 3 vídeos lançamento (Vídeo 1: Oportunidade/Porquê; Vídeo 2: Como/Caminho; Vídeo 3: Oferta/O Quê). Detalha pontos chave, histórias, CTAs.
+
+LaunchWebinarContentFlowDesigner:
+
+Input: Produto/Oferta lançamento, conteúdo série 3 vídeos (se aplicável).
+
+Lógica (Claude 3.7 Sonnet): Estrutura webinar de vendas (60-90 min) similar à série 3 vídeos, condensado, com interação. Foco em valor massivo, relacionamento, transição suave para oferta.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+CreativeAssistantService (Claude 3.7) usa PreLaunchAuthorityBuilderContentPlanner para aquecer público.
+
+Claude 3.7 gera outlines/scripts com ThreePartVideoSeriesLaunchScriptGenerator ou LaunchWebinarContentFlowDesigner.
+
+DropHunter fornece "Plano de Lançamento Estratégico Amy Porterfield" (estratégia conteúdo pré-lançamento, roteiros/outlines detalhados para série vídeos lançamento ou webinar, sugestões de integração com emails) para RobotHGAds executar lançamentos sofisticados baseados em valor.
+
+13. DONALD MILLER (StoryBrand) (Foco Criativos Visuais/UX)
+
+Especialidade: Criativos baseados em estrutura narrativa clara
+
+Metodologia principal: "StoryBrand Framework"
+
+Estratégia distintiva: BrandScript Implementation System
+
+Configurações dos Algoritmos da Estratégia:
+
+StoryBrandVisualElementGuideGenerator:
+
+Input: BrandScript de 7 pontos (do Arquivo 4).
+
+Lógica (Claude 3.7 Sonnet): Para cada ponto do BrandScript, sugere elementos visuais (para anúncio, banner, seção site) que comuniquem essa parte da história clara/rapidamente. (Ex: Herói: imagens aspiracionais; Problema: visuais de frustração sutil; Guia: logo, especialista amigável; Plano: ícones, diagramas; CTA: botões proeminentes; Sucesso: herói feliz; Fracasso: contraste sutil).
+
+Prompt para Claude 3.7:
+
+"BrandScript Completo {nome_produto_ou_marca}: {brandscript_de_7_pontos}.
+Para cada ponto, sugira 1-2 ideias elementos visuais (imagem, carrossel, frame vídeo) para comunicar efetivamente. Considere clareza, simplicidade, impacto emocional."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+StoryBrandWebsiteSectionPlanner (Foco Visual/UX):
+
+Input: BrandScript completo, objetivo da página.
+
+Lógica (Claude 3.7 Sonnet): Mapeia 7 pontos para estrutura de página visualmente lógica. Sugere tipo de criativo visual (imagem herói, banner, ícones, vídeo) para cada seção de texto, reforçando mensagem. Foco em reduzir ruído visual, propósito claro por seção.
+
+Prompt para Claude 3.7:
+
+"BrandScript Completo {nome_produto_ou_marca}: {brandscript_de_7_pontos}. Objetivo Página: Homepage e-commerce.
+Descreva estrutura ideal seções Homepage (StoryBrand). Para cada:
+1.  Ponto(s) BrandScript comunicado(s).
+2.  Tipo mensagem textual principal (resumida).
+3.  **Tipo criativo visual ideal para acompanhar (ex: 'Hero shot produto com cliente satisfeito').**
+4.  Posicionamento/tipo CTA principal/secundário."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ClarityFirstVisualChecklist:
+
+Input: Rascunho criativo visual (descrição/imagem se Claude 3.7 multimodal) ou layout página.
+
+Lógica (Claude 3.7 Sonnet): Avalia criativo/layout vs. princípios clareza StoryBrand (Herói se vê? Mensagem em 5s? O que oferece é óbvio? Como melhora vida herói? Próximo passo claro?). Fornece feedback/sugestões melhoria visual.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Após BrandScript textual (Arquivo 4), CreativeAssistantService (Claude 3.7) usa StoryBrandVisualElementGuideGenerator para sugestões visuais.
+
+StoryBrandWebsiteSectionPlanner (Claude 3.7) estrutura layout visual de LPs/página produto.
+
+ClarityFirstVisualChecklist (Claude 3.7) revisa conceitos.
+
+DropHunter fornece "Guia Visual e de UX StoryBrand" (sugestões elementos visuais por ponto BrandScript, mapa estrutura visual LP/homepage com tipos criativos recomendados, checklist clareza) para RobotHGAds/usuário garantir criativos visuais e UX alinhados com narrativa StoryBrand.
+
+14. NOAH KAGAN (AppSumo)
+
+Especialidade: Criativos minimalistas de alta conversão
+
+Metodologia principal: "Minimum Effective Dose"
+
+Estratégia distintiva: C.A.S.T. Method (Foco "Copywriting/Criativos" simplificados)
+
+Configurações dos Algoritmos da Estratégia:
+
+MinimalistCreativeConceptStripper:
+
+Input: Produto, UM benefício principal MUITO claro, ou UMA oferta MUITO simples.
+
+Lógica (Claude 3.7 Sonnet): Desafia complexidade. Remove tudo até essencial (UMA imagem/frame, UM headline curto/direto, UM CTA). Cores limitadas, design limpo.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto_simples_ou_beneficio_unico_claro}. Benefício Principal ÚNICO: '{beneficio_essencial}'. Oferta (simples): '{oferta_direta}'.
+'Minimum Effective Dose' (Noah Kagan): Gere 3 conceitos criativos (imagem/vídeo MUITO curto) EXTREMAMENTE minimalistas:
+1.  Conceito Visual Minimalista: Descreva imagem/cena mais simples para comunicar '{beneficio_essencial}'.
+2.  Headline Minimalista (Máx 5 palavras).
+3.  CTA Minimalista (Máx 3 palavras).
+Ideia: 'brutalmente' simples e direto."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+SingleBenefitVisualFocusGenerator:
+
+Input: Produto, múltiplos benefícios.
+
+Lógica (Claude 3.7 Sonnet): Claude 3.7 seleciona benefício MAIS PODEROSO/ÚNICO. Gera ideias visuais focadas exclusivamente nele.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Benefícios: [{beneficio_A}, {B}, {C}, {D}].
+1.  Seleção Benefício 'Alpha': Qual MAIS forte, único, fácil de comunicar visualmente para criativo minimalista (Noah Kagan)? Justifique.
+2.  Conceito Visual Benefício 'Alpha': Descreva conceito visual (imagem/vídeo curto) para demonstrá-lo inequivocamente, sem distrações."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+QuantitativeTestPrioritizationForMinimalistCreatives:
+
+Input: Variações criativos minimalistas.
+
+Lógica: Foco em teste rápido/quantitativo de qual variação (headline/CTA) performa melhor (CTR/conversão). Sugere plano A/B direto para RobotHGAds.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa MinimalistCreativeConceptStripper e SingleBenefitVisualFocusGenerator para ideias criativos ultra-simplificados.
+
+DropHunter fornece "Pacote de Criativos Minimalistas Noah Kagan" (conceitos criativos simples focados em benefício único, variações headlines/CTAs minimalistas, plano testes A/B) para RobotHGAds testar rapidamente resposta do mercado ou para remarketing direto.
+
+15. SETH GODIN
+
+Especialidade: Criativos memoráveis que criam diferenciação
+
+Metodologia principal: "Purple Cow"
+
+Estratégia distintiva: Idea Virus Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+RemarkableConceptBrainstormer ("Purple Cow"):
+
+Input: Produto, nicho, análise criativos concorrentes (o "normal").
+
+Lógica (Claude 3.7 Sonnet com alta criatividade): Desafia status quo. Gera ideias criativos (visuais/conceituais) radicalmente diferentes. Foco em Quebra de Padrão, Surpresa, Coragem, Simplicidade Impactante.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Nicho: {nicho_produto}. Análise Criativos Comuns Concorrentes: {descreva_o_normal}.
+'Purple Cow' (Seth Godin): Gere 3 ideias criativos (conceito visual/mensagem principal) RADICALMENTE DIFERENTES e NOTÁVEIS vs. concorrentes. Objetivo: quebrar padrão, fazer parar/comentar. Para cada: Descrição visual, Mensagem/headline, Por que 'notável'?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+IdeaVirusElementInjector:
+
+Input: Conceito criativo ("Purple Cow" ou outro).
+
+Lógica (Claude 3.7 Sonnet): Analisa conceito, sugere como incorporar elementos para facilitar compartilhamento orgânico (Facilidade de Compartilhar, Incentivo, Conexão Identidade/Tribo, Valor Intrínseco - Humor/Insight/Emoção, Sementeira - para quem mostrar primeiro).
+
+Prompt para Claude 3.7:
+
+"Conceito Criativo: {descricao_conceito_criativo_notavel}.
+'Idea Virus Framework' (Seth Godin): Como otimizar para potencializar compartilhamento orgânico? Sugira modificações/adições focando em: Facilidade compartilhar, Incentivo, Conexão identidade, Valor intrínseco. Quem seriam 'sneezers' ideais?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa RemarkableConceptBrainstormer para ideias criativas que se destacam.
+
+IdeaVirusElementInjector (Claude 3.7) refina para viralidade.
+
+DropHunter fornece "Pacote de Criativos Notáveis Seth Godin" (conceitos criativos "Purple Cow", análise/sugestões para transformar criativos em "vírus de ideia" com "espalhadores") para RobotHGAds criar campanhas de branding/lançamento de impacto massivo/orgânico.
+
+16. JESSE ITZLER
+
+Especialidade: Criativos com narrativa pessoal impactante
+
+Metodologia principal: "Story-Driven Authenticity"
+
+Estratégia distintiva: Life Resume Method
+
+Configurações dos Algoritmos da Estratégia:
+
+ExtremeExperienceExtractorForBranding:
+
+Input: Infos usuário/fundador (experiências notáveis/desafios/feitos) ou Claude 3.7 cria "Fundador Arquetípico Extremo". Valores marca, produto.
+
+Lógica (Claude 3.7 Sonnet): Identifica experiências mais "extremas"/memoráveis/resilientes. Conecta-as autenticamente a valores marca/benefícios produto.
+
+Prompt para Claude 3.7 (se usuário fornecer experiências):
+
+"Experiências Vida Notáveis Fundador: {Experiencia_1_ex_correr_100_milhas}, {Exp_2}, {Exp_3}. Valores Marca: {lista_valores}. Produto: {nome_produto}.
+'Life Resume Method' (Jesse Itzler):
+1.  Para cada experiência, qual 'lição de vida'/'princípio fundamental' extrair?
+2.  Como essas lições/princípios se conectam autenticamente com {Valores_Marca} e benefícios/filosofia de {Produto_Principal}?
+3.  Esboce 2-3 'mini-histórias' (100-150 palavras) baseadas nessas experiências para marketing (sobre marca, posts motivacionais) que reforcem sutilmente mensagem marca/produto."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+StrategicVulnerabilityAssessor:
+
+Input: Conceito história pessoal extrema.
+
+Lógica (Claude 3.7 Sonnet): Avalia como compartilhar "vulnerabilidade" (desafios) na história pode criar conexão forte/autêntica, sem autopiedade. Foco em inspirar/mostrar resiliência.
+
+LifeResumeCreativeConceptGenerator:
+
+Input: Mini-histórias/lições das experiências extremas.
+
+Lógica (Claude 3.7 Sonnet): Sugere conceitos criativos visuais (vídeos curtos, posts imagem com citação) capturando essência dessas histórias/lições. Foco em visuais de energia, superação, aspiração.
+
+Prompt para Claude 3.7:
+
+"Mini-História 'Life Resume': '{resumo_mini_historia_extrema_licao}'. Produto/Marca Associada: {nome_produto_ou_marca}.
+Gere 2 conceitos criativos visuais (1 imagem estática, 1 vídeo curto 15s) que:
+1.  Capturem visualmente essência desta história/lição.
+2.  Sejam inspiradores/autênticos.
+3.  Criem associação positiva com {Produto/Marca_Associada}.
+Descreva visual, tom, mensagem implícita."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para marcas pessoais fortes ou com "fundador arquetípico" impactante.
+
+CreativeAssistantService (Claude 3.7) usa ExtremeExperienceExtractorForBranding.
+
+StrategicVulnerabilityAssessor refina histórias; LifeResumeCreativeConceptGenerator traduz em ideias visuais.
+
+DropHunter fornece "Kit de Branding de Alto Impacto Jesse Itzler" (histórias/lições "Life Resume", conceitos criativos visuais inspiradores, diretrizes sobre vulnerabilidade estratégica) para RobotHGAds criar campanhas de branding com conexão profunda.
+
+17. JEFF WALKER
+
+Especialidade: Criativos sequenciais para lançamentos
+
+Metodologia principal: "Product Launch Formula" (PLF)
+
+Estratégia distintiva: Sideways Sales Letter
+
+Configurações dos Algoritmos da Estratégia:
+
+PLFSequencePlanner:
+
+Input: Produto/Oferta a lançar, público, "Big Idea"/transformação, datas.
+
+Lógica (Claude 3.7 Sonnet, treinado na PLF): Mapeia estrutura PLF (Pré-Pré-Lançamento -> Pré-Lançamento com PLC1, PLC2, PLC3 -> Abertura Carrinho -> Durante Carrinho -> Fechamento). Define objetivo, ângulo, formato (vídeo, artigo, PDF), CTA para cada PLC/email.
+
+Prompt para Claude 3.7:
+
+"Produto Lançamento PLF: {nome_produto_plf}, transformação: {transformacao_principal}. Público: {descricao_publico}. Abertura Carrinho: {data_abertura_carrinho}.
+'Product Launch Formula' (Jeff Walker): Detalhe conteúdo/propósito para PLC1, PLC2, PLC3 e emails chave (Abertura, Meio, Fechamento Carrinho).
+Para cada PLC (vídeo/artigo): Título, Objetivo Psicológico Chave, Pontos Conteúdo, CTA.
+Para cada Email Chave: Assunto, Mensagem Principal, CTA."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+SidewaysSalesLetterContentGenerator:
+
+Input: Outlines PLC1, PLC2, PLC3.
+
+Lógica (Claude 3.7 Sonnet): Expande outlines em scripts/rascunhos detalhados. Garante fluxo narrativo lógico entre PLCs, construindo caso gradualmente. Foco em storytelling, prova social, "mostrar, não dizer".
+
+PLFCreativeAssetSpecifier:
+
+Input: Plano sequência PLF, conteúdo PLC/email.
+
+Lógica (Claude 3.7 Sonnet): Para cada PLC/email, sugere tipos de criativos visuais. Garante consistência visual/marca.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+Para lançamentos significativos. CreativeAssistantService e CopywritingAssistantService (Claude 3.7) executam PLFSequencePlanner e SidewaysSalesLetterContentGenerator.
+
+PLFCreativeAssetSpecifier (Claude 3.7) adiciona diretrizes visuais.
+
+DropHunter fornece "Kit Completo de Product Launch Formula Jeff Walker" (plano detalhado sequência lançamento, rascunhos scripts/artigos para PLCs, sugestões criativos visuais por etapa) para RobotHGAds executar lançamentos orquestrados de alto impacto.
+
+18. BRENDON BURCHARD
+
+Especialidade: Criativos de alto desempenho para info-produtos (Adaptável para produtos físicos com componente educacional/transformação estilo de vida)
+
+Metodologia principal: "High Performance Content"
+
+Estratégia distintiva: H.P.X. Content Method (High Performance Experience)
+
+Configurações dos Algoritmos da Estratégia:
+
+HighPerformanceTopicGenerator:
+
+Input: Produto, transformação/resultado, público e seus objetivos "alto desempenho".
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para conteúdo (vídeos, artigos, webinars) ensinando público a alcançar "alto desempenho" na área do produto, posicionando produto como ferramenta/catalisador. Foco em inspirador E prático.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, ajuda {ex_ser_mais_focado}. Público: {ex_profissionais_ocupados_otimizar_tempo}.
+'High Performance Content' (Brendon Burchard): Gere 5 ideias tópicos conteúdo (vídeos/artigos) que:
+1. Ensinem habilidade/estratégia valiosa para público alcançar 'alto desempenho' em {foco_produtividade}.
+2. Sejam inspiradores/motivem ação.
+3. Permitam transição natural para apresentar {nome_produto}.
+Para cada: Título, 2-3 Pontos Chave."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+HPXContentStructureDesigner:
+
+Input: Tópico conteúdo, produto. Componentes HPX (Clareza, Energia, Engajamento, Estratégias, Transição).
+
+Lógica (Claude 3.7 Sonnet): Cria outline para conteúdo incorporando HPX (Qual promessa? Como apresentar com energia? Pontos interação? Dicas práticas? Como transitar para produto?).
+
+Prompt para Claude 3.7 (para vídeo HPX):
+
+"Tópico Vídeo Alto Desempenho: '{titulo_topico_hpx}'. Produto: {nome_produto}. Componentes HPX: {Clareza, Energia, etc.}.
+Crie outline detalhado vídeo 10-15 min '{Tópico_Vídeo}' usando HPX Method. Para cada seção:
+1. Componente HPX focado.
+2. Pontos principais.
+3. Sugestões manter 'Energia'.
+4. Como 'Engajar'.
+5. 'Estratégias Acionáveis' ensinadas.
+6. Como 'Transição' para {nome_produto}?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+InspirationalCTAGenerator:
+
+Input: Conteúdo HPX, produto.
+
+Lógica (Claude 3.7 Sonnet): Gera CTAs convidando a "próximo nível" de desempenho/experiência, com produto como veículo.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa HighPerformanceTopicGenerator para pauta conteúdo.
+
+HPXContentStructureDesigner (Claude 3.7) cria outlines. InspirationalCTAGenerator (Claude 3.7) cria CTAs.
+
+DropHunter fornece "Plano de Conteúdo de Alto Desempenho Brendon Burchard" (lista tópicos, outlines detalhados para vídeos/artigos HPX com sugestões energia/engajamento, exemplos CTAs inspiradores) para RobotHGAds criar marketing de conteúdo que posiciona marca como fonte de inspiração/transformação.
+
+19. MARI SMITH
+
+Especialidade: Criativos sociais de alta performance (Facebook, aplicável a outras)
+
+Metodologia principal: "Relationship Marketing 3.0"
+
+Estratégia distintiva: E.P.I.C. Social Formula (Engage, Position, Inform, Convert)
+
+Configurações dos Algoritmos da Estratégia:
+
+SocialRelationshipContentPlanner:
+
+Input: Produto, público na plataforma social, persona marca.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias posts sociais priorizando engajamento/relacionamento (perguntas, enquetes, bastidores, curadoria, datas comemorativas). Foco em iniciar conversas, humanizar marca.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Nicho: {nicho_produto}. Plataforma: {ex_Pagina_Facebook}. Público: {descricao_publico_social}. Persona Marca: {persona_definida}.
+'Relationship Marketing 3.0' (Mari Smith): Gere 5 ideias posts sociais para construir relacionamento/engajamento (NÃO vendas diretas). Para cada: Tipo Post, Conceito/Texto Principal, Como incentiva interação/relacionamento?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+EPICSocialPostGenerator:
+
+Input: Ideia de post, produto, objetivo E.P.I.C.
+
+Lógica (Claude 3.7 Sonnet): Gera texto/sugestão visual para post seguindo estágio E.P.I.C. (Engage: gerar interações; Position: estabelecer expertise; Inform: educar sobre problema/solução; Convert: CTAs contextuais/não agressivos). Otimizado para algoritmo da plataforma.
+
+Prompt para Claude 3.7 (exemplo post 'Position'):
+
+"Produto: {nome_produto}, solução para {problema_cliente}. Plataforma: Instagram. Estágio E.P.I.C.: Position. Objetivo: Compartilhar dica valiosa.
+Gere rascunho post Instagram (imagem+legenda):
+1.  Visual: Descreva imagem/carrossel ilustrando dica.
+2.  Legenda (Engage/Position): Comece com pergunta/afirmação engajante. Compartilhe dica útil/acionável posicionando marca como conhecedora.
+3.  Legenda (Inform/Convert Sutil): Sutilmente conecte dica à categoria/benefício de {nome_produto}, talvez CTA suave ('Quer saber mais? Link na bio!')."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+SubtleSocialCTAGenerator:
+
+Input: Post social focado em engajamento/informação.
+
+Lógica (Claude 3.7 Sonnet): Gera CTAs naturais/não interruptivos (Ex: "O que acha? Comente!", "Marque amigo!", "Saiba mais link bio.", "DM se dúvidas!").
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa SocialRelationshipContentPlanner para calendário social.
+
+EPICSocialPostGenerator (Claude 3.7) cria conteúdo por estágio E.P.I.C.
+
+SubtleSocialCTAGenerator (Claude 3.7) garante CTAs apropriados.
+
+DropHunter fornece "Plano de Conteúdo Social Mari Smith" (calendário posts, rascunhos posts E.P.I.C. com sugestões visuais, banco CTAs sociais sutis) para RobotHGAds/gestor social implementar estratégia de mídia social que constrói comunidade.
+
+20. DEAN GRAZIOSI
+
+Especialidade: Criativos de vídeo com alta conversão
+
+Metodologia principal: "Knowledge Business Blueprint" (KBB - adaptado)
+
+Estratégia distintiva: Invisible Selling Method
+
+Configurações dos Algoritmos da Estratégia:
+
+HighConversionVideoScriptFrameworker:
+
+Input: Produto, público, oferta, Big Idea/transformação.
+
+Lógica (Claude 3.7 Sonnet, treinado na narrativa Graziosi): Gera outline detalhado para vídeo de vendas (VSL, YouTube Ad, LP vídeo) seguindo estrutura: Conexão Imediata (Hook) -> Identificação Problema -> Posicionamento Guia/Autoridade Acessível -> Revelação "Nova Oportunidade" -> Ensino Valor (3-5 Pontos Chave) -> Transição Solução/Produto -> Apresentação Oferta (Value Stack) -> Prova Social/Objeções -> CTA Urgência/Visão Futura. Claude 3.7 detalha fluxo, storytelling, transições.
+
+InvisibleSellingNarrativeGenerator:
+
+Input: Outline do HighConversionVideoScriptFrameworker.
+
+Lógica (Claude 3.7 Sonnet): Expande outline em rascunho de roteiro. Foco em Storytelling Contínuo, Entrega Valor Genuíno, Transições Suaves (oferta como consequência natural), Linguagem Conversacional/Autêntica.
+
+Prompt para Claude 3.7 (para seção vídeo):
+
+"Seção Roteiro Vídeo: 'Revelação Nova Oportunidade' (após identificar problema). Produto: {nome_produto}, oferece {solucao_inovadora}. Público: {descricao_publico}. Tom: Autoritário, acessível, empático.
+Escreva trecho roteiro (150-200 palavras) para esta seção. Apresentador/narração introduz 'nova oportunidade'/{nome_produto} representa. Crie 'momento aha!', faça sentir solução real ao alcance, sem revelar produto ainda. Use storytelling, linguagem de esperança."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+VideoVisualCueSuggester:
+
+Input: Rascunho roteiro vídeo.
+
+Lógica (Claude 3.7 Sonnet): Para seções chave, sugere visuais complementares (Ex: close-up pessoa pensativa para frustração; gráficos animados para "nova oportunidade"; trechos depoimentos para prova social; text overlays para value stack).
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos que se beneficiam de venda consultiva/valor via vídeo, CreativeAssistantService (Claude 3.7) ativa módulos Graziosi.
+
+Claude 3.7 usa HighConversionVideoScriptFrameworker para esqueleto narrativa, InvisibleSellingNarrativeGenerator para roteiro, VideoVisualCueSuggester para diretrizes visuais.
+
+DropHunter fornece "Pacote de Vídeo de Vendas de Alta Conversão Dean Graziosi" (outline/rascunho roteiro VSL/anúncio longo, sugestões elementos visuais por parte roteiro, diretrizes tom autêntico/autoridade) para RobotHGAds/time vídeo criar vídeos de vendas eficazes.
+
+21. CHRIS DO (The Futur)
+
+Especialidade: Criativos educacionais que monetizam expertise
+
+Metodologia principal: "Value-First Content Strategy"
+
+Estratégia distintiva: Reciprocity Marketing System
+
+Configurações dos Algoritmos da Estratégia:
+
+PremiumFreeContentIdeator:
+
+Input: Produto principal (maior valor/sistema), expertise marca, problemas/desejos público.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para conteúdo GRATUITO "tão valioso que poderia ser vendido" (workshops, guias extensos, templates alta qualidade, mini-séries vídeo). Conteúdo resolve parte significativa do problema ou ensina habilidade, demonstra expertise, sutilmente cria necessidade do produto pago.
+
+Prompt para Claude 3.7:
+
+"Produto Principal (Pago): {nome_produto_premium}, ensina/ajuda {resolver_problema_complexo}. Expertise Marca: {area_de_expertise}. Público: {descricao_publico_busca_expertise}.
+'Value-First Content Strategy' (Chris Do): Gere 3 ideias CONTEÚDO GRATUITO PREMIUM que:
+1.  Entreguem valor massivo/acionável em {area_de_expertise}.
+2.  Demonstrem inequivocamente expertise marca.
+3.  Resolvam sub-problema/ensinem habilidade que leve a desejar {Produto_Principal_Pago}.
+Para cada: Título, Formato (Workshop Online 1h, Guia PDF 50p, Série 3 Vídeos), Principais Tópicos/Resultados gratuitos."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ReciprocityLoopDesigner:
+
+Input: Conteúdo gratuito premium, produto pago relacionado.
+
+Lógica (Claude 3.7 Sonnet): Estrutura entrega conteúdo gratuito e transição para oferta paga para maximizar reciprocidade. Conteúdo gratuito tão bom que público sente "dívida" ou quer mais. Oferta paga como próximo passo lógico.
+
+Prompt para Claude 3.7:
+
+"Conteúdo Gratuito: '{titulo_conteudo_gratuito}' (Formato: {formato}). Produto Pago: {nome_produto_pago}.
+Descreva como estruturar promoção/entrega de '{titulo_conteudo_gratuito}' e oferta subsequente de {nome_produto_pago} para forte 'Loop de Reciprocidade' (Chris Do):
+1.  Copy para Promover Conteúdo Gratuito: Enfatizar valor massivo/gratuidade.
+2.  Durante Entrega Conteúdo Gratuito: Como continuar valor e sutilmente posicionar necessidade/desejo produto pago?
+3.  Transição Oferta Paga: Maneira natural/baseada em valor de apresentar {nome_produto_pago} ao final?
+4.  Criativos Visuais Conteúdo Gratuito: Que visual comunicaria alta qualidade/valor?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+ExpertiseShowcaseCreativeGenerator:
+
+Input: Peça conteúdo gratuito premium, expertise marca.
+
+Lógica (Claude 3.7 Sonnet): Gera conceitos criativos (vídeos curtos, trechos workshops, carrosséis dicas) mostrando expertise em ação, retirados do conteúdo gratuito, para atrair público ao conteúdo completo.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos com componente educacional forte. CreativeAssistantService (Claude 3.7) usa PremiumFreeContentIdeator.
+
+ReciprocityLoopDesigner (Claude 3.7) estrutura funil marketing de conteúdo.
+
+ExpertiseShowcaseCreativeGenerator (Claude 3.7) cria anúncios para conteúdo gratuito.
+
+DropHunter fornece "Plano de Marketing de Conteúdo de Alto Valor Chris Do" (ideias/outlines conteúdo gratuito premium, estratégia para promover/criar loop reciprocidade, conceitos criativos para promover conteúdo gratuito) para RobotHGAds implementar inbound marketing poderoso.
+
+22. GRANT CARDONE
+
+Especialidade: Criativos de alta energia para vendas
+
+Metodologia principal: "10X Marketing"
+
+Estratégia distintiva: Omnipresence Protocol
+
+Configurações dos Algoritmos da Estratégia:
+
+CoreMessageAmplifier ("10X"):
+
+Input: Produto, benefício principal, persona marca (ousada, energética, foco resultados massivos).
+
+Lógica (Claude 3.7 Sonnet): Define UMA mensagem central poderosa/ambiciosa/confiante sobre resultado 10X do produto. Gera variações adaptadas em tom/comprimento, mantendo essência "10X".
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, ajuda {alcancar_resultado_significativo}. Persona Marca: Estilo Grant Cardone.
+1.  Defina 'Mensagem Central 10X': Declaração curta/poderosa (1-2 frases) comunicando resultado 10x/transformação massiva.
+2.  Gere 5 Variações Amplificação desta mensagem (tweet, hook vídeo, banner): Curta/Impactante, Estatística Ousada, Desafio Status Quo, Foco Velocidade Resultado, Tom Exclusividade/Segredo Vencedores."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+OmnipresenceContentRepurposer:
+
+Input: Conteúdo pilar (vídeo longo, artigo), Mensagem Central 10X.
+
+Lógica (Claude 3.7 Sonnet): Desmembra pilar em múltiplos micro-conteúdos (trechos vídeo, citações, imagens, stories) para diversas plataformas. Cada um reforça Mensagem Central 10X. Adapta cada um para formato/linguagem da plataforma.
+
+Prompt para Claude 3.7:
+
+"Conteúdo Pilar: {link_ou_transcricao_video_30_min_beneficios_produto}. Mensagem Central 10X: '{mensagem_10x}'.
+Desmembre em 10+ micro-conteúdos para 'Onipresença' (Grant Cardone). Para cada:
+1.  Plataforma Alvo (TikTok, Insta Story, Tweet, LinkedIn Post).
+2.  Formato Micro-Conteúdo (Vídeo 15s, Citação Imagem, Thread Tweets).
+3.  Conteúdo Específico (texto, descrição cena).
+4.  Como reforça '{Mensagem_Central_10X}'?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+HighEnergyVisualStyleGuide:
+
+Input: Persona marca estilo Cardone.
+
+Lógica (Claude 3.7 Sonnet): Define diretrizes visuais (Cores: Vibrantes, contrastantes. Tipografia: Ousada. Imagens/Vídeos: Dinâmicas, sucesso, movimento rápido. Tom: Direto, motivacional, desafiador).
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter e RobotHGAds):
+
+Para marcas com posicionamento forte/agressivo. CreativeAssistantService (Claude 3.7) usa CoreMessageAmplifier para mensagem "10X".
+
+OmnipresenceContentRepurposer (Claude 3.7) cria plano de distribuição multicanal.
+
+HighEnergyVisualStyleGuide (Claude 3.7) define estética.
+
+DropHunter fornece "Kit de Marketing 10X Grant Cardone" (Mensagem Central 10X/variações, plano conteúdo onipresença com micro-criativos textuais/conceituais visuais, guia estilo visual alta energia) para RobotHGAds implementar estratégia de saturação de mercado.
+
+23. PAT FLYNN (Smart Passive Income)
+
+Especialidade: Criativos transparentes que constroem confiança
+
+Metodologia principal: "Serve First Framework"
+
+Estratégia distintiva: Predictable Promotions Calendar
+
+Configurações dos Algoritmos da Estratégia:
+
+TransparencyContentIdeator:
+
+Input: Produto, marca, nicho. Disposição do usuário em compartilhar dados reais.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias conteúdo transparente (Bastidores criação/seleção fornecedores, Compartilhamento desafios/aprendizados, Relatórios impacto, Estudos caso honestos, Explicações modelo negócio).
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Marca: {nome_marca}. Nicho: {nicho_produto}. Objetivo: Confiança via transparência (Pat Flynn).
+Gere 5 ideias conteúdo (artigos, vídeos, posts) demonstrando transparência/construindo comunidade. Para cada: Título/Tema, Formato, Como promove transparência/confiança? Chamada para engajamento (não venda) apropriada?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+RealResultsShowcasePlanner:
+
+Input: Produto, dados performance (iniciais/testes), testemunhos.
+
+Lógica (Claude 3.7 Sonnet): Sugere formas de apresentar resultados reais (bons e ruins) autenticamente. Foco em honestidade. Transforma dados brutos em narrativa visual/textual compreensível/inspiradora.
+
+Prompt para Claude 3.7 (com dados hipotéticos):
+
+"Produto: {nome_produto}. Dados Teste Inicial: {ex_100_usuarios_50%_melhora_X_etc}. Testemunho Chave: '{testemunho_real}'.
+Abordagem 'compartilhamento resultados reais' (Pat Flynn):
+1.  Como dados teste podem ser apresentados transparente/construtivamente em criativo (post blog, vídeo)?
+2.  Crie trecho copy compartilhando resultados (incluindo não tão perfeitos) e extraindo aprendizado/próximo passo.
+3.  Como testemunho chave pode ser integrado?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PredictablePromotionsCalendarIntegrator:
+
+Input: Calendário conteúdo "servir primeiro", produtos/ofertas a promover.
+
+Lógica (Claude 3.7 Sonnet): Intercala promoções estratégica/previsivelmente no fluxo de conteúdo de valor. Define frequência/tom para manter integridade.
+
+Prompt para Claude 3.7:
+
+"Calendário Conteúdo Valor (Próximos 2 meses): {lista_conteudos_semanais}. Produto Promover: {nome_produto_promocao}.
+Integre 2-3 janelas promoção para {nome_produto_promocao} (Pat Flynn 'Predictable Promotions').
+1.  Em que semanas mais apropriadas e por quê?
+2.  Como conteúdo valor anterior pode 'preparar terreno'?
+3.  Tom/mensagem para anunciar promoção como extensão natural do serviço à comunidade?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa TransparencyContentIdeator e RealResultsShowcasePlanner.
+
+PredictablePromotionsCalendarIntegrator (Claude 3.7) planeja timing de ofertas.
+
+DropHunter fornece "Guia de Marketing Transparente Pat Flynn" (ideias/templates conteúdo bastidores/relatórios/cases honestos, estratégia para compartilhar resultados, modelo calendário valor/promoções) para RobotHGAds/usuário construir marca com base de fãs leais.
+
+24. RYAN HOLIDAY
+
+Especialidade: Criativos baseados em narrativa cultural
+
+Metodologia principal: "Perennial Seller"
+
+Estratégia distintiva: Cultural Positioning Matrix
+
+Configurações dos Algoritmos da Estratégia:
+
+CulturalConversationIdentifier:
+
+Input: Produto, nicho, público, valores marca.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Pesquisa tendências, debates, movimentos sociais, "conversas culturais" relevantes para produto/valores. Identifica onde produto pode se encaixar/oferecer perspectiva.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto_ex_garrafa_agua_inteligente}. Nicho: {ex_sustentabilidade_bem_estar_tech}. Público: {ex_jovens_profissionais_conscientes}. Valores Marca: {ex_inovacao_sustentabilidade}.
+Identifique 2-3 'Conversas Culturais' atuais/relevantes (Ryan Holiday). Para cada:
+1.  Descreva Conversa (ex: 'Debate responsabilidade individual vs. corporativa crise climática').
+2.  Como {nome_produto} pode se posicionar/contribuir significativamente?
+3.  Ângulo/mensagem principal para marca se inserir autenticamente?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PerennialCreativeConceptGenerator:
+
+Input: Produto, "conversa cultural" selecionada, mensagem chave marca.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias criativos (artigos, vídeos, posts, campanhas) sobre "ideia maior"/conversa cultural, não só produto. Objetivo: relevância longa, temas atemporais. Marketing integrado ao produto.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}. Conversa Cultural: '{conversa_cultural_selecionada}'. Mensagem Chave Marca: '{mensagem_marca_para_conversa}'.
+Gere 2 conceitos criativos 'perenes' (Ryan Holiday) posicionando {nome_produto} dentro de '{Conversa_Cultural_Selecionada}' usando '{Mensagem_Chave_Marca}'. Para cada:
+1.  Formato Criativo (Ensaios Blog, Documentário Curto YouTube).
+2.  Título/Tema Principal.
+3.  Como explora conversa cultural profundamente e oferece perspectiva duradoura?
+4.  Como produto é integrado organicamente?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+CulturalPositioningStatementWriter:
+
+Input: Produto, valores marca, conversa cultural chave.
+
+Lógica (Claude 3.7 Sonnet): Cria declaração concisa definindo como marca/produto se posicionam na conversa cultural. (Para "Sobre Nós", manifestos).
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7 com Tool Use) usa CulturalConversationIdentifier para mapear cenário cultural.
+
+PerennialCreativeConceptGenerator (Claude 3.7) desenvolve ideias criativos perenes.
+
+CulturalPositioningStatementWriter (Claude 3.7) articula "grande ideia" da marca.
+
+DropHunter fornece "Guia de Marketing Cultural Ryan Holiday" (análise conversas culturais, conceitos criativos perenes, declaração posicionamento cultural) para RobotHGAds/estrategista marca criar campanhas com significado cultural profundo.
+
+25. CHALENE JOHNSON
+
+Especialidade: Criativos multiplataforma integrados
+
+Metodologia principal: "Multi-Platform Synergy"
+
+Estratégia distintiva: Platform Specific Optimization System
+
+Configurações dos Algoritmos da Estratégia:
+
+CoreMessageDefinitionForMultiPlatform:
+
+Input: Produto, benefício principal, público geral.
+
+Lógica (Claude 3.7 Sonnet): Define UMA mensagem central concisa/poderosa, espinha dorsal de todos criativos/plataformas. Adaptável, mas essência mantida.
+
+PlatformSpecificContentAdapter:
+
+Input: Mensagem central, conteúdo pilar (artigo, vídeo longo), plataformas alvo (Instagram, TikTok, YouTube Shorts, Facebook, Pinterest, LinkedIn).
+
+Lógica (Claude 3.7 Sonnet, com conhecimento melhores práticas plataformas): Para cada plataforma, adapta mensagem central/trechos pilar para formato, linguagem, tipo de engajamento ideal. (Ex: Insta: visual alta qualidade, legendas curtas; TikTok: vídeos curtos/dinâmicos, áudios trend; YouTube: Shorts para ganchos, longos para tutoriais; FB: mix texto/imagem/vídeo, comunidade; Pinterest: verticais inspiradores; LinkedIn: formal, artigos).
+
+Prompt para Claude 3.7:
+
+"Mensagem Central Produto '{nome_produto}': '{mensagem_central}'. Conteúdo Pilar (Ex: Artigo Blog '5 Benefícios {nome_produto}'): {link_ou_texto_artigo}. Plataformas: Instagram, TikTok, Facebook.
+Adapte Mensagem Central/insights Pilar para rascunho post para cada plataforma, otimizado para melhores práticas/engajamento (Chalene Johnson):
+1.  Instagram Post: Sugestão Imagem/Carrossel, Legenda (50-100 palavras), Hashtags.
+2.  TikTok Vídeo (Conceito): Ideia vídeo curto (15-30s), Áudio/Trend, Texto sobreposição.
+3.  Facebook Post: Texto (pode ser mais longo, com link), Sugestão imagem/vídeo."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PushPullChannelStrategyPlanner:
+
+Input: Mensagem central, lista plataformas.
+
+Lógica (Claude 3.7 Sonnet): Sugere como usar plataformas para se complementarem (Push: Insta Story -> vídeo YouTube; Pull: vídeo YouTube -> grupo FB exclusivo). Cria funil distribuído.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CreativeAssistantService (Claude 3.7) usa CoreMessageDefinitionForMultiPlatform.
+
+PlatformSpecificContentAdapter (Claude 3.7) gera variações conteúdo/criativos por plataforma.
+
+PushPullChannelStrategyPlanner (Claude 3.7) orquestra sinergia.
+
+DropHunter fornece "Plano de Conteúdo Multiplataforma Integrado Chalene Johnson" (mensagem central, pacote conceitos criativos adaptados por plataforma, estratégia push-pull para funil coeso) para RobotHGAds/gestor social garantir presença consistente/eficaz no ecossistema digital.
+
+Com isso, concluímos a compilação revisada do ARQUIVO 5: DROPHUNTER - ESPECIALISTAS EM CRIATIVOS (COM DETALHAMENTO TÉCNICO). Todos os 25 especialistas foram cobertos, detalhando como suas metodologias são traduzidas em processos e prompts para o Claude 3.7 Sonnet, visando a geração de diretrizes e conceitos para criativos de alta performance.
+
+O próximo passo é compilar o ARQUIVO 6: ROBOTHGADS - 44 ESPECIALISTAS (COM CONFIGURAÇÕES GOOGLE ADS API/RPA). Este será o mais longo, pois combina os outputs dos Arquivos 3, 4 e 5 com as estratégias dos especialistas em tráfego pago. Vou seguir a abordagem que discutimos: focar nos especialistas de tráfego e mostrar como os inputs do DropHunter (derivados dos outros especialistas) são usados por Gemini para gerar as configurações da API.
+
+Devido ao volume, vou compilar o Arquivo 6 em partes, começando com os primeiros exemplos de especialistas em tráfego.

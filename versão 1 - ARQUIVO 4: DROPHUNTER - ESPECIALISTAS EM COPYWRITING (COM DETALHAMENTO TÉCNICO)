@@ -1,0 +1,1560 @@
+Entendido. Iniciando a compilação do ARQUIVO 4: DROPHUNTER - ESPECIALISTAS EM COPYWRITING (COM DETALHAMENTO TÉCNICO).
+
+Este arquivo detalha como as metodologias dos 25 especialistas em copywriting de alta performance são tecnicamente implementadas ou traduzidas em algoritmos, heurísticas e, principalmente, prompts para o Claude 3.7 Sonnet dentro do DropHunter.
+
+ARQUIVO 4: DROPHUNTER - ESPECIALISTAS EM COPYWRITING (COM DETALHAMENTO TÉCNICO) - COMPILADO
+
+Utiliza primariamente o Claude 3.7 Sonnet (com janela de 200K e "Computer Use").
+
+PARTE I: OS 25 MAIORES ESPECIALISTAS EM COPYWRITING DE ALTA PERFORMANCE
+
+1. JOANNA WIEBE (Copy Hackers)
+
+Especialidade: Framework de copy orientado à conversão
+
+Metodologia principal: "Message-to-Market Match" (Copy baseado em pesquisa direta com clientes, análise de "voice of customer", headlines testados cientificamente)
+
+Estratégia distintiva: 10x Messaging Framework (Identifica valor real através de pesquisa com clientes e transforma em copy ressonante)
+
+Configurações dos Algoritmos da Estratégia:
+
+VoiceOfCustomerDataAggregator (Módulo de Coleta de Dados do Cliente):
+
+Input: Produto, nicho, links para páginas de reviews de produtos similares, fóruns, grupos de discussão, FAQs de concorrentes.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Claude 3.7 usa "Computer Use" para acessar e raspar (de forma ética) reviews de clientes de plataformas como Amazon, Trustpilot, etc., e comentários em comunidades relevantes. Coleta grandes volumes de texto.
+
+VoiceOfCustomerAnalyzerAndExtractor (Analisador e Extrator de Voz do Cliente):
+
+Input: Texto agregado pelo VoiceOfCustomerDataAggregator.
+
+Lógica (Claude 3.7 Sonnet):
+
+Prompt para Claude 3.7:
+
+"Analise o seguinte conjunto de 'Voice of Customer Data' (reviews, comentários, discussões) para o produto/nicho '{produto_ou_nicho}':
+{grande_bloco_de_texto_com_dados_dos_clientes}
+
+Com base na metodologia 'Message-to-Market Match' de Joanna Wiebe:
+1.  **Dores e Problemas Reais:** Quais são as dores, problemas e frustrações mais frequentemente e vividamente descritos pelos clientes em suas próprias palavras? Liste as top 5-7 com citações exatas.
+2.  **Linguagem Específica (Terminologia):** Quais palavras, frases, gírias ou termos específicos os clientes usam consistentemente para descrever seus problemas, o produto (ou similares), seus benefícios desejados e suas objeções? Crie um mini-glossário.
+3.  **Benefícios Mais Desejados (Resultados Tangíveis e Emocionais):** Quais são os resultados e benefícios que os clientes mais valorizam ou buscam? O que eles realmente querem alcançar? Use as palavras deles.
+4.  **Objeções e Hesitações:** Quais são as principais dúvidas, medos ou objeções que os clientes expressam antes de comprar ou ao considerar produtos similares?
+5.  **Pontos de Valor Único Percebido (do '10x Messaging Framework'):** Qual é o valor *fundamental* ou a transformação que os clientes buscam e como um produto ideal (ou o produto em questão, se aplicável) pode entregar isso de forma 10x melhor ou diferente da concorrência, segundo a perspectiva do cliente?
+6.  **Sugestões de Headlines (Baseados em VoC):** Gere 5 headlines que usem diretamente a linguagem extraída e foquem nos benefícios mais desejados ou na solução das dores mais agudas."
+
+
+HeadlineFormulaTester (Testador de Fórmulas de Headline - Simulado ou Sugerido):
+
+Input: Headlines gerados, conhecimento das fórmulas de headline de Joanna Wiebe.
+
+Lógica: Claude 3.7 pode reformatar headlines VoC para se encaixarem em fórmulas comprovadas ou avaliar seu alinhamento.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para um produto qualificado, ProductAnalyzerService ou CopywritingAssistantService aciona VoiceOfCustomerDataAggregator (Claude 3.7 com Tool Use).
+
+VoiceOfCustomerAnalyzerAndExtractor (Claude 3.7) processa os dados.
+
+DropHunter gera um "Pacote de Inteligência de Copy Joanna Wiebe" (dores, desejos em VoC, glossário, objeções, valor 10x, sugestões de headlines) para o RobotHGAds.
+
+2. RAMIT SETHI (IWT)
+
+Especialidade: Copy para produtos premium de alto ticket
+
+Metodologia principal: "Deep Dive Research" (pesquisa detalhada, entrevistas diretas, histórias transformacionais)
+
+Estratégia distintiva: Invisible Scripts Framework (identifica e aborda crenças limitantes)
+
+Configurações dos Algoritmos da Estratégia:
+
+DeepDiveResearchPromptGenerator:
+
+Input: Produto premium, ICP preliminar.
+
+Lógica (Claude 3.7 Sonnet): Gera guia de pesquisa (perguntas para surveys online, roteiro para entrevistas simuladas com ICP, sugestão de fontes textuais online que simulem entrevistas).
+
+Prompt para Claude 3.7 (gerar guia de pesquisa):
+
+"Produto Premium: {nome_produto_premium}, Preço Estimado: ${preco_alto}
+Perfil do Cliente Ideal (Preliminar): {descricao_icp}
+Metodologia 'Deep Dive Research' de Ramit Sethi.
+
+Prepare um guia para uma 'Deep Dive Research' para este produto:
+1.  **Questões Chave para Pesquisas Online (Surveys):** Formule 10-15 perguntas abertas...
+2.  **Roteiro para Entrevistas com Clientes Ideais (Simulado):** Crie um roteiro com 10-12 perguntas profundas...
+3.  **Fontes de Dados Textuais para Análise (Simulando Entrevistas):** Sugira 3-5 tipos de fontes online..."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+InvisibleScriptIdentifier:
+
+Input: Dados textuais representativos do ICP.
+
+Lógica (Claude 3.7 Sonnet):
+
+Prompt para Claude 3.7:
+
+"Analise o seguinte conjunto de dados textuais representativos do Cliente Ideal para {nome_produto_premium}:
+{dados_textuais_coletados_do_icp}
+
+Com base na metodologia 'Invisible Scripts Framework' de Ramit Sethi:
+1.  **Identifique 3-5 'Invisible Scripts' (Crenças Limitantes):** ...
+2.  **Gere 'Copy de Desafio/Substituição':** Para cada 'Invisible Script', escreva um trecho de copy..."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+TransformationalStoryExtractor:
+
+Input: Testemunhos, estudos de caso, reviews.
+
+Lógica (Claude 3.7 Sonnet): Identifica narrativas de transformação "antes e depois", focando em resultados tangíveis e emocionais. Extrai estrutura da história.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos premium, DropHunter ativa módulos de Ramit Sethi.
+
+Claude 3.7 gera guia de pesquisa, identifica "Invisible Scripts" e copy para desafiá-los, e extrai histórias transformacionais.
+
+DropHunter fornece ao RobotHGAds um "Pacote de Copy Premium Ramit Sethi" (Invisible Scripts, copy de desafio, estruturas de histórias) para LPs, emails e VSLs de produtos de alto valor.
+
+3. DAVID OGILVY (Legado Ogilvy)
+
+Especialidade: Copy baseado em pesquisa e fatos
+
+Metodologia principal: "Factual Persuasion"
+
+Estratégia distintiva: Research-First Copywriting
+
+Configurações dos Algoritmos da Estratégia:
+
+ProductFactSheetAggregator:
+
+Input: Produto.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Coleta todos os fatos verificáveis (especificações, materiais, processo de fabricação, testes, patentes, comparações, números, estatísticas). Claude 3.7 usa "Computer Use" para pesquisar informações técnicas, manuais, artigos científicos.
+
+FactToBenefitConverter:
+
+Input: Lista de fatos.
+
+Lógica (Claude 3.7 Sonnet): Para cada fato, explica o benefício direto e indireto para o consumidor.
+
+Prompt para Claude 3.7:
+
+"Analise a seguinte Ficha Técnica do Produto '{nome_produto}':
+{lista_de_fatos_e_especificacoes_tecnicas}
+
+Para cada fato/especificação, traduza-o em benefício(s) para o cliente. Priorize os mais impactantes."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+OgilvyHeadlineGenerator:
+
+Input: Fatos impactantes e benefícios.
+
+Lógica (Claude 3.7 Sonnet): Gera headlines longos/informativos, com fato específico e surpreendente, promessa de benefício claro, números concretos, evitando generalidades.
+
+Prompt para Claude 3.7:
+
+"Com base nos Fatos e Benefícios Chave para '{nome_produto}':
+{pares_fato_beneficio}
+
+Gere 5 headlines no estilo de David Ogilvy ('Factual Persuasion'). Cada um deve:
+1. Incluir um fato específico e interessante.
+2. Comunicar um benefício poderoso.
+3. Ser claro, direto e crível."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+ProductAnalyzerService (Claude 3.7 com Tool Use) executa ProductFactSheetAggregator.
+
+FactToBenefitConverter (Claude 3.7) traduz fatos em benefícios.
+
+OgilvyHeadlineGenerator (Claude 3.7) cria headlines factuais.
+
+DropHunter fornece ao RobotHGAds um "Dossiê Factual Ogilvy" (ficha técnica, fatos->benefícios, headlines factuais) para criar copy com alta credibilidade.
+
+4. EUGENE SCHWARTZ
+
+Especialidade: Copy baseado em estados de consciência do mercado
+
+Metodologia principal: "5 States of Awareness"
+
+Estratégia distintiva: Mass Desire Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+MarketAwarenessLevelAssessor:
+
+Input: Produto, nicho, mercado alvo, dados de busca, análise de concorrentes, discussões online.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Analisa tipos de informação buscada para determinar o estado de consciência predominante (Most Unaware, Problem Aware, Solution Aware, Product Aware, Most Aware) e a proporção do mercado em cada estado. Identifica o estado de maior oportunidade.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Nicho: {nicho}, Mercado Alvo: {pais_mercado}
+Dados de Busca: {dados_keywords}
+Análise Concorrentes: {resumo_concorrentes}
+Discussões Online: {resumo_comunidades}
+
+Usando '5 States of Awareness' de Eugene Schwartz, determine o estado de consciência predominante do {mercado_alvo} para o problema que {nome_produto} resolve e sua solução. Avalie a proporção do mercado em cada estado e identifique o de maior oportunidade. Justifique."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+MassDesireIdentifier:
+
+Input: Produto, nicho, dados culturais/demográficos do mercado, tendências de consumo.
+
+Lógica (Claude 3.7 Sonnet): Identifica desejos humanos universais preexistentes no mercado alvo e conecta os benefícios do produto a esses desejos.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Benefícios: {lista_beneficios}
+Nicho: {nicho_produto}, Mercado Alvo: {pais_mercado} com perfil {perfil_demografico_psicografico}
+
+Usando 'Mass Desire Framework' de Eugene Schwartz:
+1.  Quais 3-5 desejos em massa preexistentes no {mercado_alvo} podem ser conectados aos benefícios de {nome_produto}?
+2.  Como {nome_produto} pode ser posicionado para satisfazer cada desejo?
+3.  Gere um ângulo de marketing principal conectando o produto ao desejo mais poderoso."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+AwarenessLevelCopyGenerator:
+
+Input: Produto, nível de consciência do segmento, ângulo de marketing.
+
+Lógica (Claude 3.7 Sonnet): Gera copy otimizado para cada estado de consciência.
+
+Prompt para Claude 3.7 (exemplo para Problem Aware):
+
+"Produto: {nome_produto}
+Segmento Alvo: {descricao_segmento} (Estado: Problem Aware)
+Problema: {problema_cliente}
+Ângulo (Mass Desire): Conectar {nome_produto} ao desejo de {desejo_em_massa}
+
+Gere copy (100-150 palavras) para anúncio/início de LP, para este público 'Problem Aware'. Deve:
+1. Agitar o {problema_cliente} empaticamente.
+2. Destacar consequências de não resolver.
+3. Introduzir esperança/ideia de solução eficaz, alinhada ao {desejo_em_massa}.
+4. Criar curiosidade."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+MarketAnalysisService (Claude 3.7 com Tool Use) executa MarketAwarenessLevelAssessor.
+
+ProductAnalyzerService (Claude 3.7) executa MassDesireIdentifier.
+
+CopywritingAssistantService (Claude 3.7) usa AwarenessLevelCopyGenerator.
+
+DropHunter fornece ao RobotHGAds "Pacote de Inteligência de Consciência de Mercado Eugene Schwartz" (análise de estados de consciência, desejo em massa conectado, sugestões de copy por estado) para campanhas altamente segmentadas.
+
+5. GARY BENCIVENGA
+
+Especialidade: Copy baseado em persuasão e credibilidade
+
+Metodologia principal: "Persuasion Equation" (Benefícios + Provas Incontestáveis)
+
+Estratégia distintiva: Info-First Marketing (Educar antes de vender)
+
+Configurações dos Algoritmos da Estratégia:
+
+BenefitAndProofIdentifier:
+
+Input: Produto, ficha técnica, testemunhos, estudos de caso, dados de performance.
+
+Lógica (Claude 3.7 Sonnet): Identifica benefícios impactantes (emocionais/racionais). Para cada benefício, busca/sugere provas (estatísticas, testemunhos, demos, garantias).
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}
+Ficha Técnica: {dados_produto_ogilvy}
+Testemunhos (se disponíveis): {testemunhos}
+
+Usando 'Persuasion Equation' de Gary Bencivenga:
+1.  Liste 3-5 benefícios mais convincentes.
+2.  Para cada, identifique/sugira as provas mais fortes. Se dados existem, extraia-os. Senão, sugira que tipo de prova buscar/criar.
+3.  Para cada par benefício-prova, escreva uma frase concisa que os combine."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+InfoFirstContentPlanner:
+
+Input: Produto, nicho, público, benefícios/provas.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para conteúdo educacional de alto valor (guias, checklists, mini-cursos) que resolvem problemas do público sem mencionar o produto inicialmente, estabelecendo autoridade e levando naturalmente ao produto.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, resolve {problema_principal_cliente}
+Público Alvo: {descricao_publico}
+
+Baseado em 'Info-First Marketing' de Gary Bencivenga:
+1.  Sugira 3-5 ideias para conteúdo de alto valor que eduquem sobre resolver {problema_principal_cliente} ou alcançar {beneficio_principal_produto}, sem promover {nome_produto} agressivamente no início.
+2.  Para uma ideia (ex: guia PDF), esboce estrutura de 3-5 seções que: forneça info útil, construa credibilidade, e transite suavemente para apresentar {nome_produto}.
+3.  Ângulos de copy para promover este conteúdo educacional?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+ProductAnalyzerService (Claude 3.7) implementa BenefitAndProofIdentifier.
+
+ContentStrategyModule ou CopywritingAssistantService (Claude 3.7) usa InfoFirstContentPlanner.
+
+DropHunter fornece "Pacote de Persuasão Bencivenga" (benefícios+provas, frases prontas, ideias/outlines para conteúdo Info-First, ângulos de copy) para RobotHGAds construir funis de marketing sofisticados.
+
+6. JOSEPH SUGARMAN
+
+Especialidade: Copy que cria fluxo irresistível de leitura
+
+Metodologia principal: "Slippery Slide"
+
+Estratégia distintiva: Psychological Triggers System (25 gatilhos)
+
+Configurações dos Algoritmos da Estratégia:
+
+SlipperySlideOpeningGenerator:
+
+Input: Produto, principal benefício/curiosidade.
+
+Lógica (Claude 3.7 Sonnet): Gera as primeiras 3-5 frases de uma página de vendas, onde cada frase visa apenas fazer o leitor ler a próxima, usando frases curtas, perguntas, curiosidade.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}
+Ponto de Curiosidade/Benefício Surpreendente: {ponto_chave_sugarman}
+
+Usando 'Slippery Slide' de Joseph Sugarman, escreva as primeiras 3-5 frases de uma página de vendas. Objetivo de cada frase: levar à próxima. Use curiosidade, frases curtas."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PsychologicalTriggerMapper:
+
+Input: Produto, público, estágio da jornada, os 25 gatilhos de Sugarman (definidos na base de conhecimento).
+
+Lógica (Claude 3.7 Sonnet): Seleciona os gatilhos mais apropriados e sugere como incorporá-los no copy/oferta.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Preço: ${preco}, Oferta: {detalhes_oferta}
+Público: {descricao_publico}, Objetivo do Copy: {ex_venda_direta}
+25 Gatilhos Psicológicos de Sugarman: {link_ou_conteúdo_dos_gatilhos}
+
+Selecione 5-7 gatilhos de Sugarman MAIS eficazes para persuadir o {público} a {objetivo_do_copy}. Para cada:
+1.  Explique a relevância.
+2.  Forneça exemplo específico de aplicação no copy (frase, conceito, elemento da oferta)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+NarrativeFlowOptimizer:
+
+Input: Rascunho de copy longo.
+
+Lógica (Claude 3.7 Sonnet): Analisa o rascunho para manter "fluxo escorregadio", construir/satisfazer curiosidade, sequenciar bem os gatilhos. Identifica "pontos de atrito" e sugere melhorias.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa SlipperySlideOpeningGenerator para aberturas envolventes e PsychologicalTriggerMapper para aplicar gatilhos.
+
+NarrativeFlowOptimizer (Claude 3.7) refina peças longas.
+
+DropHunter fornece ao RobotHGAds "Kit de Copy Irresistível Sugarman" (sugestões de aberturas, mapeamento de gatilhos, análise de fluxo narrativo) para criar copy que prende o leitor.
+
+7. EDDIE SHLEYNER (VeryGoodCopy)
+
+Especialidade: Micro-copy de alto impacto e storytelling
+
+Metodologia principal: "Power of One"
+
+Estratégia distintiva: Story-Selling Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+SinglePurposeMicroCopyGenerator:
+
+Input: Contexto do micro-copy (botão CTA, headline email, etc.), objetivo singular, público.
+
+Lógica (Claude 3.7 Sonnet): Gera texto conciso e direcionado para o objetivo, usando técnicas retóricas sutis.
+
+Prompt para Claude 3.7 (exemplo para CTA):
+
+"Contexto: Botão CTA em LP para '{nome_produto}'. Benefício: {beneficio_principal}. Público: {descricao_publico}. ÚNICO OBJETIVO: Clique para ver preços.
+Usando 'Power of One' de Eddie Shleyner, gere 5 variações de micro-copy (máx 5 palavras) para o botão."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PersonalStoryToUniversalPointConverter:
+
+Input: Gancho de história pessoal (real/arquetípica), ponto de marketing universal/benefício do produto.
+
+Lógica (Claude 3.7 Sonnet): Estrutura mini-narrativa (pessoal -> universal -> produto).
+
+Prompt para Claude 3.7:
+
+"Ponto de Marketing Universal: {ponto_universal_ex_beneficio_produto}
+Produto: {nome_produto}
+Gancho História Pessoal: {ex_Lembro_de_quando_lutava_com_X...}
+
+Usando abordagem de Eddie Shleyner, desenvolva parágrafo (50-70 palavras) que:
+1. Comece com gancho da história.
+2. Transite para ponto universal.
+3. Sutilmente posicione {nome_produto}."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+StorySellingFrameworkApplier:
+
+Input: Produto, benefício, público, estrutura de história clássica (ex: PAS).
+
+Lógica (Claude 3.7 Sonnet): Mapeia elementos do produto/benefícios para estágios da história. Gera outline ou trecho de copy.
+
+Prompt para Claude 3.7 (exemplo com PAS):
+
+"Produto: {nome_produto}. Público: {descricao_publico}. Problema: {problema_cliente}. Benefício Chave: {beneficio_produto}.
+Usando 'Story-Selling Framework' de Eddie Shleyner e estrutura 'Problema-Agitação-Solução', gere trecho (150-200 palavras) que:
+1.  **Problema:** Descreva vividamente o {problema_cliente}.
+2.  **Agitação:** Intensifique a dor do problema.
+3.  **Solução:** Introduza {nome_produto} destacando {beneficio_chave_produto}."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa SinglePurposeMicroCopyGenerator para micro-copy, PersonalStoryToUniversalPointConverter e StorySellingFrameworkApplier para ângulos de storytelling.
+
+DropHunter fornece "Pacote de Storytelling e Micro-Copy Eddie Shleyner" (sugestões de micro-copy, exemplos de histórias curtas, trechos narrativos) para RobotHGAds usar em emails, posts sociais, seções de LPs, adicionando toque humano.
+
+8. STEFAN GEORGI
+
+Especialidade: Copy de resposta direta para produtos de alto volume
+
+Metodologia principal: "RMBC Method" (Research, Mechanism, Brief, Copy)
+
+Estratégia distintiva: A.I.D.A. 2.0
+
+Configurações dos Algoritmos da Estratégia:
+
+RMBCAvatarResearcher:
+
+Input: Produto, nicho, dados demográficos/psicográficos preliminares.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Pesquisa aprofundada para perfil detalhado do avatar (dores, desejos, ceticismos, linguagem, o que já tentaram).
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Nicho: {nicho_produto}. Metodologia RMBC - Etapa 'Research'.
+Realize pesquisa para perfil de avatar. Use 'Computer Use' para pesquisar fóruns, reviews, mídias sociais sobre público interessado em {nicho_produto} ou que sofre de {problema_que_o_produto_resolve}. Detalhe: Dores Profundas, Desejos, Ceticismo, Mecanismos Falhos Anteriores, Linguagem Específica."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+UniqueMechanismIdentifier:
+
+Input: Produto, ficha técnica, pesquisa do avatar.
+
+Lógica (Claude 3.7 Sonnet): Identifica/cria o "mecanismo único" do produto, nomeia-o e explica concisamente.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Funcionalidades: {detalhes_produto}. Benefício: {beneficio_chave}. Pesquisa Avatar: {output_RMBCAvatarResearcher}. Metodologia RMBC - Etapa 'Mechanism'.
+1. Identifique/Crie 'Mecanismo Único': Qual componente/processo/etc. em {nome_produto} o torna diferente/eficaz para {beneficio_chave} vs. mecanismos falhos do avatar?
+2. Nomeie o Mecanismo.
+3. Explique (2-3 frases) como funciona."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+RMBCBriefGenerator:
+
+Input: Output do RMBCAvatarResearcher e UniqueMechanismIdentifier.
+
+Lógica (Claude 3.7 Sonnet): Estrutura briefing de copy (Avatar, Mecanismo Único, Big Idea, Oferta, Provas, Garantia, Urgência).
+
+ModularAIDA2CopyGenerator:
+
+Input: Briefing RMBC completo.
+
+Lógica (Claude 3.7 Sonnet): Gera copy completo (VSL/LP longa) seguindo A.I.D.A. 2.0, em blocos modulares testáveis.
+
+Prompt para Claude 3.7 (exemplo para seção):
+
+"Briefing RMBC: {briefing_completo}. Estrutura A.I.D.A. 2.0. Seção: Bloco 'Lead/Hook'.
+Escreva bloco 'Lead/Hook' (200-300 palavras) que: Capture atenção (Big Idea), empatize com dor do avatar, introduza promessa, estabeleça credibilidade, transite para Mecanismo Único."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos de alto volume/resposta direta, DropHunter ativa módulos RMBC.
+
+Claude 3.7 (com Tool Use) faz pesquisa de avatar, identifica/cria mecanismo único, gera briefing RMBC e seções modulares de copy (A.I.D.A 2.0).
+
+DropHunter fornece "Kit de Lançamento RMBC Stefan Georgi" (perfil avatar, mecanismo único, briefing, blocos modulares de copy) para RobotHGAds construir LPs/VSLs de alta conversão e testar seções.
+
+9. PARRIS LAMPROPOULOS
+
+Especialidade: Copy para mercados altamente competitivos
+
+Metodologia principal: "Beat the Control"
+
+Estratégia distintiva: Deeply Segmented Copy
+
+Configurações dos Algoritmos da Estratégia:
+
+CompetitiveControlAnalyzer:
+
+Input: Produto, mercado competitivo, exemplos de "controles" de concorrentes.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Pesquisa e analisa profundamente estrutura, ângulo, promessas, provas, oferta, tom de voz dos controles. Identifica pontos fortes e fracos/oportunidades.
+
+Prompt para Claude 3.7:
+
+"Produto Alvo: {nome_produto_nosso}. Mercado: {nicho_produto}. Controle Concorrente: {link_ou_texto_do_controle}.
+Analise este 'Controle' (Metodologia 'Beat the Control' de Parris Lampropoulos): Estrutura, Big Idea, Promessa, Provas, Oferta, CTA, Tom, Pontos Fortes, Pontos Fracos/Oportunidades de Melhoria para {nome_produto_nosso}?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+WinningPatternExtractor:
+
+Input: Análise de múltiplos controles de sucesso.
+
+Lógica (Claude 3.7 Sonnet): Compara análises para identificar elementos/estruturas/ângulos comuns em peças vencedoras.
+
+DeepSegmentationCopyVariator:
+
+Input: Produto, pesquisa de avatar, "pontos fracos" de controles, "padrões vencedores".
+
+Lógica (Claude 3.7 Sonnet): Identifica micro-segmentos do público. Para cada, gera variação de copy que: aborda dores/desejos específicos, usa "padrões vencedores", explora "pontos fracos" dos concorrentes.
+
+Prompt para Claude 3.7 (exemplo para micro-segmento):
+
+"Produto: {nome_produto_nosso}. Micro-Segmento: {descricao_micro_segmento}. Análise Controles: {resumo_analise_controles}.
+Gere novo ângulo de headline e 2-3 pontos chave para anúncio para {descricao_micro_segmento_alvo}. Copy deve: Falar DIRETAMENTE ao micro-segmento, alavancar 'padrões vencedores', atacar/superar 'pontos fracos' dos controles, destacar {nome_produto_nosso} como melhor solução para ESTE micro-segmento."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para mercados competitivos, MarketAnalysisService (Claude 3.7 com Tool Use) executa CompetitiveControlAnalyzer.
+
+Claude 3.7 usa WinningPatternExtractor e DeepSegmentationCopyVariator.
+
+DropHunter fornece "Kit de Batalha Competitiva Parris Lampropoulos" (análise de controles, padrões vencedores, variações de copy para micro-segmentos) para RobotHGAds criar copy direcionado e com objetivo de superar concorrência.
+
+10. CRAIG CLEMENS
+
+Especialidade: Copy narrativo para produtos de saúde e bem-estar
+
+Metodologia principal: "The Perfect Webinar/VSL Format"
+
+Estratégia distintiva: Problem-Agitation-Solution Plus (com autoridade científica e história pessoal)
+
+Configurações dos Algoritmos da Estratégia:
+
+HealthNarrativeElementExtractor:
+
+Input: Produto saúde/bem-estar, pesquisa avatar (dores/esperanças/ceticismo), persona do "criador", estudos científicos/dados do produto.
+
+Lógica (Claude 3.7 Sonnet): Cria/identifica História de Origem, Pontos de Agitação do Problema, Ângulos de Autoridade Científica, Mapeamento de Objeções Comuns em Saúde.
+
+Prompt para Claude 3.7:
+
+"Produto Saúde/Bem-Estar: {nome_produto_saude}, resolve {problema_saude_especifico}. Pesquisa Avatar: {resumo_pesquisa_avatar}. Dados Científicos: {dados_cientificos}.
+Para copy narrativo ('Problem-Agitation-Solution Plus' de Craig Clemens):
+1.  Esboce conceito para História de Origem (criador/usuário arquetípico) conectada ao {problema_saude_especifico}.
+2.  Liste 3-5 formas de agitar o {problema_saude_especifico} (foco consequências emocionais/longo prazo).
+3.  Como os {dados_cientificos} podem ser simplificados para construir credibilidade?
+4.  Quais 3 principais objeções o avatar teria e em que ordem abordá-las?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+VSLScriptOutlineGenerator:
+
+Input: Output do HealthNarrativeElementExtractor.
+
+Lógica (Claude 3.7 Sonnet): Gera outline detalhado para VSL/LP longa (Introdução/Gancho -> Problema/Agitação -> Descoberta/Mecanismo com Credibilidade -> Solução/Produto -> Prova Social -> Objeções -> Oferta -> Garantia/Urgência -> CTA). Claude 3.7 preenche seções.
+
+PersonalStoryIntegrationModule:
+
+Input: Outline VSL, conceito história de origem.
+
+Lógica (Claude 3.7 Sonnet): Tece a história pessoal/de origem naturalmente ao longo do script.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos de saúde/bem-estar, CopywritingAssistantService (Claude 3.7) ativa módulos de Craig Clemens.
+
+Claude 3.7 executa HealthNarrativeElementExtractor, depois VSLScriptOutlineGenerator, e PersonalStoryIntegrationModule infunde a história.
+
+DropHunter fornece "Roteiro Estratégico de VSL/LP Craig Clemens" (conceito história de origem, pontos de agitação, apresentação de autoridade científica, sequência de objeções, outline completo de VSL/LP com sugestões de copy) para RobotHGAds criar materiais de marketing de formato longo persuasivos para o nicho de saúde.
+
+11. ANN HANDLEY
+
+Especialidade: Narrativa de marca e conteúdo estratégico
+
+Metodologia principal: "Everybody Writes"
+
+Estratégia distintiva: E.I.A. Framework (Empathy, Insight, Action)
+
+Configurações dos Algoritmos da Estratégia:
+
+BrandVoiceDefinitionModule:
+
+Input: Infos marca (nova/existente), público, valores, produtos.
+
+Lógica (Claude 3.7 Sonnet): Ajuda a definir/refinar voz de marca (Clara, Simples, Empática, Útil, Consistente), atributos de tom, manifesto de voz, exemplos de "Fazer/Não Fazer".
+
+Prompt para Claude 3.7 (definir voz):
+
+"Para marca de dropshipping '{nicho_produto}' vendendo '{tipos_de_produtos}' para '{descricao_publico_alvo}':
+Princípios Ann Handley: Clareza, Simplicidade, Utilidade, Consistência, Empatia.
+1.  Defina 3-4 Atributos de Tom de Voz Principais. Justifique.
+2.  Crie Manifesto da Voz da Marca (2-3 parágrafos).
+3.  Exemplos 'Fazer' e 'Não Fazer' (2 de cada)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+UsefulContentIdeationEngine:
+
+Input: Produto, nicho, público, voz da marca.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para conteúdo útil (artigos, posts, vídeos) focado em ajudar o cliente, alinhado ao produto.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, ajuda com {problema_ou_objetivo_cliente}. Público: {descricao_publico_alvo}. Voz da Marca: {atributos_voz_definidos}.
+Filosofia 'Conteúdo Útil' de Ann Handley: Gere 5 ideias de conteúdo útil para {público_alvo} relacionado sutilmente a {nome_produto}. Para cada: Título, Formato Sugerido, Breve descrição do valor."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+EIACopyFrameworkApplier:
+
+Input: Produto, objetivo do copy, público, insights sobre público.
+
+Lógica (Claude 3.7 Sonnet): Gera copy seguindo E.I.A. (Empathy -> Insight -> Action).
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}. Objetivo: Post mídia social (100 palavras) para engajar {descricao_publico_alvo} sobre benefício de {beneficio_chave_produto}. Insight Público: {ex_sentem_sobrecarregados_com_solucoes_complexas}.
+Use 'E.I.A. Framework' de Ann Handley:
+-   Empatia: Conecte com sentimento de {ex_sobrecarga}.
+-   Insight: Mostre como {nome_produto} simplifica ou oferece {beneficio_chave_produto} facilmente.
+-   Ação: CTA para {ex_descobrir_como_e_facil}."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+BrandVoiceDefinitionModule (Claude 3.7) estabelece/refina voz da marca.
+
+UsefulContentIdeationEngine (Claude 3.7) gera pauta de conteúdo útil.
+
+CopywritingAssistantService (Claude 3.7) usa EIACopyFrameworkApplier para gerar copy.
+
+DropHunter fornece "Guia de Conteúdo e Voz Ann Handley" (definição de voz, ideias de conteúdo útil, exemplos E.I.A.) para RobotHGAds/usuário construir marca forte e relacionamento com público.
+
+12. NEVILLE MEDHORA (Kopywriting Kourse)
+
+Especialidade: Copy conversacional e frameworks acionáveis
+
+Metodologia principal: "AIDA + PAS Framework Hybrid"
+
+Estratégia distintiva: A.P.P. Formula (Audience, Problem, Promise)
+
+Configurações dos Algoritmos da Estratégia:
+
+ConversationalToneAdopter:
+
+Input: Rascunho de copy.
+
+Lógica (Claude 3.7 Sonnet): Reescreve copy para tom natural, amigável, conversacional (frases curtas, perguntas, linguagem simples, "você").
+
+Prompt para Claude 3.7:
+
+"Rascunho Original: '{rascunho_copy_formal}'. Produto: '{nome_produto}'.
+Reescreva no estilo conversacional de Neville Medhora. Torne mais amigável, direto, fácil de ler."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+VisualDigestibilityFormatter:
+
+Input: Bloco de texto.
+
+Lógica (Claude 3.7 Sonnet ou regras): Quebra parágrafos, usa bullet points, negrito/itálico (moderado), sugere espaçamento. Claude pode gerar copy já formatado.
+
+HybridFrameworkSynthesizer (AIDA+PAS):
+
+Input: Produto, público, oferta.
+
+Lógica (Claude 3.7 Sonnet): Combina elementos de AIDA e PAS para gerar outline ou rascunho de copy para LPs/anúncios.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, resolve {problema_cliente}, oferece {beneficio_principal}. Público: {descricao_publico}. Oferta: {detalhes_oferta}.
+Gere outline para LP curta (300-400 palavras) combinando AIDA e PAS (estilo Neville Medhora - conversacional, digestível). Indique seções AIDA/PAS.
+Estrutura Ex: Headline (Atenção-AIDA), Intro Problema (Problema-PAS), Agitação (Agitar-PAS / Interesse-AIDA), Solução/Produto (Solução-PAS / Desejo-AIDA), Benefícios/Provas (Desejo-AIDA), Oferta/CTA (Ação-AIDA)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+APPFormulaEmailGenerator:
+
+Input: Produto/Oferta, público do email.
+
+Lógica (Claude 3.7 Sonnet): Gera email (Audience -> Problem -> Promise -> CTA).
+
+Prompt para Claude 3.7:
+
+"Produto/Oferta: {produto_ou_oferta_email}. Segmento Email: {ex_novos_inscritos_lead_magnet_X}.
+Escreva email curto/direto (máx 150 palavras) usando Fórmula A.P.P. (Audience, Problem, Promise) de Neville Medhora. Tom conversacional."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa ConversationalToneAdopter e VisualDigestibilityFormatter.
+
+Claude 3.7 usa HybridFrameworkSynthesizer para LPs/anúncios e APPFormulaEmailGenerator para emails.
+
+DropHunter fornece "Pacote de Copy Conversacional Neville Medhora" (copy conversacional/formatado, templates email A.P.P., outlines LP AIDA+PAS) para RobotHGAds criar copy menos corporativo, mais pessoal.
+
+13. HENRIK JORETEG
+
+Especialidade: Copy técnico para produtos complexos
+
+Metodologia principal: "Clarity First Copy"
+
+Estratégia distintiva: Technical-to-Simple Translation System
+
+Configurações dos Algoritmos da Estratégia:
+
+ComplexFeatureIdentifier:
+
+Input: Especificações técnicas, manuais, docs API.
+
+Lógica (Claude 3.7 Sonnet): Analisa docs técnicos, identifica características complexas/jargões intimidantes para usuário não-técnico.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto_tecnico}. Especificações/Documentação: {documentacao_tecnica}.
+Identifique 3-5 características técnicas mais propensas a serem mal compreendidas ou intimidantes para usuário leigo/semi-técnico. Explique brevemente por que cada uma é complexa."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+TechnicalToSimpleTranslator:
+
+Input: Característica técnica complexa, público-alvo (nível técnico).
+
+Lógica (Claude 3.7 Sonnet): Foco no benefício tangível ("O que isso significa PARA MIM?"). Usa analogias/metáforas. Linguagem simples, explica termos técnicos essenciais.
+
+Prompt para Claude 3.7:
+
+"Característica Técnica Complexa de '{nome_produto_tecnico}': '{descricao_caracteristica_tecnica_complexa}'. Público Alvo: {descricao_publico_com_nivel_tecnico}.
+Usando 'Clarity First Copy' de Henrik Joreteg e 'Technical-to-Simple Translation System':
+1.  Traduza em benefício CLARO e TANGÍVEL para o {publico_alvo}.
+2.  Crie Analogia/Metáfora Simples para explicar.
+3.  Escreva parágrafo (3-4 frases) explicando característica e benefício de forma que o {publico_alvo} entenda e veja valor."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+BenefitDrivenCopyForComplexProducts:
+
+Input: Lista de características técnicas traduzidas em benefícios, perfil do público.
+
+Lógica (Claude 3.7 Sonnet): Gera copy (LPs, descrições, anúncios) priorizando benefícios resultantes das características técnicas. Técnica mencionada brevemente como "magia por trás".
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos complexos, ProductAnalyzerService (Claude 3.7) ativa ComplexFeatureIdentifier.
+
+CopywritingAssistantService (Claude 3.7) usa TechnicalToSimpleTranslator e BenefitDrivenCopyForComplexProducts.
+
+DropHunter fornece "Kit de Clareza Técnica Henrik Joreteg" (lista de características complexas, "tradução" para linguagem simples com analogias/benefícios, sugestões de copy claro/persuasivo) para RobotHGAds vender produtos técnicos para públicos não-técnicos.
+
+14. SOPHIA LE (Interpretado como especialista em Voice-of-Customer com foco em mineração de reviews)
+
+Especialidade: Voice-of-Customer e copy baseado em pesquisa
+
+Metodologia principal: "Customer Language Optimization"
+
+Estratégia distintiva: Review Mining Protocol
+
+Configurações dos Algoritmos da Estratégia:
+
+AdvancedReviewAggregatorAndFilter:
+
+Input: Produto/Nicho, links fontes de reviews.
+
+Lógica (Claude 3.7 Sonnet com Tool Use): Coleta massiva de reviews (Amazon, Trustpilot, etc.). Filtra por relevância, sentimento, aspectos do produto.
+
+ReviewMiningProtocolEngine:
+
+Input: Grande conjunto de reviews agregados/filtrados (até 200K tokens).
+
+Lógica (Claude 3.7 Sonnet):
+
+Extração de Termos/Frases Chave (linguagem do cliente), frequência, coocorrência.
+
+Identificação de "Golden Nuggets" de Copy (citações exatas persuasivas/vívidas).
+
+Mapeamento de Objeções Ocultas / Perguntas Não Respondidas.
+
+Descoberta de Casos de Uso Inesperados / Benefícios Secundários.
+
+Geração de "Swipe File" de Copy (headlines, bullets, história arquetípica) baseado em reviews.
+
+Prompt para Claude 3.7 (analisando dump de reviews):
+
+"Produto/Nicho: {produto_ou_nicho}. Conjunto de Reviews (até 200K tokens): {dump_de_reviews_formatado}.
+Execute 'Review Mining Protocol' de Sophia Le:
+1.  Top 20 Termos/Frases Mais Usados (para problema, benefícios, características, frustrações).
+2.  'Golden Nuggets': Extraia 5-7 citações diretas para headlines/testemunhos/frases chave.
+3.  Objeções/Dúvidas Ocultas: 3-5 inferidas dos reviews.
+4.  Casos de Uso/Benefícios Inesperados.
+5.  Componentes para 'Review-Driven Swipe File': 3 Headlines, 5 Bullets de benefícios, 1 Parágrafo de história de cliente arquetípica.
+Priorize linguagem exata e sentimento dos clientes."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+VoiceOfCustomerDataAggregator aprimorado para coleta massiva de reviews (Claude 3.7 com 200K).
+
+CopywritingAssistantService (Claude 3.7) implementa ReviewMiningProtocolEngine para análise profunda.
+
+DropHunter fornece "Relatório Detalhado de Mineração de Reviews Sophia Le" (vocabulário cliente, "Golden Nuggets", objeções ocultas, casos de uso, swipe file de copy) para RobotHGAds usar em LPs/páginas de produto, garantindo ressonância com o mercado.
+
+15. JOEL KLETTKE (Case Study Buddy)
+
+Especialidade: Copy baseado em cases e provas
+
+Metodologia principal: "Evidence-Based Copywriting"
+
+Estratégia distintiva: Customer-Sourced Copywriting
+
+Configurações dos Algoritmos da Estratégia:
+
+CustomerStoryProspector:
+
+Input: Clientes existentes (se houver) ou reviews/testemunhos de produtos concorrentes muito similares.
+
+Lógica (Claude 3.7 Sonnet): Analisa dados para identificar clientes/arquétipos com resultados transformadores, que representam ICP, e articulados.
+
+Prompt para Claude 3.7:
+
+"Dados Clientes/Reviews para produto (ou similar) '{nome_produto}': {lista_reviews_ou_dados_clientes_com_resultados}.
+Identifique 3-5 candidatos (ou arquétipos) para estudo de caso/testemunho detalhado (Joel Klettke). Para cada:
+1.  Resultado transformador alcançado? (Quantificável se possível).
+2.  Por que sua história seria persuasiva?
+3.  Aspectos da jornada (problema, decisão, experiência, resultados) interessantes para explorar?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+StructuredInterviewGuideGeneratorForCaseStudies:
+
+Input: Candidato a estudo de caso, produto.
+
+Lógica (Claude 3.7 Sonnet): Gera conjunto de perguntas abertas/detalhadas para entrevista, focando em extrair história completa (antes, durante, depois), citações, métricas, detalhes emocionais.
+
+CaseStudyCopyGenerator:
+
+Input: Transcrição de entrevista (real ou simulada por Claude 3.7 com base em perfil de sucesso arquetípico).
+
+Lógica (Claude 3.7 Sonnet): Estrutura informação em formato de estudo de caso persuasivo (Título, Cliente, Desafio, Solução, Resultados, Citações Chave). Escreve usando linguagem do cliente ("Customer-Sourced").
+
+Prompt para Claude 3.7 (com transcrição simulada):
+
+"Produto: {nome_produto}. Transcrição Simulada Entrevista 'Cliente Sucesso Arquetípico': '{transcricao_com_problema_solucao_resultados_citacoes}'.
+Baseado em Joel Klettke, gere estudo de caso (300-500 palavras): Título focado no resultado, Seções (Cliente, Desafio, Solução, Resultados), 3+ Citações diretas impactantes, Métricas de sucesso. Tom autêntico."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa CustomerStoryProspector para achar fontes de histórias, gera guias de entrevista, e CaseStudyCopyGenerator para rascunhar estudos de caso/prova social.
+
+DropHunter fornece "Kit de Prova Social Joel Klettke" (perfis ideais para cases, guias de entrevista, rascunhos de cases/prova social) para RobotHGAds enriquecer LPs/anúncios com provas concretas.
+
+16. LAURA BELGRAY (Talking Shrimp)
+
+Especialidade: Copy com personalidade distinta e humor
+
+Metodologia principal: "Personality-Driven Copy"
+
+Estratégia distintiva: Story-Driven Email Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+BrandPersonalityDefinerAndAmplifier:
+
+Input: Nicho, público, persona da marca desejada (ou Claude ajuda a criar).
+
+Lógica (Claude 3.7 Sonnet): Define traços de personalidade chave, exemplos de manifestação no copy (incluindo humor), "quirks" memoráveis.
+
+Prompt para Claude 3.7:
+
+"Para marca dropshipping '{nicho_produto}' vendendo '{tipos_de_produtos}' para '{descricao_publico_alvo}'. Voz desejada: {ex_espirituosa_irreverente_honesta}.
+Princípios Laura Belgray:
+1.  Defina 'Manifesto de Personalidade da Marca' (150 palavras): Como fala, piadas, tom, como faz público sentir.
+2.  Exemplos Copy com Personalidade: 3 exemplos curtos (headline, snippet email, bio social).
+3.  Tipos de Humor (se aplicável): Qual tipo e exemplo?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PersonalStoryAngleGenerator:
+
+Input: Produto, benefício, persona marca/fundador arquetípico, dores público.
+
+Lógica (Claude 3.7 Sonnet): Gera conceitos para pequenas histórias pessoais (reais/fictícias verossímeis) para criar empatia, ilustrar problema/solução, humanizar marca.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, ajuda {resolver_problema_X_ou_alcancar_Y}. Persona Marca: {descricao_persona}. Público/Dores: {publico_e_dores}.
+Gere 3 conceitos para 'histórias pessoais' (Laura Belgray) que: a) Conectem com '{dor_especifica_publico}'. b) Ilustrem sutilmente benefício de '{beneficio_do_produto}'. c) Entretenham/construam rapport. Para cada: Título da história, Resumo 1-2 frases."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+StoryDrivenEmailFrameworkApplier:
+
+Input: Conceito história pessoal, produto/oferta a promover sutilmente, objetivo email.
+
+Lógica (Claude 3.7 Sonnet): Escreve rascunho de email: história envolvente -> transição para lição/insight -> conexão natural com produto/oferta -> CTA suave. Mantém voz da marca.
+
+Prompt para Claude 3.7:
+
+"Conceito História: {conceito_historia_gerado}. Produto/Oferta: {nome_produto_ou_oferta}. Objetivo Email: Engajar lista, direcionar tráfego sutilmente. Voz Marca: {atributos_voz}.
+Escreva rascunho email (200-300 palavras) 'Story-Driven Email Framework' (Laura Belgray): Conte história, extraia lição, conecte à oferta, CTA suave. Use {voz_da_marca}."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+BrandVoiceDefinitionModule (Claude 3.7) ajuda a estabelecer personalidade de marca.
+
+CopywritingAssistantService (Claude 3.7) usa PersonalStoryAngleGenerator para histórias e StoryDrivenEmailFrameworkApplier para emails.
+
+DropHunter fornece "Kit de Personalidade e Storytelling Laura Belgray" (guia de voz, ideias de histórias, templates/rascunhos de emails story-driven) para RobotHGAds criar campanhas de email e social media que se destacam pela autenticidade.
+
+17. ALEX CATTONI
+
+Especialidade: Copy de campanha para lançamentos e webinars
+
+Metodologia principal: "Launch Copy Blueprint"
+
+Estratégia distintiva: Multi-Channel Copy Alignment
+
+Configurações dos Algoritmos da Estratégia:
+
+LaunchEmailSequencePlanner:
+
+Input: Produto a lançar, datas, oferta, público.
+
+Lógica (Claude 3.7 Sonnet): Gera plano para sequência de emails de lançamento (5-10 emails) cobrindo fases (Pré-Lançamento, Abertura Carrinho, Durante, Fechamento). Define objetivo, ângulo, CTA para cada email.
+
+Prompt para Claude 3.7:
+
+"Produto Lançamento: {nome_produto_lancamento}, Preço: ${preco}, Oferta: {detalhes_oferta_especial}. Período: Carrinho abre {data_abertura}, fecha {data_fechamento}. Público: {descricao_publico}.
+'Launch Copy Blueprint' (Alex Cattoni): Planeje sequência 7 emails. Para cada: Fase Lançamento, Dia Envio, Objetivo, Ângulo/Mensagem, Sugestão Assunto, CTA Principal."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+WebinarScriptOutlineGenerator3Act:
+
+Input: Produto/Oferta do webinar, público.
+
+Lógica (Claude 3.7 Sonnet): Gera outline para webinar de vendas em 3 atos (Oportunidade/Problema -> Conteúdo de Valor/Ensino -> A Oferta/Transição). Detalha pontos chave e fluxo.
+
+MultiChannelCopySynchronizer:
+
+Input: Plano emails, outline webinar, outros canais (posts sociais, anúncios).
+
+Lógica (Claude 3.7 Sonnet): Garante mensagem consistente mas complementar em todos os canais. Sugere como canais se complementam (email -> webinar, social reforça email).
+
+Prompt para Claude 3.7:
+
+"Estratégia Lançamento '{nome_produto_lancamento}': Emails: {resumo_plano_emails}. Webinar: {resumo_outline_webinar}. Outros Canais: Facebook Ads, Instagram Posts.
+'Multi-Channel Copy Alignment' (Alex Cattoni): Como sincronizar/adaptar mensagens para cada canal nas fases chave do lançamento? Exemplo: como mesmo 'tema do dia' seria comunicado complementarmente no Email, FB Ad, Insta Post?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para lançamentos formais. CopywritingAssistantService (Claude 3.7) usa LaunchEmailSequencePlanner e WebinarScriptOutlineGenerator3Act.
+
+MultiChannelCopySynchronizer (Claude 3.7) orquestra mensagens.
+
+DropHunter fornece "Blueprint de Lançamento Alex Cattoni" (plano emails, outline webinar, estratégia de sincronização multicanal) para RobotHGAds executar campanhas de lançamento complexas e coordenadas.
+
+18. BRIAN CLARK (Copyblogger)
+
+Especialidade: Copy educacional que vende sem parecer vendedor
+
+Metodologia principal: "Teaching Sells"
+
+Estratégia distintiva: 4-P Content Formula (Problem, Promise, Picture, Proof)
+
+Configurações dos Algoritmos da Estratégia:
+
+EducationalContentPlanner:
+
+Input: Produto, nicho, problemas público, expertise da marca.
+
+Lógica (Claude 3.7 Sonnet): Gera ideias para "currículo" de conteúdo educacional que leve à necessidade do produto. Foco em valor genuíno.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, ajuda especialistas em {nicho_especialistas} a {resolver_problema_principal}. Expertise Marca: {topico_de_expertise}. Público: Especialistas em {nicho_especialistas} querendo {objetivo_do_publico}.
+'Teaching Sells' (Brian Clark): Planeje série 3-5 conteúdos educacionais (artigos, vídeos) que:
+1.  Forneçam valor real para público alcançar {objetivo_do_publico}.
+2.  Demonstrem sutilmente expertise em {topico_de_expertise}.
+3.  Criem necessidade/interesse por {nome_produto} sem vender diretamente.
+Para cada: Título, Principais Tópicos."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+FourPContentGenerator:
+
+Input: Ideia de conteúdo educacional, produto, público.
+
+Lógica (Claude 3.7 Sonnet): Gera rascunho de conteúdo (ex: artigo) usando 4-P (Problem -> Promise -> Picture -> Proof). Venda do produto sutil, como ferramenta para implementar o ensinado.
+
+Prompt para Claude 3.7:
+
+"Ideia Conteúdo: '{titulo_ideia_conteudo}' (foco em ensinar {topico_ensinado}). Produto Relacionado: {nome_produto}. Público: {descricao_publico}.
+Gere rascunho artigo (500-700 palavras) '{titulo_ideia_conteudo}' usando '4-P Content Formula' (Brian Clark).
+-   Problema: Defina claramente.
+-   Promessa: O que leitor aprenderá/será capaz?
+-   Imagem: Descreva resultado positivo.
+-   Prova: Exemplos, dados, lógica.
+Integre menção sutil a {nome_produto} como forma de aplicar o ensinado, perto do final."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa EducationalContentPlanner para estratégia de marketing de conteúdo.
+
+Claude 3.7 usa FourPContentGenerator para rascunhar artigos/scripts.
+
+DropHunter fornece "Plano de Marketing de Conteúdo Brian Clark" (temas/títulos, rascunhos 4-P, sugestões de integração do produto) para RobotHGAds/usuário implementar inbound marketing.
+
+19. JOANNA WIERENGA
+
+Especialidade: Copy de conversão para e-commerce
+
+Metodologia principal: "Conversion Content Method"
+
+Estratégia distintiva: E-commerce Checkpoint Copy System (otimiza 7 pontos críticos de decisão)
+
+Configurações dos Algoritmos da Estratégia:
+
+EcommFunnelStageCopyCustomizer:
+
+Input: Produto, estágio funil e-commerce (Categoria, Produto, Carrinho, Checkout), público.
+
+Lógica (Claude 3.7 Sonnet): Gera copy adaptado para objetivo de cada estágio.
+
+Prompt para Claude 3.7 (exemplo Descrição Produto):
+
+"Produto: {nome_produto_ecommerce}, Categoria: {categoria}. Estágio: Página de Produto. Público: {descricao_publico_ecommerce}. Objetivo: Adicionar ao carrinho.
+'Conversion Content Method' (Joanna Wierenga): Gere descrição produto (150-250 palavras) que:
+1.  Gancho emocional/benefício impactante.
+2.  Características -> benefícios claros/desejáveis para {publico_alvo_ecommerce}.
+3.  Storytelling/imagem mental do cliente usando/amando produto.
+4.  1-2 Provas sociais concisas.
+5.  Aborde sutilmente 1-2 objeções comuns.
+6.  CTA claro/persuasivo para adicionar ao carrinho."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+EmotionalBenefitExtractorForProducts:
+
+Input: Produto, características técnicas, público.
+
+Lógica (Claude 3.7 Sonnet): Identifica benefícios emocionais profundos além dos funcionais.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Características: {lista_caracteristicas}. Público: {descricao_publico}.
+Para cada característica, identifique benefício funcional. Para os 2-3 mais importantes, identifique benefícios EMOCIONAIS profundos para {publico_alvo}."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+EcommCheckpointMicroCopyOptimizer:
+
+Input: 7 checkpoints (Botão AddToCart, Link Carrinho, Campo Cupom, Botão Checkout, Seleção Frete, Entrada Pagamento, Botão Confirmar Pedido), objetivo/contexto de cada.
+
+Lógica (Claude 3.7 Sonnet): Para cada checkpoint, gera variações de micro-copy (texto botão, tooltips, validação, segurança/confiança) para minimizar hesitação.
+
+Prompt para Claude 3.7 (exemplo campo cupom):
+
+"Checkpoint E-comm: Campo Código Cupom (carrinho). Objetivo: Incentivar uso se tiver, não desencorajar se não, evitar saída para procurar.
+Gere 3 opções micro-copy: Texto label, Texto tooltip/ajuda, Mensagem cupom inválido."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa EcommFunnelStageCopyCustomizer para copy de loja/LP.
+
+EmotionalBenefitExtractorForProducts (Claude 3.7) descobre ângulos emocionais para copy de página de produto.
+
+EcommCheckpointMicroCopyOptimizer (Claude 3.7) gera sugestões de micro-copy.
+
+DropHunter fornece "Guia de Copy de Conversão para E-commerce Joanna Wierenga" (sugestões copy por página, benefícios emocionais, variações micro-copy para checkpoints) para RobotHGAds/usuário otimizar cada etapa da jornada de compra online.
+
+20. ROBERT CIALDINI
+
+Especialidade: Copy baseado em princípios de persuasão científica
+
+Metodologia principal: "6 Principles of Persuasion"
+
+Estratégia distintiva: Pre-Suasion Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+CialdiniPrincipleIdentifierAndApplier:
+
+Input: Produto, oferta, público, contexto do copy, 6 princípios de Cialdini (definidos na base de conhecimento: Reciprocidade, Escassez, Autoridade, Consistência, Afinidade, Consenso).
+
+Lógica (Claude 3.7 Sonnet): Seleciona 2-3 princípios mais eficazes para o contexto e sugere como aplicá-los.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Oferta: {detalhes_oferta}. Público: {descricao_publico}. Contexto: {ex_secao_de_preco_landing_page}. 6 Princípios Cialdini: {link_ou_resumo_principios}.
+Selecione 2-3 princípios Cialdini MAIS IMPACTANTES para aplicar em '{contexto_do_copy}'. Para cada:
+1.  Explique relevância/eficácia.
+2.  Forneça exemplo específico de implementação no copy (frase, visual, tática de oferta)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+PreSuasionMomentOptimizer:
+
+Input: Jornada do cliente (antes do copy principal), produto, mensagem principal do copy.
+
+Lógica (Claude 3.7 Sonnet): Identifica "momentos privilegiados" pré-oferta para direcionar atenção a conceitos/ideias que aumentem receptividade à mensagem de vendas.
+
+Prompt para Claude 3.7:
+
+"Produto: {nome_produto}, Mensagem Venda Principal: '{mensagem_venda_principal}'.
+Jornada Cliente (Pontos Contato ANTES da LP Venda): Anúncio FB, Artigo Blog, Email Boas-Vindas.
+'Pre-Suasion Framework' Cialdini: Sugira tática de pré-suasão para cada ponto de contato para tornar prospect mais receptivo à '{mensagem_venda_principal}' na LP.
+1.  Anúncio FB: Pergunta/afirmação inicial para 'pré-configurar' mente?
+2.  Artigo Blog: Conceito/ideia chave para enfatizar?
+3.  Email Boas-Vindas: Valor/enquadramento inicial para estado mental favorável?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa CialdiniPrincipleIdentifierAndApplier para infundir os 6 princípios no copy.
+
+PreSuasionMomentOptimizer (Claude 3.7) planeja estratégia de conteúdo/primeiros contatos.
+
+DropHunter fornece "Guia de Persuasão Científica Cialdini" (como aplicar 6 princípios, ideias para táticas pré-suasão) para RobotHGAds criar campanhas/funis cientificamente projetados para conversão.
+
+21. CARLINE ANGLADE-COLE
+
+Especialidade: Copy para mercado de saúde e suplementos
+
+Metodologia principal: "H.P.F.C." (Hope, Problem, Fear, Credibility)
+
+Estratégia distintiva: Fascination-to-Fact Ratio
+
+Configurações dos Algoritmos da Estratégia:
+
+HPFCContentFrameworkApplier:
+
+Input: Produto saúde/suplemento, pesquisa avatar (esperanças/medos saúde), dados científicos/credenciais produto.
+
+Lógica (Claude 3.7 Sonnet): Gera seções de copy equilibrando Hope (quadro resultado desejado), Problem (articular problema), Fear (consequências de não tratar, ético/baseado em fatos), Credibility (provas científicas, testemunhos especialistas).
+
+Prompt para Claude 3.7:
+
+"Produto Saúde/Suplemento: {nome_produto_saude}, visa {melhorar_condicao_X}. Pesquisa Avatar (Esperanças: {esperancas_avatar}, Medos: {medos_avatar}). Dados Credibilidade: {estudos_ingredientes}.
+Framework 'H.P.F.C.' (Carline Anglade-Cole): Gere outline e trechos copy para LP:
+1.  Seção Esperança: Descrever futuro positivo (100 palavras).
+2.  Seção Problema: Articular problema empaticamente (100 palavras).
+3.  Seção Medo (Ético): Discutir consequências de não tratar (baseado em fatos, 75 palavras).
+4.  Seção Credibilidade: Apresentar {dados_de_credibilidade_produto} convincentemente (150 palavras)."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+FascinationToFactRatioOptimizer:
+
+Input: Rascunho copy saúde, lista "fatos científicos" e "elementos fascinantes".
+
+Lógica (Claude 3.7 Sonnet): Analisa rascunho para equilíbrio Fascinação (ganchos, histórias, promessas intrigantes) vs. Fatos (dados, mecanismos, provas). Sugere onde adicionar mais de um ou de outro.
+
+Prompt para Claude 3.7:
+
+"Rascunho Copy Produto Saúde '{nome_produto_saude}': '{rascunho_copy_longo}'.
+Analise com 'Fascination-to-Fact Ratio' (Carline Anglade-Cole).
+1.  Identifique 'Elementos de Fascinação'.
+2.  Identifique 'Elementos de Fato/Credibilidade'.
+3.  Avalie Equilíbrio: Otimizado para engajar E convencer? Muito seco ou muito vago?
+4.  Sugestões Otimização: Onde adicionar mais 'fascinação' ou mais 'fatos'?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos saúde/suplementos, CopywritingAssistantService (Claude 3.7) ativa módulos HPFC.
+
+Claude 3.7 usa HPFCContentFrameworkApplier para copy e FascinationToFactRatioOptimizer para refinar.
+
+DropHunter fornece "Guia de Copy para Saúde e Suplementos Carline Anglade-Cole" (templates HPFC, análise proporção Fascinação/Fato, sugestões para tornar copy científico mais "fascinante" e promessas mais "factuais") para RobotHGAds criar campanhas responsáveis e persuasivas para este nicho.
+
+22. ROY FURR
+
+Especialidade: Copy financeiro e para serviços de alto ticket
+
+Metodologia principal: "Breakthrough Marketing" (Big Idea, hook irresistível, estrutura narrativa de escalonamento de compromisso)
+
+Estratégia distintiva: Big Idea Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+BigIdeaDiscoveryEngine:
+
+Input: Produto (financeiro/alto ticket), público (dores/aspirações financeiras/profissionais), análise concorrência (Big Ideas deles), tendências mercado.
+
+Lógica (Claude 3.7 Sonnet com Tool Use e raciocínio profundo): Sintetiza infos para achar conceito central (Novo/Único, Simples, Relevante, Emocional, Escalável). Claude pode usar "Computer Use" para pesquisar notícias financeiras, relatórios de tendências.
+
+Prompt para Claude 3.7:
+
+"Produto/Serviço: {nome_produto_alto_ticket}, ajuda {publico_alvo} a {resultado_principal}. Dores/Aspirações Público: {resumo_dores_aspiracoes}. Análise Concorrência (Big Ideas): {resumo_concorrencia}. Tendências Mercado: {resumo_tendencias}.
+'Big Idea Framework' (Roy Furr): Desenvolva 3-5 'Big Ideas' candidatas. Cada uma:
+1.  Conceito Central (frase/parágrafo curto).
+2.  Ângulo Único (vs. concorrência/abordagens atuais).
+3.  Conexão Emocional (qual emoção principal visa despertar).
+4.  Potencial de Hook (quão forte para hook irresistível).
+Avalie cada candidata (1-10) em força/originalidade."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+IrresistibleHookGenerator:
+
+Input: "Big Idea" selecionada.
+
+Lógica (Claude 3.7 Sonnet): Gera múltiplos headlines/aberturas VSL/primeiros parágrafos carta de vendas que dramatizam a "Big Idea" e criam curiosidade intensa.
+
+Prompt para Claude 3.7:
+
+"Big Idea Selecionada: '{big_idea_escolhida}'. Produto/Serviço: {nome_produto_alto_ticket}.
+Gere 5 'Hooks Irresistíveis' (headlines, aberturas vídeo). Cada hook: Intrigante/curiosidade massiva, Sugerir grande benefício/solução, Conciso/direto, Fazer querer desesperadamente continuar."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+CommitmentEscalationNarrativeStructure:
+
+Input: "Big Idea", Hook, produto/serviço, oferta.
+
+Lógica (Claude 3.7 Sonnet): Esboça estrutura de copy (VSL, LP longa, emails) que gradualmente constrói caso para "Big Idea", revela mecanismo, apresenta provas, pede micro-compromissos antes da oferta principal.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produtos financeiros/alto ticket, CopywritingAssistantService (Claude 3.7) ativa módulos de Roy Furr.
+
+Claude 3.7 (com pesquisa/síntese) usa BigIdeaDiscoveryEngine, depois IrresistibleHookGenerator e CommitmentEscalationNarrativeStructure.
+
+DropHunter fornece "Pacote de Marketing de Ruptura Roy Furr" ("Big Idea" central, hooks irresistíveis, outline estrutura narrativa) para RobotHGAds criar campanhas para produtos/serviços que exigem mudança de paradigma ou representam investimento significativo.
+
+23. NIKKI ELLEDGE BROWN
+
+Especialidade: Copy autêntico para personal brands
+
+Metodologia principal: "A Course About Copy"
+
+Estratégia distintiva: C.L.A.R.I.T.Y. Framework
+
+Configurações dos Algoritmos da Estratégia:
+
+BrandAuthenticityVoiceProfiler:
+
+Input: Infos marca pessoal/usuário (valores, história, paixões, "jeitão") ou persona marca produto. Público.
+
+Lógica (Claude 3.7 Sonnet): Ajuda a definir/refinar voz de marca autêntica (para pessoa/marca) que ressoe com público. Foco na intersecção verdade marca/pessoa e o que público valoriza.
+
+Prompt para Claude 3.7:
+
+"Infos Marca Pessoal/Fundador Arquetípico: Valores: {lista_valores}, História: {breve_historia}, Paixões: {lista_paixoes}, 'Jeitão': {ex_direto_engracado}. Produtos: {lista_produtos}. Público: {descricao_publico}.
+Princípios Nikki Elledge Brown (copy autêntico):
+1.  Defina 'Núcleo Autêntico da Voz' (2-3 frases).
+2.  Guia Linguagem Autêntica: Palavras/frases DEVERIA usar e EVITAR.
+3.  Como esta voz autêntica pode criar conexão genuína com {publico_alvo} sobre {lista_produtos}?"
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+CLARITYFrameworkMessageGenerator:
+
+Input: Produto, público, voz autêntica, componentes C.L.A.R.I.T.Y. (Connection, Language, Audience, Results, Irresistible Offer, Trust, You-focused - precisam ser detalhados na base de conhecimento).
+
+Lógica (Claude 3.7 Sonnet): Para cada componente C.L.A.R.I.T.Y., Claude 3.7 gera trecho de copy ou ponto de foco. Tenta montar em mensagem coesa.
+
+SimpleAndStrategicCopyRefiner:
+
+Input: Rascunho de copy.
+
+Lógica (Claude 3.7 Sonnet): Analisa para remover jargões, complexidade. Garante mensagem principal óbvia. Verifica consistência com voz autêntica.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Ideal para usuários construindo marca pessoal ou loja com forte "personalidade".
+
+BrandVoiceDefinitionModule (Claude 3.7) usa BrandAuthenticityVoiceProfiler.
+
+CopywritingAssistantService (Claude 3.7) aplica CLARITYFrameworkMessageGenerator e SimpleAndStrategicCopyRefiner.
+
+DropHunter fornece "Guia de Copy Autêntico Nikki Elledge Brown" (definição voz autêntica, componentes C.L.A.R.I.T.Y., exemplos copy refinado) para RobotHGAds criar campanhas que constroem marca forte/leal baseada em autenticidade/clareza.
+
+24. DRAYTON BIRD
+
+Especialidade: Copy direto e testado para múltiplos mercados
+
+Metodologia principal: "Common Sense Marketing"
+
+Estratégia distintiva: Sequential Testing Protocol
+
+Configurações dos Algoritmos da Estratégia:
+
+FundamentalCopyChecklistGenerator:
+
+Input: Tipo peça copy, produto, público, oferta.
+
+Lógica (Claude 3.7 Sonnet, treinado nos princípios de Drayton Bird): Gera checklist de perguntas que copy deve responder (clareza, foco cliente, benefício, prova, oferta, CTA, urgência, etc.).
+
+Prompt para Claude 3.7:
+
+"Tipo Peça Copy: {ex_Anuncio_Facebook}. Produto: {nome_produto}. Público: {descricao_publico}. Oferta: {detalhes_oferta}.
+Princípios 'Common Sense Marketing' (Drayton Bird): Gere checklist (10-15 perguntas essenciais) que o copy para {Tipo_Peça_Copy} DEVE responder/abordar para ser eficaz."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+DeepCustomerUnderstandingProfiler:
+
+Input: Produto, nicho, dados demográficos/psicográficos, VoC.
+
+Lógica (Claude 3.7 Sonnet): Sintetiza dados para perfil com insights profundos (motivações reais, contexto de vida, "o que mantém acordado à noite").
+
+SequentialTestingPlanGeneratorForCopy:
+
+Input: Copy de controle/rascunho forte, elementos chave do copy.
+
+Lógica (Claude 3.7 Sonnet ou programática): Propõe plano para testar UMA variável de copy por vez (Headline -> Oferta -> Lead etc.). Especifica duração, tráfego para significância, como determinar vencedor (para RobotHGAds executar A/B).
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+CopywritingAssistantService (Claude 3.7) usa FundamentalCopyChecklistGenerator para garantir fundamentos de resposta direta.
+
+DeepCustomerUnderstandingProfiler (Claude 3.7) enriquece perfil do avatar.
+
+SequentialTestingPlanGeneratorForCopy (Claude 3.7 ou sistema) gera plano de teste A/B.
+
+DropHunter fornece "Guia de Otimização de Copy Drayton Bird" (checklist fundamentos, perfil cliente profundo, planos de teste A/B sequenciais) para RobotHGAds otimizar continuamente copy via testes metódicos.
+
+25. DONALD MILLER (StoryBrand)
+
+Especialidade: Copy baseado em estrutura narrativa clara
+
+Metodologia principal: "StoryBrand Framework"
+
+Estratégia distintiva: 7-Part BrandScript
+
+Configurações dos Algoritmos da Estratégia:
+
+StoryBrandRoleIdentifier:
+
+Input: Produto, marca (ou conceito), cliente ideal.
+
+Lógica (Claude 3.7 Sonnet): Define papéis: Cliente=Herói (o que quer?), Problema do Herói (externo, interno, filosófico), Marca=Guia (como ajuda? empatia/autoridade, plano), CTA, Sucesso (e Fracasso Evitado).
+
+Prompt para Claude 3.7:
+
+"Produto/Marca: {nome_produto_ou_marca}. Cliente Ideal (Herói): {descricao_cliente_com_objetivos}.
+StoryBrand Framework (Donald Miller): Defina elementos da narrativa:
+1.  Herói e Seu Desejo.
+2.  Problema do Herói (Externo, Interno, Filosófico).
+3.  Marca como Guia (Empatia, Autoridade).
+4.  O Plano do Guia (3-4 passos simples).
+5.  CTA Claro.
+6.  Sucesso Prometido (transformação).
+7.  Fracasso a Ser Evitado."
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution. 
+IGNORE_WHEN_COPYING_END
+
+BrandScriptGenerator:
+
+Input: Output do StoryBrandRoleIdentifier.
+
+Lógica (Claude 3.7 Sonnet): Compila os 7 elementos em "BrandScript" coeso. Gera frases chave e conceitos para cada ponto, para usar em todo marketing.
+
+StoryBrandWebsiteWireframer (Foco em Copy e Estrutura de Mensagem para LPs):
+
+Input: BrandScript completo.
+
+Lógica (Claude 3.7 Sonnet): Sugere como mapear elementos do BrandScript para seções de um website/LP (especialmente homepage ou página de produto) para clareza e conversão. Descreve estrutura e CONTEÚDO TEXTUAL de cada seção.
+
+Discernimento de Como Fazer na Prática Detalhado (DropHunter):
+
+Para produto/marca, CopywritingAssistantService (Claude 3.7) usa StoryBrandRoleIdentifier e BrandScriptGenerator.
+
+StoryBrandWebsiteWireframer (Claude 3.7) gera outline de copy para LP/página produto.
+
+DropHunter fornece "Kit de Clareza Narrativa StoryBrand" (BrandScript completo, sugestões frases chave, "wireframe de copy" para LP/homepage) para RobotHGAds/usuário garantir comunicação de marketing clara, centrada no cliente, seguindo estrutura narrativa eficaz.
+
+Com isso, concluímos a compilação revisada do ARQUIVO 4: DROPHUNTER - ESPECIALISTAS EM COPYWRITING (COM DETALHAMENTO TÉCNICO). Todos os 25 especialistas foram cobertos, detalhando como suas metodologias são traduzidas em processos e prompts para o Claude 3.7 Sonnet, visando a geração de copy de alta performance.
+
+O próximo passo é compilar o ARQUIVO 5: DROPHUNTER - ESPECIALISTAS EM CRIATIVOS (COM DETALHAMENTO TÉCNICO). Vou juntar todo o conteúdo que geramos para ele.
